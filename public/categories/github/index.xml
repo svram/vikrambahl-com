@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on Vikram Bahl</title>
+    <link>https://vikrambahl.com/categories/github/</link>
+    <description>Recent content in GitHub on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 19 Sep 2020 10:27:46 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switch GitHub account on macOS terminal</title>
+      <link>https://vikrambahl.com/switch-github-account-on-macos-terminal/</link>
+      <pubDate>Sat, 19 Sep 2020 10:27:46 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/switch-github-account-on-macos-terminal/</guid>
+      <description>
+        
+          &lt;p&gt;If you have multiple GitHub accounts and are getting error messages like this while pushing code to the repo&lt;/p&gt;
+&lt;p&gt;“remote: Permission to svram/twittering.git denied to &lt;currently-configured-username&gt;&lt;br&gt;
+fatal: unable to access ‘https://github.com/svram/&lt;reponame&gt;.git/’: The requested URL returned error: 403″&lt;/p&gt;
+&lt;p&gt;This means that the currently configured username on your terminal is not the one whose repo you are intending to commit code to. The first step to fix this is to list the current configuration like so&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will get a result which will inform you about the username and email which is currently configured.&lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;credential.helper=osxkeychain
+user.name=svram
+user.email=&amp;lt;something&gt;@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=true
+remote.origin.url=https://github.com/svram/reponame.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master&lt;/pre&gt;
+&lt;p&gt;If your github username and email are not consistent then change those first with&lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;git config --global user.name &#34;&#34;
+git config --global user.email &#34;&#34;&lt;/pre&gt;
+&lt;p&gt;One of the simple ways to do this on macOS is to delete the password of the existing GitHub account configured from the Keychain.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the Keychain, click on All Items and then search for git. You can delete the password entry which comes.&lt;/li&gt;
+&lt;li&gt;Once this is done, try to do a git push and it should ask you to reauthenticate. I recommend using the &lt;a href=&#34;https://visualstudio.github.com/&#34;&gt;visual studio integration&lt;/a&gt;. It makes life really simple while developing code&lt;figure class=&#34;wp-block-image size-large&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/keychain.png&#34;&gt;
+&lt;p&gt;There are other ways to do this which would work across windows, linux and macOS too. That involves generating an SSH keypair and authenticating your terminal/computer with GitHub. I recommend following &lt;a href=&#34;https://medium.com/@aklson_DS/how-to-properly-setup-your-github-repository-mac-version-3a8047b899e5&#34;&gt;this tutorial&lt;/a&gt; for the steps.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

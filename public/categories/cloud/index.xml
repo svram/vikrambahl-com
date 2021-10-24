@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Vikram Bahl</title>
+    <link>https://vikrambahl.com/categories/cloud/</link>
+    <description>Recent content in Cloud on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pass the AZ-900 Azure Fundamentals in your first attempt</title>
+      <link>https://vikrambahl.com/az-900-azure-fundamentals-guide/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/az-900-azure-fundamentals-guide/</guid>
+      <description>
+        
+          &lt;h2 id=&#34;thoughts-on-az-900&#34;&gt;Thoughts on AZ-900&lt;/h2&gt;
+&lt;p&gt;The Azure Fundamentals AZ-900 certification is meant to be the first step in Microsoft Azure land for business and technical folks. I recently prepared and  &lt;a href=&#34;https://www.youracclaim.com/badges/f08a72ab-e3d5-406f-806c-30b9d543b8b0&#34;&gt;cleared the certification&lt;/a&gt;  securing 884 on 1000 (passing marks are 700). This guide below goes over all you need for Azure AZ-900 preparation.&lt;/p&gt;
+&lt;p&gt;Coming from a hands on cloud and dev background, my impression before I gave the exam was “this shit is going to be a breeze” or “AZ-900 is for sales and project managers, cloud architects should find it easy af”. After the exam? I stand corrected. While I breezed through the 29 questions in about 30-35mins (including a once over), I left the center pondering why these pricing and compliance focussed exams tend to trip up technical folks. In hindsight, I should’ve focussed a LOT more on the compliance and pricing features.&lt;/p&gt;
+&lt;p&gt;The questions on cloud concepts were the easiest because they relied on logic and a bit of cloud experience. But these questions comprise just about 15-20% of the exam. The devil is in making sure your knowledge of azure services, what the services do, compliance, trust, security, privacy, pricing and support are rock solid. And this means memorising some Azure facts (which sucks TBH, certifications should test concepts rather than facts. Atleast 60% of the exam should be concepts as opposed to the 20% that it is now).&lt;/p&gt;
+&lt;p&gt;I had about 10 days to prepare for this exam. I had about 5yrs cloud experience already so I reckoned that 10 days is enough time.&lt;/p&gt;
+&lt;h2 id=&#34;tips-to-prepare&#34;&gt;Tips to prepare&lt;/h2&gt;
+&lt;p&gt;I followed the following methods to prepare and it is more than enough to comfortably sail through this examination:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The starting point should be the official free online study guide by Microsoft. It’s good and covers all the bases&lt;/li&gt;
+&lt;li&gt;Aside from this cheat sheet I would recommend doing EITHER the &lt;em&gt;Whizlabs&lt;/em&gt; question bank set or the one from Udemy. Gun to my head, I’d recommend Whizlabs since they have a reputation for keeping the questions up to date and relevant. There are about 6-7 tests with 55 questions each. So we are looking at 350-400 questions to choose from. The Udemy practise test was great but I found myself doubting a lot of the answers. You can choose to do it only for the questions but then again do either and not both.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://shareasale.com/r.cfm?b=1815676&amp;amp;u=2564998&amp;amp;m=43514&amp;amp;urllink=&amp;amp;afftrack=&#34;&gt;&lt;img src=&#34;https://static.shareasale.com/image/43514/Hurry-Limited-period-offer-on-Subscr_06.png&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.shareasale.com/m-pr.cfm?merchantID=43514&amp;userID=2564998&amp;productID=1217786039&#34; target=&#34;_blank&#34;&gt;Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95&lt;/a&gt;&lt;br/&gt;from: &lt;b&gt;Whizlabs.com&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The aCloudGuru/Linux Academy course is pretty decent (Thanks to my employer for getting me a subscription)&lt;/li&gt;
+&lt;li&gt;Hands on playing around the Azure Portal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-cheatsheet&#34;&gt;The cheatsheet&lt;/h2&gt;
+&lt;p&gt;Use this to revise concepts and facts a day or two before the exam. Follow and read up all links. Get a PDF version right here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A geography is a part of the world with at-least one azure region&lt;/li&gt;
+&lt;li&gt;An Azure region contains more than one data center.&lt;/li&gt;
+&lt;li&gt;A region can be comprised of multiple availability zones (AZ)&lt;/li&gt;
+&lt;li&gt;An AZ contains more than 1 data center&lt;/li&gt;
+&lt;li&gt;When it’s AZ think independent power, cooling, and networking&lt;/li&gt;
+&lt;li&gt;Not all regions have AZ’s in Azure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/availability-zones/az-overview&#34;&gt;Regions, AZ’s, Geographies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;High Availability (HA) refers to that feature of Azure which enables distributed systems to recover very quickly from faults with none or minor degradation in user experience.
+&lt;ul&gt;
+&lt;li&gt;A highly available application or database is one which is spread across multiple hosts in independent racks in a data center, independent data centers in a regions/AZ or independent AZ’s in a region&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fault Tolerance refers to the ability of a systems to adhere to SLA’s for response time and availability even if system failure occurs. Basically no impact on users during system failure. This is more complex and expensive to attain compared with HA.&lt;/li&gt;
+&lt;li&gt;Disaster Recovery is associated with the ability of a system to recover operations (applications and data) within a defined RTO (Recovery Time Objective) and RPO (Recovery Point Objective). RTO and RPO are usually decided based on the SLA and business objectives.
+&lt;ul&gt;
+&lt;li&gt;RTO: The maximum downtime the service or application can endure in time of a disaster (or my application can be down only for 2 hours before my users complain or I break the SLA with my customers)&lt;/li&gt;
+&lt;li&gt;RPO: The tolerable amount of unbacked up data which can be lost in a disaster before it harms the business (or I can lose two hours of data if it is not backed up which means I need to schedule backups every two hours to meet the RPO)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Scalability is the ability of a system to handle variable increase in load or requests without affecting the response time or quality of service.&lt;/li&gt;
+&lt;li&gt;Elasticity is the ability of a system to scale up or down with the load on the system. The system adds additional resources to handle an increase in load and when the load decreases, it removes the additional resources.&lt;/li&gt;
+&lt;li&gt;Vertical scaling refers to increasing the spec or capacity of a resource so it can handle higher load
+&lt;ul&gt;
+&lt;li&gt;Choosing a higher powered instance&lt;/li&gt;
+&lt;li&gt;Vertical scaling often requires making the system temporarily unavailable while it is being redeployed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Horizontal scaling is the addition of resources to a pool of resource in response to an increase in load or some metric which require additional compute to perform the job.&lt;/li&gt;
+&lt;li&gt;Autoscaling mostly applies to compute resources. While it’s possible to horizontally scale a database or a message queue, this usually involves data partitioning, which is generally not automated. There are flavours of SQL and NoSQL databases which make autoscaling easier but that is because they’re managed services or PaaS services like Synapse, Amazon RDS, Bigquery or Azure SQL PaaS.&lt;/li&gt;
+&lt;li&gt;What differentiates the cloud from the onpremises deployments is essentially the API. You can provision large amounts of compute and storage resources in a data center somewhere with just a simple API call. Azure provides us with a plethora of mediums to invoke these APIs.&lt;/li&gt;
+&lt;li&gt;There are many options to work with resources in Azure. These are elaborated on below. For a small sized project, you will likely use a couple. The different options to manipulate resources in Azure are
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli&#34;&gt;Azure CLI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This is the command line interface for interating with Azure resources. Runs on windows, linux and mac environments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/powershell/azure/?view=azps-4.8.0&#34;&gt;Azure Powershell&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure PowerShell is a set of cmdlets (automation scripts) for managing Azure resources directly from the PowerShell command line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/features/cloud-shell/&#34;&gt;Azure Cloud Shell&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Like the name mentions, this is a shell in the cloud. It’s a browser based, automatically authenticated powerful shell experience. It comes with both Bash and Powershell. This is very powerful and I believe no other cloud offers 2 shell flavours.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.github.io/azure-sdk/&#34;&gt;Azure SDK’s&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This is the Software Development Kit (SDK) libraries which contain support for multiple programming languages (.NET, Java, Javascript, Python, C++, iOS, Android). Essentially they contain similar functionality as the CLI or the API’s but invoked through application code.&lt;/li&gt;
+&lt;li&gt;One use case could be your team is building a mobile only chat application and you need a way to setup the backend for common chat functionalities like create message, list contacts or join groups. You can  &lt;a href=&#34;https://github.com/Azure/azure-sdk-for-ios/tree/1.0.0-beta.2/sdk/communication/AzureCommunicationChat&#34;&gt;embed Azure SDK for chat&lt;/a&gt;  directly in your Swift codebase so that the backend “just works”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/rest/api/azure/&#34;&gt;Azure APIs&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;These are REST API’s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/features/azure-portal/&#34;&gt;Azure Portal&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Portal is a web based dashboard for creating, configuring, deleting and managing Azure resources. It is essentially a powerful web application which gives you a UI for making things happen on Azure. The URL is  &lt;a href=&#34;https://portal.azure.com/&#34;&gt;&lt;strong&gt;https://portal.azure.com/&lt;/strong&gt;&lt;/a&gt;. This is similar to the AWS Console (&lt;a href=&#34;https://console.aws.amazon.com/&#34;&gt;&lt;strong&gt;https://console.aws.amazon.com/&lt;/strong&gt;&lt;/a&gt;) or the GCP Console (&lt;a href=&#34;http://console.cloud.google.com/&#34;&gt;&lt;strong&gt;http://console.cloud.google.com/&lt;/strong&gt;&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Powershell, CLI, SDK’s etc all use azure resource manager to take action on azure&lt;/li&gt;
+&lt;li&gt;Azure building blocks
+&lt;ul&gt;
+&lt;li&gt;Regions
+&lt;ul&gt;
+&lt;li&gt;Not all regions have availability zones&lt;/li&gt;
+&lt;li&gt;Data centers are close enough to each other that there is no latency difference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Paired regions
+&lt;ul&gt;
+&lt;li&gt;Each azure region is paired except brazil south. colocated geographically. Offers failover during outages. Offers data replication. Maintenance is done serially&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AZ
+&lt;ul&gt;
+&lt;li&gt;Independent power, network and cooling&lt;/li&gt;
+&lt;li&gt;Each region that supports AZ’s has minimum of 3 AZ’s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Latency defined perimeter: not too far from each other&lt;/li&gt;
+&lt;li&gt;Regional low latency network -&amp;gt; fiber connection between regions not too far from each other&lt;/li&gt;
+&lt;li&gt;How to choose region to deploy your application. Take the following 3 factors into consideration
+&lt;ul&gt;
+&lt;li&gt;Location -&amp;gt; closer to users&lt;/li&gt;
+&lt;li&gt;Features -&amp;gt; do we have full azure feature set required for the application&lt;/li&gt;
+&lt;li&gt;Price -&amp;gt; price varies per region&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To take advantage of multi-az, you need to specify you need multi-az for resource during provisioning.&lt;/li&gt;
+&lt;li&gt;Resource groups
+&lt;ul&gt;
+&lt;li&gt;Everything in azure must be inside a resource group. Resource group is not a resource&lt;/li&gt;
+&lt;li&gt;It is a container that holds related azure resources for a solution&lt;/li&gt;
+&lt;li&gt;Each resource exists in 1 resource group only&lt;/li&gt;
+&lt;li&gt;Resources can be moved, added, deleted from/to other resource groups&lt;/li&gt;
+&lt;li&gt;Resource groups can span multiple regions&lt;/li&gt;
+&lt;li&gt;Has access control facility for users&lt;/li&gt;
+&lt;li&gt;Resources in a resource group can interact with resources in other resource groups&lt;/li&gt;
+&lt;li&gt;Has a location or region. Resource group can be in Mumbai but have resources in Singapore or USA&lt;/li&gt;
+&lt;li&gt;A resource group will contain resources related to a specific application. For example, a group may contain a website resource that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage Account that stores non-relational assets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview&#34;&gt;Azure Resource Manager (ARM)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Everything cli, powershell, rest api, client SDK, web portal all go through the ARM API to CRUD (Create, Read, Update, Delete) resources on azure&lt;/li&gt;
+&lt;li&gt;Allows for grouped resource handling, access control, resource tagging, billing of tagged resource, define dependencies between resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Scale sets
+&lt;ul&gt;
+&lt;li&gt;Lets you manage a group of identical, load balanced vm’s&lt;/li&gt;
+&lt;li&gt;You only pay for VM’s, storage, load balancers&lt;/li&gt;
+&lt;li&gt;Upto 1000 VM’s in a single scale set&lt;/li&gt;
+&lt;li&gt;Baseline VM is used as a template&lt;/li&gt;
+&lt;li&gt;Similar to a managed instance group in GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/services/app-service/&#34;&gt;Azure App Services&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;PaaS offering&lt;/li&gt;
+&lt;li&gt;Web apps on win and linux&lt;/li&gt;
+&lt;li&gt;Web apps for containers -&amp;gt; host containers on azure&lt;/li&gt;
+&lt;li&gt;Api apps -&amp;gt; expose and connect data backend&lt;/li&gt;
+&lt;li&gt;App service plan is the server&lt;/li&gt;
+&lt;li&gt;App service is the service or website&lt;/li&gt;
+&lt;li&gt;Similar to App Engine on GCP or Elastic Beanstalk on AWS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/services/container-instances/&#34;&gt;Azure Container Instances&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Primary Azure service for running containerized apps&lt;/li&gt;
+&lt;li&gt;Similar to ECS on AWS or Cloud Run on GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Virtual Network (VNET)
+&lt;ul&gt;
+&lt;li&gt;VNET’s are regional&lt;/li&gt;
+&lt;li&gt;VNET belongs to 1 subscription, 1 subscription can have many VNET’s&lt;/li&gt;
+&lt;li&gt;Similar to VPC’s in AWS and GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Load Balancer
+&lt;ul&gt;
+&lt;li&gt;Frontend -&amp;gt; access point for the load balancer, receives the traffic&lt;/li&gt;
+&lt;li&gt;Backend -&amp;gt; pool of VM’s over which traffic is distributed by load balancer&lt;/li&gt;
+&lt;li&gt;Configuration for rules and health probes&lt;/li&gt;
+&lt;li&gt;Health probe to make sure backend pool has healthy vm’s&lt;/li&gt;
+&lt;li&gt;Supports port forward to a specific port on a specific machine. on the VM, a process or app will be listening for messages on a specific port or ports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VNET gateway
+&lt;ul&gt;
+&lt;li&gt;A subnet with 2 or more servers&lt;/li&gt;
+&lt;li&gt;A virtual network can have two virtual network gateways; one VPN gateway and one ExpressRoute gateway&lt;/li&gt;
+&lt;li&gt;The VM’s in the VNET gateway cannot be directly accessed&lt;/li&gt;
+&lt;li&gt;Hybrid cloud starts with setting up a VPN or Express route connection from onpremises to the VNET gateway&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/application-gateway/overview&#34;&gt;Application Gateway&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Make routing requests based on parameters other than IP and port&lt;/li&gt;
+&lt;li&gt;Other parameters are URL, headers, data format&lt;/li&gt;
+&lt;li&gt;Elastic scaling, e2e encryption, multi-az, supports upto 100 websites per application gateway&lt;/li&gt;
+&lt;li&gt;Another type of load balancer for HTTP requests&lt;/li&gt;
+&lt;li&gt;Similar to ALB on AWS or Cloud Load Balancing on GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction&#34;&gt;Storage. Essentially four kinds of storage on Azure&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Blob: Similar to S3 on AWS or GCS on GCP&lt;/li&gt;
+&lt;li&gt;Disk: Similar to EBS on AWS or Persistent disk on GCP&lt;/li&gt;
+&lt;li&gt;File: similar to EFS on AWS or Filestore on GCP&lt;/li&gt;
+&lt;li&gt;Archive: Similar to Glacier on AWS or Cold Storage on GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Storage Account – unique Azure namespace for storage
+&lt;ul&gt;
+&lt;li&gt;Base for all azure storage types&lt;/li&gt;
+&lt;li&gt;Storage account has a container with blob storage inside&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Blob – binary large object or BLOB&lt;/li&gt;
+&lt;li&gt;Storage account can have multiple blob containers to store data&lt;/li&gt;
+&lt;li&gt;Blob container – mix bag of items (images, video, vmdk etc) each with a web address&lt;/li&gt;
+&lt;li&gt;Blob types
+&lt;ul&gt;
+&lt;li&gt;Block blobs – text and binary data upto 4.7tb&lt;/li&gt;
+&lt;li&gt;Append blobs – appendable files like log file&lt;/li&gt;
+&lt;li&gt;Page blobs – files upto 8 TB like hard disks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pricing tiers
+&lt;ul&gt;
+&lt;li&gt;Hot&lt;/li&gt;
+&lt;li&gt;Cool&lt;/li&gt;
+&lt;li&gt;Archive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Disk
+&lt;ul&gt;
+&lt;li&gt;Managed – azure manages backup, uptime, performance&lt;/li&gt;
+&lt;li&gt;Attached to VM’s&lt;/li&gt;
+&lt;li&gt;Easily upgrade type and size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Disk types
+&lt;ul&gt;
+&lt;li&gt;HDD – low cost, best for backup&lt;/li&gt;
+&lt;li&gt;Standard SSD – standard for production workloads&lt;/li&gt;
+&lt;li&gt;Premium SSD – critical workloads like db installs&lt;/li&gt;
+&lt;li&gt;Ultra disk – unprecedented sub ms latency – upto 64TB like gaming, rendering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;File storage
+&lt;ul&gt;
+&lt;li&gt;Large scale managed storage for files&lt;/li&gt;
+&lt;li&gt;Connects with onprem file storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Archive
+&lt;ul&gt;
+&lt;li&gt;Lowest price, highest access time, low performance, encrypted&lt;/li&gt;
+&lt;li&gt;Cheap type of blob storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure CDN
+&lt;ul&gt;
+&lt;li&gt;Content Delivery Network&lt;/li&gt;
+&lt;li&gt;Distributed network of servers that can deliver content close to users&lt;/li&gt;
+&lt;li&gt;CDN fetches data from an origin server depending upon the TTL (Time to Live)
+&lt;ul&gt;
+&lt;li&gt;Simple example: I have a website where people can browse cat photos. I upload new photos once a day. People visit the site by going to vikramsamazingcatphotos.com. I store all photos in an Object storage account on Azure in the US region. However, my users are from all over the world. So I setup Azure CDN to fetch images from the origin server, which is the storage account in US in this case. Azure CDN caches the images at an edge location closer to the users location. So a user in India requesting for a cat image will not be routed to the storage account in US, they will receive the image from an edge location (nothing but a bunch of servers) in India.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/product-categories/databases/&#34;&gt;Databases&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Cosmos DB&lt;/li&gt;
+&lt;li&gt;Azure SQL&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;DMS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cosmos DB
+&lt;ul&gt;
+&lt;li&gt;Global, easy to add region&lt;/li&gt;
+&lt;li&gt;Sync, cross-region replication is handled&lt;/li&gt;
+&lt;li&gt;Latency 0-9ms anywhere in the world&lt;/li&gt;
+&lt;li&gt;Autoscaling&lt;/li&gt;
+&lt;li&gt;Various sdks and languages for developers&lt;/li&gt;
+&lt;li&gt;Supports database flavors like Sql, Mongo, Cassandra&lt;/li&gt;
+&lt;li&gt;Can be very expensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure SQL
+&lt;ul&gt;
+&lt;li&gt;DB as a service (PaaS)&lt;/li&gt;
+&lt;li&gt;Use case: migrate onprem SQL server to azure sql&lt;/li&gt;
+&lt;li&gt;Built in machine learning&lt;/li&gt;
+&lt;li&gt;Upto 100TB&lt;/li&gt;
+&lt;li&gt;Secure, scale&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure DB for MySQL
+&lt;ul&gt;
+&lt;li&gt;Host foss MySQL&lt;/li&gt;
+&lt;li&gt;It’s a PaaS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure DB for Postgres
+&lt;ul&gt;
+&lt;li&gt;Hosted foss&lt;/li&gt;
+&lt;li&gt;Based on Ingres, came after it (hence POSTgres)&lt;/li&gt;
+&lt;li&gt;Default os for macos&lt;/li&gt;
+&lt;li&gt;Lot of features – horizontal scale, jsonb, fast indexing, geospatial (postgis)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Database Migration Service (DMS)
+&lt;ul&gt;
+&lt;li&gt;Onprem database migration to azure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Authentication and authorization in Azure
+&lt;ul&gt;
+&lt;li&gt;Identity services&lt;/li&gt;
+&lt;li&gt;Azure Active Directory (AD)&lt;/li&gt;
+&lt;li&gt;MFA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Identity
+&lt;ul&gt;
+&lt;li&gt;Authentication: identity proving/confirmation (you are who you say you are)&lt;/li&gt;
+&lt;li&gt;Authorization: once authenticated, do i have authorization to access a resource
+&lt;ul&gt;
+&lt;li&gt;Is this identity allowed access to a particular resource&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis&#34;&gt;Azure Active Directory (AAD)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This is different from Active Directory onprem&lt;/li&gt;
+&lt;li&gt;AD onprem is used by companies for managing users, printers and more&lt;/li&gt;
+&lt;li&gt;Azure AD is a separate product, you cant transfer skills from onprem AD&lt;/li&gt;
+&lt;li&gt;First service in a new azure account is an AAD service&lt;/li&gt;
+&lt;li&gt;Tenant is a dedicated instance of AAD that an org receives when it signs up for azure. One user belongs to 1 tenant but can be guest in other tenants&lt;/li&gt;
+&lt;li&gt;Tenant represents an organization&lt;/li&gt;
+&lt;li&gt;Subscriptions -&amp;gt; separate billing entities, multiple subscriptions in a single tenant&lt;/li&gt;
+&lt;li&gt;AAD can manage users onprem and in azure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Solutions
+&lt;ul&gt;
+&lt;li&gt;IoT Hub (ingest for billions of devices), managed PaaS, device authentication&lt;/li&gt;
+&lt;li&gt;IoT Central – SaaS, no code, connect IoT devices with dashboard, connections, rules&lt;/li&gt;
+&lt;li&gt;Big Data
+&lt;ul&gt;
+&lt;li&gt;Azure Data Lake Analytics – parallel processing, SQL, serverless&lt;/li&gt;
+&lt;li&gt;Azure HDInsights – foss (similar to dl analytics), hadoop, spark, kafka&lt;/li&gt;
+&lt;li&gt;Azure Databricks – based on spark (distributed cluster computing), integrates with azure storage&lt;/li&gt;
+&lt;li&gt;Synapse analytics – data warehouse (reporting and data analytics), limitless in storage, synapse sql&lt;/li&gt;
+&lt;li&gt;Speed of processing, cheaper for large data, better decisions, high profits as you use data to build better products&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AIML
+&lt;ul&gt;
+&lt;li&gt;Modelling&lt;/li&gt;
+&lt;li&gt;Knowledge mining – uses azure search&lt;/li&gt;
+&lt;li&gt;Cognitive services – apis
+&lt;ul&gt;
+&lt;li&gt;Vision, decision, speech&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Aazure ML studio
+&lt;ul&gt;
+&lt;li&gt;Premade modules&lt;/li&gt;
+&lt;li&gt;UI based&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure ML service
+&lt;ul&gt;
+&lt;li&gt;e2e service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Serverless
+&lt;ul&gt;
+&lt;li&gt;Azure functions&lt;/li&gt;
+&lt;li&gt;Logic apps – connects apps, data, systems across azure and outside. like workflow orchestration without code&lt;/li&gt;
+&lt;li&gt;Event grid – pubsub model, routing service for connected apps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/?product=featured&#34;&gt;Azure DevOps&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Boards – Azure Jira&lt;/li&gt;
+&lt;li&gt;Azure Pipelines – Cicd&lt;/li&gt;
+&lt;li&gt;Azure Repos – Git Repo&lt;/li&gt;
+&lt;li&gt;Azure Test Plans – Test Planning&lt;/li&gt;
+&lt;li&gt;Azure Artifacts – App Binaries And Libs&lt;/li&gt;
+&lt;li&gt;Devtest Labs – Create Test Environments, No Unexpected Costs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Security
+&lt;ul&gt;
+&lt;li&gt;Securing Network Connectivity
+&lt;ul&gt;
+&lt;li&gt;Azure Firewall – Rules To Define What Traffic Has Access&lt;/li&gt;
+&lt;li&gt;Ddos Protection – Detection, Deflection&lt;/li&gt;
+&lt;li&gt;Network Sec Groups – Attached To Subnet, Network, Interface&lt;/li&gt;
+&lt;li&gt;App Security Group – Protects Applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction&#34;&gt;Azure Security Center&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Manage All Sec Features Of Azure&lt;/li&gt;
+&lt;li&gt;In Azure Portal&lt;/li&gt;
+&lt;li&gt;Agents In Vm’s Onprem Or Azure Sent Data To Azure Sec Center&lt;/li&gt;
+&lt;li&gt;Policy, Compliance, Anomalies, Secure Score, Integrated With Aws/Gcp, Single Point For Siem, Alerts&lt;/li&gt;
+&lt;li&gt;Set Policies In Sec Center, Protect Resources Through Active Monitoring, Respond To Incidents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Key Vault
+&lt;ul&gt;
+&lt;li&gt;Secure Place To Store Passwords And Secrets. Can Delegate Access With Others Without Sharing The Actual Password&lt;/li&gt;
+&lt;li&gt;Secure Hardware&lt;/li&gt;
+&lt;li&gt;Global Scaling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Information Protection
+&lt;ul&gt;
+&lt;li&gt;Secure Data And Documents, Email, Office 365&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Advanced Threat Protection
+&lt;ul&gt;
+&lt;li&gt;Monitors Users&lt;/li&gt;
+&lt;li&gt;Call Out Anomalous Behavior&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Privacy, Compliance, Trust
+&lt;ul&gt;
+&lt;li&gt;Governance&lt;/li&gt;
+&lt;li&gt;Azure Monitor&lt;/li&gt;
+&lt;li&gt;Azure Service Health&lt;/li&gt;
+&lt;li&gt;Compliance&lt;/li&gt;
+&lt;li&gt;Privacy&lt;/li&gt;
+&lt;li&gt;Trust&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Governance
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/governance/policy/overview&#34;&gt;Azure Policy&lt;/a&gt; – Set Of Rules Which Resources Should Be Compliant To. Resources And Policies Are There. Azure Policy Is The Enforcer.&lt;/li&gt;
+&lt;li&gt;RBAC
+&lt;ul&gt;
+&lt;li&gt;Least Privilege&lt;/li&gt;
+&lt;li&gt;Principal – Users Or Group&lt;/li&gt;
+&lt;li&gt;Roles – Collection Of Permissions&lt;/li&gt;
+&lt;li&gt;Scope – Specific Resources Access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Resources Can Be Locked (Cant Be Deleted Or Read-Only)
+&lt;ul&gt;
+&lt;li&gt;Can Be Applied To Subscription, Resource Group Or Resource&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Blueprints – Templates For Resource Creation With Policy, Compliance, Regulation Adherence, Rbac&lt;/li&gt;
+&lt;li&gt;Telemetry – Info About How Remote Resources Re Performing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-monitor/overview&#34;&gt;Azure Monitor&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Feed Telemetry Here&lt;/li&gt;
+&lt;li&gt;Supports Ml&lt;/li&gt;
+&lt;li&gt;Query Language&lt;/li&gt;
+&lt;li&gt;Identify Issues Beforehand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-in/features/service-health/&#34;&gt;Azure Service Health&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Notifications For Azure Platform Health, Maintenance Window Etc&lt;/li&gt;
+&lt;li&gt;Service Health Dashboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Compliance – With Legislation
+&lt;ul&gt;
+&lt;li&gt;GDPR&lt;/li&gt;
+&lt;li&gt;NIST&lt;/li&gt;
+&lt;li&gt;ISO 9001:2008&lt;/li&gt;
+&lt;li&gt;Azure Compliance Manager
+&lt;ul&gt;
+&lt;li&gt;Recommendations For Achieving Compliance, Track Compliance For Team, Score&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Gov Cloud
+&lt;ul&gt;
+&lt;li&gt;Dedicated Regions For Us Govt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;China Regions&lt;/li&gt;
+&lt;li&gt;Azure Germany&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Privacy – Baked Into Azure Products
+&lt;ul&gt;
+&lt;li&gt;Azure Privacy Statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Trust
+&lt;ul&gt;
+&lt;li&gt;Azure Trust Center. Efforts Taken By Msft In Ensuring Trust&lt;/li&gt;
+&lt;li&gt;Service Trust Portal – Read Audit Reports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/pricing/&#34;&gt;Pricing&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Subscriptions
+&lt;ul&gt;
+&lt;li&gt;No Azure Service Lives Outside A Subscription&lt;/li&gt;
+&lt;li&gt;Billing Admin Has Access To Billing Responsibilities&lt;/li&gt;
+&lt;li&gt;Billing Cycles Net 30/60&lt;/li&gt;
+&lt;li&gt;Subscriptions Are Good For Separating Billing Concerns&lt;/li&gt;
+&lt;li&gt;Azure Offer Types&lt;/li&gt;
+&lt;li&gt;Management Groups For Subscriptions Can Have Multiple Subs Under One Mgmt Group. Easier For Policies, Tracking In Bulk&lt;/li&gt;
+&lt;li&gt;Mgmt Group Per Country Or Department&lt;/li&gt;
+&lt;li&gt;Nest Mgmt Groups To Indicate Hierarchy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cost Management
+&lt;ul&gt;
+&lt;li&gt;Free Services Upto 12 Months&lt;/li&gt;
+&lt;li&gt;Some Are Always Free Upto Certain Usage Limit&lt;/li&gt;
+&lt;li&gt;Nice Dashboard To See Graphs Of Cost&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cost Affected By
+&lt;ul&gt;
+&lt;li&gt;Resource Type&lt;/li&gt;
+&lt;li&gt;Resource Size&lt;/li&gt;
+&lt;li&gt;Bandwidth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Data Transfer Between Regions In Same Billing Zone Is Free. Egress Between Billing Zones Is Charged&lt;/li&gt;
+&lt;li&gt;Azure Tco Calculator Over 5 Yrs&lt;/li&gt;
+&lt;li&gt;Azure Pricing Calculator&lt;/li&gt;
+&lt;li&gt;Best Practises
+&lt;ul&gt;
+&lt;li&gt;Spending Limits&lt;/li&gt;
+&lt;li&gt;Quotas&lt;/li&gt;
+&lt;li&gt;Use Tags&lt;/li&gt;
+&lt;li&gt;Pay As You Go, Reserved Instances For 1 Or 3 Yrs.&lt;/li&gt;
+&lt;li&gt;Azure Advisor Has Cost Optimization Section&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/support/options/&#34;&gt;Support&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Support Plans
+&lt;ul&gt;
+&lt;li&gt;Basic&lt;/li&gt;
+&lt;li&gt;Developer&lt;/li&gt;
+&lt;li&gt;Standard&lt;/li&gt;
+&lt;li&gt;Professional Direct&lt;/li&gt;
+&lt;li&gt;Premier&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;All Support Plans Have Access To
+&lt;ul&gt;
+&lt;li&gt;247 Access To Billing And Subscription Support&lt;/li&gt;
+&lt;li&gt;Online Documentation&lt;/li&gt;
+&lt;li&gt;Forums&lt;/li&gt;
+&lt;li&gt;Azure Advisor&lt;/li&gt;
+&lt;li&gt;Service Health&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dev Support -&amp;gt; Business Hrs Email, Rest Get 247 Email/Phone&lt;/li&gt;
+&lt;li&gt;Severity A Support For Standard To Premier Is &amp;lt; 1hr. Sev B &amp;lt; 2hr, Sev C &amp;lt; 4 Hr&lt;/li&gt;
+&lt;li&gt;Tickets
+&lt;ul&gt;
+&lt;li&gt;To Contact Azure Support&lt;/li&gt;
+&lt;li&gt;Ticket_id Is Unique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Channels&lt;/li&gt;
+&lt;li&gt;Knowledge Center&lt;/li&gt;
+&lt;li&gt;SLA
+&lt;ul&gt;
+&lt;li&gt;1 Sla For Product. No Sla For Free Products And Services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Service Lifecycle&lt;/li&gt;
+&lt;li&gt;Azure &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/?product=featured&#34;&gt;Documentation&lt;/a&gt; And Forums&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Https://Azure.Microsoft.Com/En-Us/Resources/Knowledge-Center/&#34;&gt;Azure Knowledge Center&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Azure Service Lifecycle
+&lt;ul&gt;
+&lt;li&gt;Private Preview (Invite Only By Product Team)&lt;/li&gt;
+&lt;li&gt;Public Previews (Feature Available To All Azure Customers In Portal)&lt;/li&gt;
+&lt;li&gt;GA – Has SLA, Support Team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Preview Portal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.shareasale.com/m-pr.cfm?merchantID=43514&amp;userID=2564998&amp;productID=1217786039&#34; target=&#34;_blank&#34;&gt;Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95&lt;/a&gt;&lt;br/&gt;from: &lt;b&gt;Whizlabs.com&lt;/b&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/learn/certifications/exams/az-900&#34;&gt;AZ900 prep official&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

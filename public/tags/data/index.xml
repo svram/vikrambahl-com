@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data on Vikram Bahl</title>
+    <link>https://vikrambahl.com/tags/data/</link>
+    <description>Recent content in data on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 19 Oct 2013 05:29:38 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Secure Data Sanitization</title>
+      <link>https://vikrambahl.com/secure-data-sanitization/</link>
+      <pubDate>Sat, 19 Oct 2013 05:29:38 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/secure-data-sanitization/</guid>
+      <description>
+        
+          &lt;p&gt;Published a paper on techniques for shredding data from storage devices. &lt;a href=&#34;https://en.wikipedia.org/wiki/Gutmann_method&#34;&gt;Guttman’s algorithm&lt;/a&gt; to DoD to the NSA algorithm were all put to test on a 1GB flash drive. The results were published in this paper.&lt;/p&gt;
+&lt;object data=&#34;/pdfs/Secure-Data-Sanitization.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;700px&#34;&gt;
+    &lt;embed src=&#34;http://yoursite.com/the.pdf&#34;&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;https://vikrambahl.com/pdfs/Secure-Data-Sanitization.pdf&#34;&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Maps SDK on Vikram Bahl</title>
+    <link>https://vikrambahl.com/categories/google-maps-sdk/</link>
+    <description>Recent content in Google Maps SDK on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 01 Jul 2014 05:20:40 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/categories/google-maps-sdk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Maps SDK for iOS in Xcode Storyboard</title>
+      <link>https://vikrambahl.com/google-maps-ios-xcode-storyboards/</link>
+      <pubDate>Tue, 01 Jul 2014 05:20:40 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/google-maps-ios-xcode-storyboards/</guid>
+      <description>
+        
+          &lt;p&gt;Developing a location based application on iOS with Google Maps is super easy with the Google Maps SDK for iOS. So here’s the complete step-by-step way to add a google map to your iOS application using storyboards in Xcode 5.&lt;/p&gt;
+&lt;p&gt;This is what your app will look like in the end:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/finalApp.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/finalApp.png&#34; alt=&#34;Google Maps in iPhone using Xcode Storyboards&#34; title=&#34;Google Maps in iPhone using Xcode Storyboards&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Download code from Github: &lt;a href=&#34;https://github.com/svram/GoogleMapSDKiOS-Storyboards&#34;&gt;https://github.com/svram/GoogleMapSDKiOS-Storyboards&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the Google Maps SDK for iOS:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/ios/start#getting_the_google_maps_sdk_for_ios&#34;&gt;https://developers.google.com/maps/documentation/ios/start#getting_the_google_maps_sdk_for_ios&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The current version is 1.8.1&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Obtain an API key from the Google Developers console. Do the easy to follow instructions here:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/ios/start#the_google_maps_api_key&#34;&gt;https://developers.google.com/maps/documentation/ios/start#the_google_maps_api_key&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Setup Xcode Environment to work with Google Maps SDK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;a) Open Xcode and Create a new project.&lt;/p&gt;
+&lt;p&gt;b) Create a new ‘Single View Application’ template.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/singleViewApp.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/singleViewApp.png&#34; alt=&#34;Create Single View Application in Xcode&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Create Single View Application in Xcode&lt;/p&gt;
+&lt;p&gt;c) Enter Product, Organization &amp;amp; Company names. Enter a class prefix and choose iPhone from the devices drop down menu.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-details.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-details.png&#34; alt=&#34;Add product name, company etc&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Add product name, company etc&lt;/p&gt;
+&lt;p&gt;d) Save your project to disk.&lt;/p&gt;
+&lt;p&gt;e) Unzip and open the Google Maps iOS SDK that you downloaded in Step 1.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-framework.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-framework.png&#34; alt=&#34;Google Maps SDK iOS folder on desktop&#34; title=&#34;Google Maps SDK iOS folder on desktop&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;f) Add the “GoogleMaps.framework” bundle to the “Frameworks” Folder in Xcode by dragging it there. When prompted, select “Copy items into destination group’s folder”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/drag-image.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/drag-image.png&#34; alt=&#34;Drag the GoogleMaps.framework bundle to the Frameworks folder in Xcode&#34; title=&#34;Drag the GoogleMaps.framework bundle to the Frameworks folder in Xcode&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/copy-items.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/copy-items.png&#34; alt=&#34;Select Copy items into destination group&#39;s folder&#34; title=&#34;Select Copy items into destination group&#39;s folder&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;g) Similarly, drag the “GoogleMaps.bundle” from the  &lt;em&gt;GoogleMaps.framework -&amp;gt; Resources&lt;/em&gt;  folder to the “Frameworks” folder in Xcode. When prompted DO NOT select “Copy items into destination group’s folder”.&lt;/p&gt;
+&lt;p&gt;f) Then, select your project from the Project Navigator and select your applications “Target” (not the “Project”).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/select-target.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/select-target.png&#34; alt=&#34;Select applications Target in project navigator&#34; title=&#34;Select applications Target in project navigator&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;g) Then go to the “Build Phases” tab and then open “Link Binary With Libraries”. Then click on the “+” button at the bottom left and add the following libraries to be compiled along with your app binaries:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AVFoundation.framework&lt;/li&gt;
+&lt;li&gt;CoreData.framework&lt;/li&gt;
+&lt;li&gt;CoreLocation.framework&lt;/li&gt;
+&lt;li&gt;CoreText.framework&lt;/li&gt;
+&lt;li&gt;GLKit.framework&lt;/li&gt;
+&lt;li&gt;ImageIO.framework&lt;/li&gt;
+&lt;li&gt;libc++.dylib&lt;/li&gt;
+&lt;li&gt;libicucore.dylib&lt;/li&gt;
+&lt;li&gt;libz.dylib&lt;/li&gt;
+&lt;li&gt;OpenGLES.framework&lt;/li&gt;
+&lt;li&gt;QuartzCore.framework&lt;/li&gt;
+&lt;li&gt;SystemConfiguration.framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/build-phases.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/build-phases.png&#34; alt=&#34;Go To Build Phases -&gt; Link Binary With Libraries&#34; title=&#34;Go To Build Phases -&amp;gt; Link Binary With Libraries&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-frameworks.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-frameworks.png&#34; alt=&#34;Add the frameworks&#34; title=&#34;Add the frameworks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is what your Xcode environment should look like:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/after-adding-frameworks.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/after-adding-frameworks.png&#34; alt=&#34;XCode environment after adding the frameworks&#34; title=&#34;XCode environment after adding the frameworks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;h) Now choose your “Project” rather than a “Target” and open the “Build Settings” tab. Scroll down till you find the “Linking” section and under that find “Other Linker Flags”. Now open the section and click the “+” next to “Debug” and add “-ObjC” in the text field. If these settings are not visible, change the filter in the “Build Settings” to “All” instead of “Basic”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/other-linker-flags.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/other-linker-flags.png&#34; alt=&#34;Add the &#39;-ObjC&#39; flag in Other Linker Flags under Build Settings tab&#34; title=&#34;Add the &#39;-ObjC&#39; flag in Other Linker Flags under Build Settings tab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Add the ‘-ObjC’ flag in Other Linker Flags under Build Settings tab&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Begin Coding&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;a) Open your AppDelegate.m file and add the following import statement:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;GoogleMaps/GoogleMaps.h&amp;gt;;
+
+//Copy the API Key you created in Step 2 and enter the following code in the method
+
+application: didFinishLaunchingWithOptions:
+
+[GMSServices provideAPIKey:@&amp;quot;API_KEY&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Replace API_KEY with your API key.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-api-key.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-api-key.png&#34; alt=&#34;Add Google Maps API Key to the AppDelegate.m application:didFinishLaunchingWithOptions: method&#34; title=&#34;Add Google Maps API Key to the AppDelegate.m application:didFinishLaunchingWithOptions: method&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;b) Open “Main.Storyboard” and drag a UIView object from the Object Library. Now open the Identity Inspector and under Custom Class add “GMSMapView”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/drag-uiview.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/drag-uiview.png&#34; alt=&#34;Drag a UIView from object library to the main storyboard&#34; title=&#34;Drag a UIView from object library to the main storyboard&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-custom-class.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-custom-class.png&#34; alt=&#34;Assign Custom class &#39;GMSMapView&#39; to the UIView object in the Identity Inspector&#34; title=&#34;Assign Custom class &#39;GMSMapView&#39; to the UIView object in the Identity Inspector&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;c) Control drag from the UIView (GMSMapView) object to your ViewController.h file to create an outlet with the name “mapView”. Don’t forget to add the GoogleMaps import statement in your ViewController.h file.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/mapview-outlet.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/mapview-outlet.png&#34; alt=&#34;Create an outlet for the GMSMapView object in the ViewController.h file&#34; title=&#34;Create an outlet for the GMSMapView object in the ViewController.h file&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;d) Make the ViewController conform to the “GMSMapViewDelegate” protocol.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/delegate-protocol.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/delegate-protocol.png&#34; alt=&#34;Make the ViewController conform to the GMSMapViewDelegate protocol&#34; title=&#34;Make the ViewController conform to the GMSMapViewDelegate protocol&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;e) Finally, add the following code to your ViewController.m file in the viewDidLoad: method&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//Controls whether the My Location dot and accuracy circle is enabled.
+ 
+self.mapView.myLocationEnabled = YES;
+ 
+//Controls the type of map tiles that should be displayed.
+ 
+self.mapView.mapType = kGMSTypeNormal;
+ 
+//Shows the compass button on the map
+ 
+self.mapView.settings.compassButton = YES;
+ 
+//Shows the my location button on the map
+ 
+self.mapView.settings.myLocationButton = YES;
+ 
+//Sets the view controller to be the GMSMapView delegate
+ 
+self.mapView.delegate = self;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/viewdidload.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/viewdidload.png&#34; alt=&#34;viewDidLoad: method in ViewController.m&#34; title=&#34;viewDidLoad: method in ViewController.m&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;f) Now run the app in the simulator. Choose a location from the Debug -&amp;gt; Location menu option. Click on the my location button the app to move to your current location. And done!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/debug-location.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/debug-location.png&#34; alt=&#34;iOS Simulator choose location from Debug -&gt; Location&#34; title=&#34;iOS Simulator choose location from Debug -&amp;gt; Location&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/successful-maps-add.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/successful-maps-add.png&#34; alt=&#34;Successfully added a google map to Xcode storyboard&#34; title=&#34;Successfully added a google map to Xcode storyboard&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;g) Almost done. Finally some cosmetic changes. Go to your main storyboard and click on the view controller. Now go to the menu add a navigation controller by choosing “Editor -&amp;gt; Embed In -&amp;gt; Navigation Controller”.&lt;/p&gt;
+&lt;p&gt;This will add a navigator controller to your main storyboard.&lt;/p&gt;
+&lt;p&gt;Next give the navigation bar a title by adding the following code in your ViewController.m file:&lt;/p&gt;
+&lt;p&gt;self.title = @&amp;quot;Google Maps in iOS&amp;quot;;&lt;/p&gt;
+&lt;p&gt;Feel free to add any other UIView objects. I have added a dummy button and a UITextView object.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/embed-navcontroller.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/embed-navcontroller.png&#34; alt=&#34;Embed a Navigation Controller&#34; title=&#34;Embed a Navigation Controller&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Get the project files on  &lt;a href=&#34;https://github.com/svram/GoogleMapSDKiOS-Storyboards&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

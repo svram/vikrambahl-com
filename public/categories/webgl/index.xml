@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WebGL on Vikram Bahl</title>
+    <link>https://vikrambahl.com/categories/webgl/</link>
+    <description>Recent content in WebGL on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 18 Oct 2013 08:46:01 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/categories/webgl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to HTML5 &amp; WebGL</title>
+      <link>https://vikrambahl.com/introduction-html5-webgl/</link>
+      <pubDate>Fri, 18 Oct 2013 08:46:01 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/introduction-html5-webgl/</guid>
+      <description>
+        
+          &lt;p&gt;Recently gave a talk on HTML5 and WebGL, talking about how it has changed the web app landscape. The presentation slides talk about these topics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML5 vs HTML4.0/XHTML&lt;/li&gt;
+&lt;li&gt;HTML5 vs Flash&lt;/li&gt;
+&lt;li&gt;Intro to WebGL&lt;/li&gt;
+&lt;li&gt;Graphics  pipeline&lt;/li&gt;
+&lt;li&gt;Vertex &amp;amp; fragment shaders&lt;/li&gt;
+&lt;li&gt;Cool WebGL and HTML5 demos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So check it out:&lt;/p&gt;
+&lt;iframe src=&#34;https://slides.com/vikrambahl/introduction-to-html5-webgl/embed&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

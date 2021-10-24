@@ -1,0 +1,1688 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vikram Bahl</title>
+    <link>https://vikrambahl.com/</link>
+    <description>Recent content on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 26 Sep 2020 02:34:53 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean Data Is the Foundation of Effective Machine Learning</title>
+      <link>https://vikrambahl.com/clean-data-is-the-foundation-of-effective-machine-learning/</link>
+      <pubDate>Sat, 26 Sep 2020 02:34:53 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/clean-data-is-the-foundation-of-effective-machine-learning/</guid>
+      <description>
+        
+          &lt;p&gt;&lt;em&gt;Reproducing what I wrote for &lt;a href=&#34;https://thenewstack.io/clean-data-is-the-foundation-of-effective-machine-learning/&#34;&gt;The New Stack&lt;/a&gt; where it first appeared.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Data science isn’t just for tech companies anymore; and it is slowly becoming a significant part of data teams, whether you are an enterprise looking for IT modernization or a startup trying to achieve the unicorn status. What used to be a bastion of data engineers, BI teams and data analysts talking SQL is increasingly being infiltrated by talks of linear regression and reinforcement learning. Machine learning and AI have solved some real-world business challenges for companies who are today reaping the rewards for making the right investment at the right time. Recommendation engines on Netflix, predictive analysis on Spotify, and multilingual speech-to-text systems by Google are among the most widely shared examples of this success.&lt;/p&gt;
+&lt;p&gt;With this in mind, CEOs and CFOs are reaching out to their CIOs and engineering heads with problem statements along the lines of&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Company X increased its revenue by 10% by doubling down on hidden market segments which were brought to light by Machine Learning. Can we apply AI to our product line and achieve similar results?&lt;/li&gt;
+&lt;li&gt;We are paying $20,000 per month to this cloud provider for storing data. Can we do some kind of AI or machine learning on this idle data and get a win for the board and boost PR?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Data science teams get formed with largely this context in mind. They are given a business use case and a problem statement and are expected to deliver stellar results, increase revenues, and decrease costs for the company&lt;/p&gt;
+&lt;p&gt;But the hard reality is that data engineers and scientists often spend weeks, and in some cases months, trying to clean, organize, and make sense of the data that’s been handed over to them by the customer’s Business Intelligence team.&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/xkcd-machine-learning.png&#34;&gt;
+&lt;p&gt;The reasons for underperforming data science teams are manifold. However,&lt;a class=&#34;ext-link&#34; href=&#34;https://arxiv.org/abs/1803.06071&#34; rel=&#34;external &#34;&gt; well-researched studies&lt;/a&gt; and &lt;a class=&#34;ext-link&#34; href=&#34;https://www.marklogic.com/blog/the-staggering-impact-of-dirty-data/&#34; rel=&#34;external &#34;&gt;thought pieces&lt;/a&gt; say that dirty data impacts machine learning results but also has important implications on the performance of dirty data as well as the performance of data science teams. (Read &lt;a class=&#34;ext-link&#34; href=&#34;https://medium.com/@ODSC/6-reasons-why-data-science-projects-fail-6240bf9326f6&#34; rel=&#34;external &#34;&gt;this&lt;/a&gt; for six factors why data science teams fail.)&lt;/p&gt;
+&lt;p&gt;In short, before applying any algorithm or technique to the dataset, it is paramount to have quality and consistency in the dataset.&lt;/p&gt;
+&lt;p&gt;Anyone who has attended a computer science or programming class is familiar with GIGO or Garbage In Garbage Out. The same principle applies to machine learning.&lt;/p&gt;
+&lt;p&gt;Data science may be “the sexiest job of the 21st Century” (based on a study conducted by &lt;a class=&#34;ext-link&#34; href=&#34;https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century&#34; rel=&#34;external &#34;&gt;Harvard&lt;/a&gt;), but let’s dig deeper and understand what data scientists actually do on a day-to-day basis. A recent study by Forbes concluded that data scientists &lt;a class=&#34;ext-link&#34; href=&#34;https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#79b08e806f63&#34; rel=&#34;external &#34;&gt;spend 60% of their time&lt;/a&gt; just cleaning and organizing the data. Now that gives a whole new perspective to this promising career of Data Science.&lt;/p&gt;
+&lt;h2 id=&#34;typical-machine-learning-flow&#34;&gt;Typical Machine Learning Flow&lt;/h2&gt;
+&lt;p&gt;Now that we have established that the majority of time on the job is consumed by data cleaning, let’s take a look at where it fits in the overall machine learning flow.&lt;/p&gt;
+&lt;p&gt;On a high level, ML happens in the following more or less sequential steps (let’s leave the feedback loops aside):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Source Discovery&lt;/li&gt;
+&lt;li&gt;Data Preparation &amp;amp; Segregation&lt;/li&gt;
+&lt;li&gt;Feature extraction&lt;/li&gt;
+&lt;li&gt;Modeling&lt;/li&gt;
+&lt;li&gt;Model Training &amp;amp; Tuning&lt;/li&gt;
+&lt;li&gt;Prediction&lt;/li&gt;
+&lt;li&gt;Model Deployment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The focus of this article will primarily be data preparation and segregation.&lt;/p&gt;
+&lt;h2 id=&#34;characteristics-of-bad-datasets&#34;&gt;Characteristics of Bad Datasets&lt;/h2&gt;
+&lt;p&gt;I have come to an understanding that the &lt;a class=&#34;ext-link&#34; href=&#34;https://en.wikipedia.org/wiki/Anna_Karenina_principle&#34; rel=&#34;external &#34;&gt;Anna Karenina principle&lt;/a&gt; is universal and applies to this case as well: “All good datasets are alike; each bad dataset is bad in its own way.”&lt;/p&gt;
+&lt;p&gt;The implication of this is that no matter the dataset or use case, there will always be a data cleaning step. No amount of automation or edge case analysis will take it away (maybe a ML model trained on highly unclean and dirty data will one day solve this problem).&lt;/p&gt;
+&lt;p&gt;Some of the commonly seen data which makes a dataset “unclean” are showcased below. The reasons for these errors are usually due to human error at some point in the data lifecycle, however, some can be machine-generated as well.&lt;/p&gt;
+&lt;h3 id=&#34;inconsistent-schema&#34;&gt;Inconsistent Schema&lt;/h3&gt;
+&lt;p&gt;Imagine you are in the data team of a football association that has requested all football clubs in the country to send detailed information of the players in the team. The guideline for clubs is to send personal details in a csv file (there was no time to build a web interface or an API). Now some of the clubs created the column headers in the file just as expected (name, age, place_of_birth etc). However, some of the clubs named it differently, missed a column or added some new columns (a column for firstname and a column for last_name). You as part of the football association will, therefore, be spending additional time on reconciling the data into a common schema.&lt;/p&gt;
+&lt;h3 id=&#34;extraneous-text&#34;&gt;Extraneous Text&lt;/h3&gt;
+&lt;p&gt;This is when a value for the column contains unnecessary information. An example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;date_of_birth column with “01/12/2018szuyl” instead of “01/12/2018”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This happens more often than you think and is a pain when it brings down the data pipeline or an entire day’s worth of data is not included in a query because &lt;em&gt;01/12/2018szuyl&lt;/em&gt; means nothing.&lt;/p&gt;
+&lt;h3 id=&#34;missing-data&#34;&gt;Missing Data&lt;/h3&gt;
+&lt;p&gt;This is fairly simple to debug as it is just values that are missing. Scientists clean this by adding default values or calculating a value based on certain assumptions. Implications of missing data can be large in downstream ML models. If unchecked, it could lead to overfitting and an undertrained ML model.&lt;/p&gt;
+&lt;h3 id=&#34;redundant-information&#34;&gt;Redundant Information&lt;/h3&gt;
+&lt;p&gt;This is when the same data exists more than once in a dataset (think duplicated rows in a csv/xls dataset or duplicate key:value documents). Datasets with redundant data may lead to overfitting down the line. Duplicated rows are rare in a relational database these days since having primary keys being NOT NULL and UNIQUE is expounded in most computer science curriculums.&lt;/p&gt;
+&lt;p&gt;However, not all information is redundant, it depends on the context. If there is a IoT temperature sensor streaming two temperature records every five seconds then it is likely that there will be groups of data with the same temperature value. This may not represent duplicate data when calculating anomalies in temperature values in a time period.&lt;/p&gt;
+&lt;h3 id=&#34;contextual-errors&#34;&gt;Contextual Errors&lt;/h3&gt;
+&lt;p&gt;These are some of the toughest to correct because it often requires “business” knowledge or contextual know-how of the dataset itself. Some examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consider a dataset of daytime temperatures in the most populated cities in the world. A temperature value 320 is impossible to be in Celsius or Fahrenheit&lt;/li&gt;
+&lt;li&gt;Age is -46.3 years&lt;/li&gt;
+&lt;li&gt;Earth’s axial tilt is 22 degrees. Is this even within the range of acceptable axial tilts?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Scientists often assume that the sanity check on data is “not my job”&lt;/p&gt;
+&lt;p&gt;Sorry to disappoint.&lt;/p&gt;
+&lt;h3 id=&#34;garbage-values&#34;&gt;Garbage Values&lt;/h3&gt;
+&lt;p&gt;Imagine a record in the first_name column is_&lt;a class=&#34;ext-link&#34; href=&#34;https://www.bbc.com/news/world-us-canada-52557291#:~:text=Elon%20Musk%20and%20singer%20Grimes,her%20followers%20on%20social%20media.&#34; rel=&#34;external &#34;&gt; â€™&amp;amp;#258&lt;/a&gt;._ This obviously requires cleaning up or UTF-8/Unicode conversion of some sort (unless it’s an Elon Musk thing). This is often the first pass which a data engineer needs to perform on the dataset. Unchecked, it could lead to some pretty hairy bugs in a downstream extract, transform and load (ETL) pipeline or feature engineering script.&lt;/p&gt;
+&lt;h2 id=&#34;data-cleaning-in-action&#34;&gt;Data Cleaning in Action&lt;/h2&gt;
+&lt;p&gt;The effort required to clean data scales with the breadth and depth of the dataset. I’d like to walk you through a scenario from a while back where I iterated through multiple rounds of data cleaning efforts while training a simple ML model.&lt;/p&gt;
+&lt;p&gt;The objective was to build an automatic speech recognition system that can recognize spoken digits from 0 to 9.&lt;/p&gt;
+&lt;p&gt;We chose &lt;a class=&#34;ext-link&#34; href=&#34;https://github.com/kaldi-asr/kaldi&#34; rel=&#34;external &#34;&gt;Kaldi&lt;/a&gt; to build the solution. There were three steps involved in achieving the perfect model:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Collect dataset and create training and test sets&lt;/li&gt;
+&lt;li&gt;Train the model on training dataset&lt;/li&gt;
+&lt;li&gt;Test the model accuracy based on the predictions from test dataset&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now that seems simple enough, doesn’t it?&lt;/p&gt;
+&lt;p&gt;We had identified over a thousand speakers who were required to send us the data to be trained upon. The requirements for each speaker were: 25 WAV files of audio from each speaker sampled at 16000Hz. Each audio file is to be named after the digits spoken in that audio, for example if you say “1 2 3”, the file should be named “&lt;em&gt;1_2_3.wav&lt;/em&gt;”. This naming convention is enforced by Kaldi and will be considered as a valid input to the Automatic Speech Recognition (ASR) toolkit.&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/audio-files-dir-structure.png&#34; alt=&#34;Audio files directory structure&#34;&gt;
+&lt;p&gt;Each speaker optionally creates a &lt;strong&gt;textfile&lt;/strong&gt; with the digits they have spoken:&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/textfile.png&#34; alt=&#34;The textfile&#34;&gt;
+&lt;p&gt;Again, this may seem like a walk in the park. But it isn’t. Here are some of things which had to be fixed before the real ML work began:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Wrong Filename
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;1_23.wav&lt;/em&gt; or &lt;em&gt;123.wav&lt;/em&gt; instead of_ 1_2_3.wav_&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Our solution:&lt;/strong&gt; We wrote a Python script to go over each file, validate the filename and make the change if required (string.split, string.replace was used)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Wrong codec or container. This came under 2 cases
+&lt;ol&gt;
+&lt;li&gt;The extension says .WAV but the encoding is MP3&lt;/li&gt;
+&lt;li&gt;The extension says .MP3 but the encoding is WAV&lt;/li&gt;
+&lt;li&gt;Our solution:This was a bit tough to solve, we used ffmpeg to validate that we are using the right codec here. If it was the codec, we used a shell script to reencode it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Wrong sample rate
+&lt;ol&gt;
+&lt;li&gt;We expect each audio file to be recorded in 16k Hz (simple to do with Audacity). However, about 30-40% of the recordings we received were recorded in 44k Hz.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Our solution:&lt;/strong&gt; We used ffmpeg and a script to downsample the audio to 16k Hz&lt;/p&gt;
+&lt;h3 id=&#34;list-of-fixes-for-the-text-file&#34;&gt;List of fixes for the text file&lt;/h3&gt;
+&lt;p&gt;We made a mistake of having this as an optional file. We shouldn’t have made this a requirement. Instead, the right way to do this is to generate this file from the names of the audio files. We made this an option for the participants so they would be rigorous in the process of recording their audio. What you say is what you document.&lt;/p&gt;
+&lt;p&gt;However, at that point in time, we received the textfile from half the participants. For the second half which sent in their files, there were challenges with formatting which needed to be addressed, for example&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Missing delimiter or duplicated delimiter \r\n: we received files with_ 123789_ in one line instead of _123\r\n789._&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What you expect:&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/textfile.png&#34; alt=&#34;The textfile you expect, everything delimited by newline&#34;&gt;
+&lt;p&gt;What you get:&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/textfile-real-world.png&#34; alt=&#34;The textfile you get, thousands of rows, some with demiliters and some without&#34;&gt;
+&lt;p&gt;We abandoned the approach of fixing the textfiles sent in by the user as there were too many edge cases to handle. A decision was made to auto-generate the text file after fixing in the file naming issues with the audio files.&lt;/p&gt;
+&lt;h2 id=&#34;data-preparation&#34;&gt;Data Preparation&lt;/h2&gt;
+&lt;p&gt;After cleaning the dataset, we had to do another additional step of data preparation to make the dataset ready for machine learning. This step was not as painful as cleaning the dataset but it was still another hurdle to jump before the machine learning could begin.&lt;/p&gt;
+&lt;p&gt;Why is data preparation required? Simply put, Kaldi expects the input to the ASR ML program in a certain format. With the cleaned dataset in hand, we had to create the following text files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 &lt;em&gt;spk2gender&lt;/em&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/spk2gender.png&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;1 text file&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/training_textfile.png&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;1 &lt;em&gt;utt2spk&lt;/em&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/utt2spk.png&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;1 &lt;em&gt;wav.scp&lt;/em&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/wav-scp-file.png&#34;&gt;
+&lt;p&gt;These files can all be generated using the information provided by the audio files and the textfile. We spent a day writing the Python script to generate these files.&lt;/p&gt;
+&lt;p&gt;Once this was done, we spent all of two days running the ML algorithm customizations, model tuning, and deploying it to the cloud.&lt;/p&gt;
+&lt;p&gt;Here’s a shoutout to some of the tools used:&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/clean-data/data-cleaning-tools.png&#34;&gt;
+&lt;h2 id=&#34;key-tenets-to-keep-in-mind&#34;&gt;Key Tenets to Keep in Mind&lt;/h2&gt;
+&lt;p&gt;What are the final takeaways? This is the section that sums the post up with “tips and tricks” and “ninja tactics.” In short, you can put these points as TLDR or in a slide deck for management.&lt;/p&gt;
+&lt;h3 id=&#34;data-quality-plan&#34;&gt;Data Quality Plan&lt;/h3&gt;
+&lt;p&gt;Start by creating KPIs for your dataset. Set guidelines for the quality of data in the system. This ensures that all data enters your system only after following a predefined set of rules. This process starts with profiling current data sources and points of entry and ends with defining the workflow of data in the system including any new data sources in the future.&lt;/p&gt;
+&lt;h3 id=&#34;data-standardization&#34;&gt;Data Standardization&lt;/h3&gt;
+&lt;p&gt;This is a qualitative step that begins by asking the question “Is the right data entering my systems?” If unimportant data or incorrect data is entering your system without being sanitized, then it leads to additional effort down the road when time may be a critical factor in getting insights.&lt;/p&gt;
+&lt;p&gt;It is important to store raw data. There may be future use cases or legal/compliance needs which depend on it. However, it is prudent to have that stored in archival. For more day to day data needs, a layer of prepared data should be readily available in datastores.&lt;/p&gt;
+&lt;h3 id=&#34;data-validation&#34;&gt;Data Validation&lt;/h3&gt;
+&lt;p&gt;Verifying the accuracy of data is paramount to the success of the data team in delivering a business outcome. On a high level, this involves verifying the source of data and verifying the accuracy of a data point. If you are getting weekly dumps from a third-party provider, you need to assess whether that data is reliable, how they collect the data, what steps they take to clean it and how they manage access to it.&lt;/p&gt;
+&lt;p&gt;Having custom rules depending on the dataset to verify if the data points make sense is critical. If a value in the age column is negative, it’s more than likely that it is incorrect. If the justification is “No negative value in the age column represents the delta between the estimated year of death and today, then maybe that column should not be called age.”&lt;/p&gt;
+&lt;h3 id=&#34;data-hygiene&#34;&gt;Data Hygiene&lt;/h3&gt;
+&lt;p&gt;This involves end to end hygiene of the datasets to include fixing of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Inconsistent schema&lt;/li&gt;
+&lt;li&gt;Extraneous text&lt;/li&gt;
+&lt;li&gt;Missing data&lt;/li&gt;
+&lt;li&gt;Redundant information&lt;/li&gt;
+&lt;li&gt;Contextual errors&lt;/li&gt;
+&lt;li&gt;Garbage values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yes, but those scripts can be reused/automated to a high degree.&lt;/p&gt;
+&lt;p&gt;Although you have to manually write code to clean up every dataset since it is a unique schema, there is always room for automation.&lt;/p&gt;
+&lt;h3 id=&#34;enrich-data&#34;&gt;Enrich Data&lt;/h3&gt;
+&lt;p&gt;Purists will argue that this is part of the ETL step or it “depends on xyz..” but it is valuable to do a first pass at enriching the data by appending or aggregating fields to create a cleaner schema. Getting a column in Fahrenheit and non-US members are tearing their hair out? Just add a column for Celsius. Append last name to the first name and have a single name column. The use case depends on how you plan to consume the data.&lt;/p&gt;
+&lt;h3 id=&#34;automation&#34;&gt;Automation&lt;/h3&gt;
+&lt;p&gt;All the points made above require thought, planning, and coding. It is important to automate these processes into systems as and when a pattern emerges. Think of it as a CI/CD pipeline for your data. All the automation gets integrated, gets tested and the ‘build’ is nothing but a dataset meeting its KPIs for quality and consistency.&lt;/p&gt;
+&lt;h2 id=&#34;closing-thoughts&#34;&gt;Closing Thoughts&lt;/h2&gt;
+&lt;p&gt;At the end of the day, the tasks which bring maximum visible value to the business is the machine learning piece. That’s the reason teams go through the trouble of spending so much developer time with data cleaning and preparation.&lt;/p&gt;
+&lt;p&gt;However, there is a point to be made about the value of bringing rigor to the data science process by having a system or process around data cleaning and preparation. Once these systems are designed and automated, there is a path for the data to go from unclean to clean. Always remember that automating something once is far better than doing something manually way too many times. The process of getting there will be arduous and painful, but it will bear sweet fruits for everyone.&lt;/p&gt;
+&lt;p class=&#34;attribution&#34;&gt;
+  Photo by &lt;a class=&#34;ext-link&#34; href=&#34;https://unsplash.com/@jeremyperkins?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText&#34; rel=&#34;external &#34;&gt;Jeremy Perkins&lt;/a&gt; on &lt;a class=&#34;ext-link&#34; href=&#34;https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText&#34; rel=&#34;external &#34;&gt;Unsplash&lt;/a&gt;.
+&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Switch GitHub account on macOS terminal</title>
+      <link>https://vikrambahl.com/switch-github-account-on-macos-terminal/</link>
+      <pubDate>Sat, 19 Sep 2020 10:27:46 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/switch-github-account-on-macos-terminal/</guid>
+      <description>
+        
+          &lt;p&gt;If you have multiple GitHub accounts and are getting error messages like this while pushing code to the repo&lt;/p&gt;
+&lt;p&gt;“remote: Permission to svram/twittering.git denied to &lt;currently-configured-username&gt;&lt;br&gt;
+fatal: unable to access ‘https://github.com/svram/&lt;reponame&gt;.git/’: The requested URL returned error: 403″&lt;/p&gt;
+&lt;p&gt;This means that the currently configured username on your terminal is not the one whose repo you are intending to commit code to. The first step to fix this is to list the current configuration like so&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git config --list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will get a result which will inform you about the username and email which is currently configured.&lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;credential.helper=osxkeychain
+user.name=svram
+user.email=&amp;lt;something&gt;@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=true
+remote.origin.url=https://github.com/svram/reponame.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master&lt;/pre&gt;
+&lt;p&gt;If your github username and email are not consistent then change those first with&lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;git config --global user.name &#34;&#34;
+git config --global user.email &#34;&#34;&lt;/pre&gt;
+&lt;p&gt;One of the simple ways to do this on macOS is to delete the password of the existing GitHub account configured from the Keychain.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the Keychain, click on All Items and then search for git. You can delete the password entry which comes.&lt;/li&gt;
+&lt;li&gt;Once this is done, try to do a git push and it should ask you to reauthenticate. I recommend using the &lt;a href=&#34;https://visualstudio.github.com/&#34;&gt;visual studio integration&lt;/a&gt;. It makes life really simple while developing code&lt;figure class=&#34;wp-block-image size-large&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/keychain.png&#34;&gt;
+&lt;p&gt;There are other ways to do this which would work across windows, linux and macOS too. That involves generating an SSH keypair and authenticating your terminal/computer with GitHub. I recommend following &lt;a href=&#34;https://medium.com/@aklson_DS/how-to-properly-setup-your-github-repository-mac-version-3a8047b899e5&#34;&gt;this tutorial&lt;/a&gt; for the steps.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Pass the AZ-900 Azure Fundamentals in your first attempt</title>
+      <link>https://vikrambahl.com/az-900-azure-fundamentals-guide/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/az-900-azure-fundamentals-guide/</guid>
+      <description>
+        
+          &lt;h2 id=&#34;thoughts-on-az-900&#34;&gt;Thoughts on AZ-900&lt;/h2&gt;
+&lt;p&gt;The Azure Fundamentals AZ-900 certification is meant to be the first step in Microsoft Azure land for business and technical folks. I recently prepared and  &lt;a href=&#34;https://www.youracclaim.com/badges/f08a72ab-e3d5-406f-806c-30b9d543b8b0&#34;&gt;cleared the certification&lt;/a&gt;  securing 884 on 1000 (passing marks are 700). This guide below goes over all you need for Azure AZ-900 preparation.&lt;/p&gt;
+&lt;p&gt;Coming from a hands on cloud and dev background, my impression before I gave the exam was “this shit is going to be a breeze” or “AZ-900 is for sales and project managers, cloud architects should find it easy af”. After the exam? I stand corrected. While I breezed through the 29 questions in about 30-35mins (including a once over), I left the center pondering why these pricing and compliance focussed exams tend to trip up technical folks. In hindsight, I should’ve focussed a LOT more on the compliance and pricing features.&lt;/p&gt;
+&lt;p&gt;The questions on cloud concepts were the easiest because they relied on logic and a bit of cloud experience. But these questions comprise just about 15-20% of the exam. The devil is in making sure your knowledge of azure services, what the services do, compliance, trust, security, privacy, pricing and support are rock solid. And this means memorising some Azure facts (which sucks TBH, certifications should test concepts rather than facts. Atleast 60% of the exam should be concepts as opposed to the 20% that it is now).&lt;/p&gt;
+&lt;p&gt;I had about 10 days to prepare for this exam. I had about 5yrs cloud experience already so I reckoned that 10 days is enough time.&lt;/p&gt;
+&lt;h2 id=&#34;tips-to-prepare&#34;&gt;Tips to prepare&lt;/h2&gt;
+&lt;p&gt;I followed the following methods to prepare and it is more than enough to comfortably sail through this examination:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The starting point should be the official free online study guide by Microsoft. It’s good and covers all the bases&lt;/li&gt;
+&lt;li&gt;Aside from this cheat sheet I would recommend doing EITHER the &lt;em&gt;Whizlabs&lt;/em&gt; question bank set or the one from Udemy. Gun to my head, I’d recommend Whizlabs since they have a reputation for keeping the questions up to date and relevant. There are about 6-7 tests with 55 questions each. So we are looking at 350-400 questions to choose from. The Udemy practise test was great but I found myself doubting a lot of the answers. You can choose to do it only for the questions but then again do either and not both.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://shareasale.com/r.cfm?b=1815676&amp;amp;u=2564998&amp;amp;m=43514&amp;amp;urllink=&amp;amp;afftrack=&#34;&gt;&lt;img src=&#34;https://static.shareasale.com/image/43514/Hurry-Limited-period-offer-on-Subscr_06.png&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.shareasale.com/m-pr.cfm?merchantID=43514&amp;userID=2564998&amp;productID=1217786039&#34; target=&#34;_blank&#34;&gt;Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95&lt;/a&gt;&lt;br/&gt;from: &lt;b&gt;Whizlabs.com&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The aCloudGuru/Linux Academy course is pretty decent (Thanks to my employer for getting me a subscription)&lt;/li&gt;
+&lt;li&gt;Hands on playing around the Azure Portal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-cheatsheet&#34;&gt;The cheatsheet&lt;/h2&gt;
+&lt;p&gt;Use this to revise concepts and facts a day or two before the exam. Follow and read up all links. Get a PDF version right here.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A geography is a part of the world with at-least one azure region&lt;/li&gt;
+&lt;li&gt;An Azure region contains more than one data center.&lt;/li&gt;
+&lt;li&gt;A region can be comprised of multiple availability zones (AZ)&lt;/li&gt;
+&lt;li&gt;An AZ contains more than 1 data center&lt;/li&gt;
+&lt;li&gt;When it’s AZ think independent power, cooling, and networking&lt;/li&gt;
+&lt;li&gt;Not all regions have AZ’s in Azure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/availability-zones/az-overview&#34;&gt;Regions, AZ’s, Geographies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;High Availability (HA) refers to that feature of Azure which enables distributed systems to recover very quickly from faults with none or minor degradation in user experience.
+&lt;ul&gt;
+&lt;li&gt;A highly available application or database is one which is spread across multiple hosts in independent racks in a data center, independent data centers in a regions/AZ or independent AZ’s in a region&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fault Tolerance refers to the ability of a systems to adhere to SLA’s for response time and availability even if system failure occurs. Basically no impact on users during system failure. This is more complex and expensive to attain compared with HA.&lt;/li&gt;
+&lt;li&gt;Disaster Recovery is associated with the ability of a system to recover operations (applications and data) within a defined RTO (Recovery Time Objective) and RPO (Recovery Point Objective). RTO and RPO are usually decided based on the SLA and business objectives.
+&lt;ul&gt;
+&lt;li&gt;RTO: The maximum downtime the service or application can endure in time of a disaster (or my application can be down only for 2 hours before my users complain or I break the SLA with my customers)&lt;/li&gt;
+&lt;li&gt;RPO: The tolerable amount of unbacked up data which can be lost in a disaster before it harms the business (or I can lose two hours of data if it is not backed up which means I need to schedule backups every two hours to meet the RPO)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Scalability is the ability of a system to handle variable increase in load or requests without affecting the response time or quality of service.&lt;/li&gt;
+&lt;li&gt;Elasticity is the ability of a system to scale up or down with the load on the system. The system adds additional resources to handle an increase in load and when the load decreases, it removes the additional resources.&lt;/li&gt;
+&lt;li&gt;Vertical scaling refers to increasing the spec or capacity of a resource so it can handle higher load
+&lt;ul&gt;
+&lt;li&gt;Choosing a higher powered instance&lt;/li&gt;
+&lt;li&gt;Vertical scaling often requires making the system temporarily unavailable while it is being redeployed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Horizontal scaling is the addition of resources to a pool of resource in response to an increase in load or some metric which require additional compute to perform the job.&lt;/li&gt;
+&lt;li&gt;Autoscaling mostly applies to compute resources. While it’s possible to horizontally scale a database or a message queue, this usually involves data partitioning, which is generally not automated. There are flavours of SQL and NoSQL databases which make autoscaling easier but that is because they’re managed services or PaaS services like Synapse, Amazon RDS, Bigquery or Azure SQL PaaS.&lt;/li&gt;
+&lt;li&gt;What differentiates the cloud from the onpremises deployments is essentially the API. You can provision large amounts of compute and storage resources in a data center somewhere with just a simple API call. Azure provides us with a plethora of mediums to invoke these APIs.&lt;/li&gt;
+&lt;li&gt;There are many options to work with resources in Azure. These are elaborated on below. For a small sized project, you will likely use a couple. The different options to manipulate resources in Azure are
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli&#34;&gt;Azure CLI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This is the command line interface for interating with Azure resources. Runs on windows, linux and mac environments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/powershell/azure/?view=azps-4.8.0&#34;&gt;Azure Powershell&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure PowerShell is a set of cmdlets (automation scripts) for managing Azure resources directly from the PowerShell command line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/features/cloud-shell/&#34;&gt;Azure Cloud Shell&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Like the name mentions, this is a shell in the cloud. It’s a browser based, automatically authenticated powerful shell experience. It comes with both Bash and Powershell. This is very powerful and I believe no other cloud offers 2 shell flavours.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.github.io/azure-sdk/&#34;&gt;Azure SDK’s&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This is the Software Development Kit (SDK) libraries which contain support for multiple programming languages (.NET, Java, Javascript, Python, C++, iOS, Android). Essentially they contain similar functionality as the CLI or the API’s but invoked through application code.&lt;/li&gt;
+&lt;li&gt;One use case could be your team is building a mobile only chat application and you need a way to setup the backend for common chat functionalities like create message, list contacts or join groups. You can  &lt;a href=&#34;https://github.com/Azure/azure-sdk-for-ios/tree/1.0.0-beta.2/sdk/communication/AzureCommunicationChat&#34;&gt;embed Azure SDK for chat&lt;/a&gt;  directly in your Swift codebase so that the backend “just works”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/rest/api/azure/&#34;&gt;Azure APIs&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;These are REST API’s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/features/azure-portal/&#34;&gt;Azure Portal&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Portal is a web based dashboard for creating, configuring, deleting and managing Azure resources. It is essentially a powerful web application which gives you a UI for making things happen on Azure. The URL is  &lt;a href=&#34;https://portal.azure.com/&#34;&gt;&lt;strong&gt;https://portal.azure.com/&lt;/strong&gt;&lt;/a&gt;. This is similar to the AWS Console (&lt;a href=&#34;https://console.aws.amazon.com/&#34;&gt;&lt;strong&gt;https://console.aws.amazon.com/&lt;/strong&gt;&lt;/a&gt;) or the GCP Console (&lt;a href=&#34;http://console.cloud.google.com/&#34;&gt;&lt;strong&gt;http://console.cloud.google.com/&lt;/strong&gt;&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Powershell, CLI, SDK’s etc all use azure resource manager to take action on azure&lt;/li&gt;
+&lt;li&gt;Azure building blocks
+&lt;ul&gt;
+&lt;li&gt;Regions
+&lt;ul&gt;
+&lt;li&gt;Not all regions have availability zones&lt;/li&gt;
+&lt;li&gt;Data centers are close enough to each other that there is no latency difference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Paired regions
+&lt;ul&gt;
+&lt;li&gt;Each azure region is paired except brazil south. colocated geographically. Offers failover during outages. Offers data replication. Maintenance is done serially&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AZ
+&lt;ul&gt;
+&lt;li&gt;Independent power, network and cooling&lt;/li&gt;
+&lt;li&gt;Each region that supports AZ’s has minimum of 3 AZ’s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Latency defined perimeter: not too far from each other&lt;/li&gt;
+&lt;li&gt;Regional low latency network -&amp;gt; fiber connection between regions not too far from each other&lt;/li&gt;
+&lt;li&gt;How to choose region to deploy your application. Take the following 3 factors into consideration
+&lt;ul&gt;
+&lt;li&gt;Location -&amp;gt; closer to users&lt;/li&gt;
+&lt;li&gt;Features -&amp;gt; do we have full azure feature set required for the application&lt;/li&gt;
+&lt;li&gt;Price -&amp;gt; price varies per region&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To take advantage of multi-az, you need to specify you need multi-az for resource during provisioning.&lt;/li&gt;
+&lt;li&gt;Resource groups
+&lt;ul&gt;
+&lt;li&gt;Everything in azure must be inside a resource group. Resource group is not a resource&lt;/li&gt;
+&lt;li&gt;It is a container that holds related azure resources for a solution&lt;/li&gt;
+&lt;li&gt;Each resource exists in 1 resource group only&lt;/li&gt;
+&lt;li&gt;Resources can be moved, added, deleted from/to other resource groups&lt;/li&gt;
+&lt;li&gt;Resource groups can span multiple regions&lt;/li&gt;
+&lt;li&gt;Has access control facility for users&lt;/li&gt;
+&lt;li&gt;Resources in a resource group can interact with resources in other resource groups&lt;/li&gt;
+&lt;li&gt;Has a location or region. Resource group can be in Mumbai but have resources in Singapore or USA&lt;/li&gt;
+&lt;li&gt;A resource group will contain resources related to a specific application. For example, a group may contain a website resource that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage Account that stores non-relational assets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview&#34;&gt;Azure Resource Manager (ARM)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Everything cli, powershell, rest api, client SDK, web portal all go through the ARM API to CRUD (Create, Read, Update, Delete) resources on azure&lt;/li&gt;
+&lt;li&gt;Allows for grouped resource handling, access control, resource tagging, billing of tagged resource, define dependencies between resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Scale sets
+&lt;ul&gt;
+&lt;li&gt;Lets you manage a group of identical, load balanced vm’s&lt;/li&gt;
+&lt;li&gt;You only pay for VM’s, storage, load balancers&lt;/li&gt;
+&lt;li&gt;Upto 1000 VM’s in a single scale set&lt;/li&gt;
+&lt;li&gt;Baseline VM is used as a template&lt;/li&gt;
+&lt;li&gt;Similar to a managed instance group in GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/services/app-service/&#34;&gt;Azure App Services&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;PaaS offering&lt;/li&gt;
+&lt;li&gt;Web apps on win and linux&lt;/li&gt;
+&lt;li&gt;Web apps for containers -&amp;gt; host containers on azure&lt;/li&gt;
+&lt;li&gt;Api apps -&amp;gt; expose and connect data backend&lt;/li&gt;
+&lt;li&gt;App service plan is the server&lt;/li&gt;
+&lt;li&gt;App service is the service or website&lt;/li&gt;
+&lt;li&gt;Similar to App Engine on GCP or Elastic Beanstalk on AWS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/services/container-instances/&#34;&gt;Azure Container Instances&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Primary Azure service for running containerized apps&lt;/li&gt;
+&lt;li&gt;Similar to ECS on AWS or Cloud Run on GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Virtual Network (VNET)
+&lt;ul&gt;
+&lt;li&gt;VNET’s are regional&lt;/li&gt;
+&lt;li&gt;VNET belongs to 1 subscription, 1 subscription can have many VNET’s&lt;/li&gt;
+&lt;li&gt;Similar to VPC’s in AWS and GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Load Balancer
+&lt;ul&gt;
+&lt;li&gt;Frontend -&amp;gt; access point for the load balancer, receives the traffic&lt;/li&gt;
+&lt;li&gt;Backend -&amp;gt; pool of VM’s over which traffic is distributed by load balancer&lt;/li&gt;
+&lt;li&gt;Configuration for rules and health probes&lt;/li&gt;
+&lt;li&gt;Health probe to make sure backend pool has healthy vm’s&lt;/li&gt;
+&lt;li&gt;Supports port forward to a specific port on a specific machine. on the VM, a process or app will be listening for messages on a specific port or ports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;VNET gateway
+&lt;ul&gt;
+&lt;li&gt;A subnet with 2 or more servers&lt;/li&gt;
+&lt;li&gt;A virtual network can have two virtual network gateways; one VPN gateway and one ExpressRoute gateway&lt;/li&gt;
+&lt;li&gt;The VM’s in the VNET gateway cannot be directly accessed&lt;/li&gt;
+&lt;li&gt;Hybrid cloud starts with setting up a VPN or Express route connection from onpremises to the VNET gateway&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/application-gateway/overview&#34;&gt;Application Gateway&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Make routing requests based on parameters other than IP and port&lt;/li&gt;
+&lt;li&gt;Other parameters are URL, headers, data format&lt;/li&gt;
+&lt;li&gt;Elastic scaling, e2e encryption, multi-az, supports upto 100 websites per application gateway&lt;/li&gt;
+&lt;li&gt;Another type of load balancer for HTTP requests&lt;/li&gt;
+&lt;li&gt;Similar to ALB on AWS or Cloud Load Balancing on GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction&#34;&gt;Storage. Essentially four kinds of storage on Azure&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Blob: Similar to S3 on AWS or GCS on GCP&lt;/li&gt;
+&lt;li&gt;Disk: Similar to EBS on AWS or Persistent disk on GCP&lt;/li&gt;
+&lt;li&gt;File: similar to EFS on AWS or Filestore on GCP&lt;/li&gt;
+&lt;li&gt;Archive: Similar to Glacier on AWS or Cold Storage on GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Storage Account – unique Azure namespace for storage
+&lt;ul&gt;
+&lt;li&gt;Base for all azure storage types&lt;/li&gt;
+&lt;li&gt;Storage account has a container with blob storage inside&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Blob – binary large object or BLOB&lt;/li&gt;
+&lt;li&gt;Storage account can have multiple blob containers to store data&lt;/li&gt;
+&lt;li&gt;Blob container – mix bag of items (images, video, vmdk etc) each with a web address&lt;/li&gt;
+&lt;li&gt;Blob types
+&lt;ul&gt;
+&lt;li&gt;Block blobs – text and binary data upto 4.7tb&lt;/li&gt;
+&lt;li&gt;Append blobs – appendable files like log file&lt;/li&gt;
+&lt;li&gt;Page blobs – files upto 8 TB like hard disks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pricing tiers
+&lt;ul&gt;
+&lt;li&gt;Hot&lt;/li&gt;
+&lt;li&gt;Cool&lt;/li&gt;
+&lt;li&gt;Archive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Disk
+&lt;ul&gt;
+&lt;li&gt;Managed – azure manages backup, uptime, performance&lt;/li&gt;
+&lt;li&gt;Attached to VM’s&lt;/li&gt;
+&lt;li&gt;Easily upgrade type and size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Disk types
+&lt;ul&gt;
+&lt;li&gt;HDD – low cost, best for backup&lt;/li&gt;
+&lt;li&gt;Standard SSD – standard for production workloads&lt;/li&gt;
+&lt;li&gt;Premium SSD – critical workloads like db installs&lt;/li&gt;
+&lt;li&gt;Ultra disk – unprecedented sub ms latency – upto 64TB like gaming, rendering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;File storage
+&lt;ul&gt;
+&lt;li&gt;Large scale managed storage for files&lt;/li&gt;
+&lt;li&gt;Connects with onprem file storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Archive
+&lt;ul&gt;
+&lt;li&gt;Lowest price, highest access time, low performance, encrypted&lt;/li&gt;
+&lt;li&gt;Cheap type of blob storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure CDN
+&lt;ul&gt;
+&lt;li&gt;Content Delivery Network&lt;/li&gt;
+&lt;li&gt;Distributed network of servers that can deliver content close to users&lt;/li&gt;
+&lt;li&gt;CDN fetches data from an origin server depending upon the TTL (Time to Live)
+&lt;ul&gt;
+&lt;li&gt;Simple example: I have a website where people can browse cat photos. I upload new photos once a day. People visit the site by going to vikramsamazingcatphotos.com. I store all photos in an Object storage account on Azure in the US region. However, my users are from all over the world. So I setup Azure CDN to fetch images from the origin server, which is the storage account in US in this case. Azure CDN caches the images at an edge location closer to the users location. So a user in India requesting for a cat image will not be routed to the storage account in US, they will receive the image from an edge location (nothing but a bunch of servers) in India.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/product-categories/databases/&#34;&gt;Databases&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Cosmos DB&lt;/li&gt;
+&lt;li&gt;Azure SQL&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;DMS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cosmos DB
+&lt;ul&gt;
+&lt;li&gt;Global, easy to add region&lt;/li&gt;
+&lt;li&gt;Sync, cross-region replication is handled&lt;/li&gt;
+&lt;li&gt;Latency 0-9ms anywhere in the world&lt;/li&gt;
+&lt;li&gt;Autoscaling&lt;/li&gt;
+&lt;li&gt;Various sdks and languages for developers&lt;/li&gt;
+&lt;li&gt;Supports database flavors like Sql, Mongo, Cassandra&lt;/li&gt;
+&lt;li&gt;Can be very expensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure SQL
+&lt;ul&gt;
+&lt;li&gt;DB as a service (PaaS)&lt;/li&gt;
+&lt;li&gt;Use case: migrate onprem SQL server to azure sql&lt;/li&gt;
+&lt;li&gt;Built in machine learning&lt;/li&gt;
+&lt;li&gt;Upto 100TB&lt;/li&gt;
+&lt;li&gt;Secure, scale&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure DB for MySQL
+&lt;ul&gt;
+&lt;li&gt;Host foss MySQL&lt;/li&gt;
+&lt;li&gt;It’s a PaaS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure DB for Postgres
+&lt;ul&gt;
+&lt;li&gt;Hosted foss&lt;/li&gt;
+&lt;li&gt;Based on Ingres, came after it (hence POSTgres)&lt;/li&gt;
+&lt;li&gt;Default os for macos&lt;/li&gt;
+&lt;li&gt;Lot of features – horizontal scale, jsonb, fast indexing, geospatial (postgis)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Database Migration Service (DMS)
+&lt;ul&gt;
+&lt;li&gt;Onprem database migration to azure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Authentication and authorization in Azure
+&lt;ul&gt;
+&lt;li&gt;Identity services&lt;/li&gt;
+&lt;li&gt;Azure Active Directory (AD)&lt;/li&gt;
+&lt;li&gt;MFA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Identity
+&lt;ul&gt;
+&lt;li&gt;Authentication: identity proving/confirmation (you are who you say you are)&lt;/li&gt;
+&lt;li&gt;Authorization: once authenticated, do i have authorization to access a resource
+&lt;ul&gt;
+&lt;li&gt;Is this identity allowed access to a particular resource&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis&#34;&gt;Azure Active Directory (AAD)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This is different from Active Directory onprem&lt;/li&gt;
+&lt;li&gt;AD onprem is used by companies for managing users, printers and more&lt;/li&gt;
+&lt;li&gt;Azure AD is a separate product, you cant transfer skills from onprem AD&lt;/li&gt;
+&lt;li&gt;First service in a new azure account is an AAD service&lt;/li&gt;
+&lt;li&gt;Tenant is a dedicated instance of AAD that an org receives when it signs up for azure. One user belongs to 1 tenant but can be guest in other tenants&lt;/li&gt;
+&lt;li&gt;Tenant represents an organization&lt;/li&gt;
+&lt;li&gt;Subscriptions -&amp;gt; separate billing entities, multiple subscriptions in a single tenant&lt;/li&gt;
+&lt;li&gt;AAD can manage users onprem and in azure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Solutions
+&lt;ul&gt;
+&lt;li&gt;IoT Hub (ingest for billions of devices), managed PaaS, device authentication&lt;/li&gt;
+&lt;li&gt;IoT Central – SaaS, no code, connect IoT devices with dashboard, connections, rules&lt;/li&gt;
+&lt;li&gt;Big Data
+&lt;ul&gt;
+&lt;li&gt;Azure Data Lake Analytics – parallel processing, SQL, serverless&lt;/li&gt;
+&lt;li&gt;Azure HDInsights – foss (similar to dl analytics), hadoop, spark, kafka&lt;/li&gt;
+&lt;li&gt;Azure Databricks – based on spark (distributed cluster computing), integrates with azure storage&lt;/li&gt;
+&lt;li&gt;Synapse analytics – data warehouse (reporting and data analytics), limitless in storage, synapse sql&lt;/li&gt;
+&lt;li&gt;Speed of processing, cheaper for large data, better decisions, high profits as you use data to build better products&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AIML
+&lt;ul&gt;
+&lt;li&gt;Modelling&lt;/li&gt;
+&lt;li&gt;Knowledge mining – uses azure search&lt;/li&gt;
+&lt;li&gt;Cognitive services – apis
+&lt;ul&gt;
+&lt;li&gt;Vision, decision, speech&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Aazure ML studio
+&lt;ul&gt;
+&lt;li&gt;Premade modules&lt;/li&gt;
+&lt;li&gt;UI based&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure ML service
+&lt;ul&gt;
+&lt;li&gt;e2e service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Serverless
+&lt;ul&gt;
+&lt;li&gt;Azure functions&lt;/li&gt;
+&lt;li&gt;Logic apps – connects apps, data, systems across azure and outside. like workflow orchestration without code&lt;/li&gt;
+&lt;li&gt;Event grid – pubsub model, routing service for connected apps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/?product=featured&#34;&gt;Azure DevOps&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Boards – Azure Jira&lt;/li&gt;
+&lt;li&gt;Azure Pipelines – Cicd&lt;/li&gt;
+&lt;li&gt;Azure Repos – Git Repo&lt;/li&gt;
+&lt;li&gt;Azure Test Plans – Test Planning&lt;/li&gt;
+&lt;li&gt;Azure Artifacts – App Binaries And Libs&lt;/li&gt;
+&lt;li&gt;Devtest Labs – Create Test Environments, No Unexpected Costs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Security
+&lt;ul&gt;
+&lt;li&gt;Securing Network Connectivity
+&lt;ul&gt;
+&lt;li&gt;Azure Firewall – Rules To Define What Traffic Has Access&lt;/li&gt;
+&lt;li&gt;Ddos Protection – Detection, Deflection&lt;/li&gt;
+&lt;li&gt;Network Sec Groups – Attached To Subnet, Network, Interface&lt;/li&gt;
+&lt;li&gt;App Security Group – Protects Applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction&#34;&gt;Azure Security Center&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Manage All Sec Features Of Azure&lt;/li&gt;
+&lt;li&gt;In Azure Portal&lt;/li&gt;
+&lt;li&gt;Agents In Vm’s Onprem Or Azure Sent Data To Azure Sec Center&lt;/li&gt;
+&lt;li&gt;Policy, Compliance, Anomalies, Secure Score, Integrated With Aws/Gcp, Single Point For Siem, Alerts&lt;/li&gt;
+&lt;li&gt;Set Policies In Sec Center, Protect Resources Through Active Monitoring, Respond To Incidents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Key Vault
+&lt;ul&gt;
+&lt;li&gt;Secure Place To Store Passwords And Secrets. Can Delegate Access With Others Without Sharing The Actual Password&lt;/li&gt;
+&lt;li&gt;Secure Hardware&lt;/li&gt;
+&lt;li&gt;Global Scaling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Information Protection
+&lt;ul&gt;
+&lt;li&gt;Secure Data And Documents, Email, Office 365&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Advanced Threat Protection
+&lt;ul&gt;
+&lt;li&gt;Monitors Users&lt;/li&gt;
+&lt;li&gt;Call Out Anomalous Behavior&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Privacy, Compliance, Trust
+&lt;ul&gt;
+&lt;li&gt;Governance&lt;/li&gt;
+&lt;li&gt;Azure Monitor&lt;/li&gt;
+&lt;li&gt;Azure Service Health&lt;/li&gt;
+&lt;li&gt;Compliance&lt;/li&gt;
+&lt;li&gt;Privacy&lt;/li&gt;
+&lt;li&gt;Trust&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Governance
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/governance/policy/overview&#34;&gt;Azure Policy&lt;/a&gt; – Set Of Rules Which Resources Should Be Compliant To. Resources And Policies Are There. Azure Policy Is The Enforcer.&lt;/li&gt;
+&lt;li&gt;RBAC
+&lt;ul&gt;
+&lt;li&gt;Least Privilege&lt;/li&gt;
+&lt;li&gt;Principal – Users Or Group&lt;/li&gt;
+&lt;li&gt;Roles – Collection Of Permissions&lt;/li&gt;
+&lt;li&gt;Scope – Specific Resources Access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Resources Can Be Locked (Cant Be Deleted Or Read-Only)
+&lt;ul&gt;
+&lt;li&gt;Can Be Applied To Subscription, Resource Group Or Resource&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Blueprints – Templates For Resource Creation With Policy, Compliance, Regulation Adherence, Rbac&lt;/li&gt;
+&lt;li&gt;Telemetry – Info About How Remote Resources Re Performing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/azure-monitor/overview&#34;&gt;Azure Monitor&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Feed Telemetry Here&lt;/li&gt;
+&lt;li&gt;Supports Ml&lt;/li&gt;
+&lt;li&gt;Query Language&lt;/li&gt;
+&lt;li&gt;Identify Issues Beforehand&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-in/features/service-health/&#34;&gt;Azure Service Health&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Notifications For Azure Platform Health, Maintenance Window Etc&lt;/li&gt;
+&lt;li&gt;Service Health Dashboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Compliance – With Legislation
+&lt;ul&gt;
+&lt;li&gt;GDPR&lt;/li&gt;
+&lt;li&gt;NIST&lt;/li&gt;
+&lt;li&gt;ISO 9001:2008&lt;/li&gt;
+&lt;li&gt;Azure Compliance Manager
+&lt;ul&gt;
+&lt;li&gt;Recommendations For Achieving Compliance, Track Compliance For Team, Score&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Azure Gov Cloud
+&lt;ul&gt;
+&lt;li&gt;Dedicated Regions For Us Govt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;China Regions&lt;/li&gt;
+&lt;li&gt;Azure Germany&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Privacy – Baked Into Azure Products
+&lt;ul&gt;
+&lt;li&gt;Azure Privacy Statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Trust
+&lt;ul&gt;
+&lt;li&gt;Azure Trust Center. Efforts Taken By Msft In Ensuring Trust&lt;/li&gt;
+&lt;li&gt;Service Trust Portal – Read Audit Reports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/pricing/&#34;&gt;Pricing&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Subscriptions
+&lt;ul&gt;
+&lt;li&gt;No Azure Service Lives Outside A Subscription&lt;/li&gt;
+&lt;li&gt;Billing Admin Has Access To Billing Responsibilities&lt;/li&gt;
+&lt;li&gt;Billing Cycles Net 30/60&lt;/li&gt;
+&lt;li&gt;Subscriptions Are Good For Separating Billing Concerns&lt;/li&gt;
+&lt;li&gt;Azure Offer Types&lt;/li&gt;
+&lt;li&gt;Management Groups For Subscriptions Can Have Multiple Subs Under One Mgmt Group. Easier For Policies, Tracking In Bulk&lt;/li&gt;
+&lt;li&gt;Mgmt Group Per Country Or Department&lt;/li&gt;
+&lt;li&gt;Nest Mgmt Groups To Indicate Hierarchy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cost Management
+&lt;ul&gt;
+&lt;li&gt;Free Services Upto 12 Months&lt;/li&gt;
+&lt;li&gt;Some Are Always Free Upto Certain Usage Limit&lt;/li&gt;
+&lt;li&gt;Nice Dashboard To See Graphs Of Cost&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cost Affected By
+&lt;ul&gt;
+&lt;li&gt;Resource Type&lt;/li&gt;
+&lt;li&gt;Resource Size&lt;/li&gt;
+&lt;li&gt;Bandwidth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Data Transfer Between Regions In Same Billing Zone Is Free. Egress Between Billing Zones Is Charged&lt;/li&gt;
+&lt;li&gt;Azure Tco Calculator Over 5 Yrs&lt;/li&gt;
+&lt;li&gt;Azure Pricing Calculator&lt;/li&gt;
+&lt;li&gt;Best Practises
+&lt;ul&gt;
+&lt;li&gt;Spending Limits&lt;/li&gt;
+&lt;li&gt;Quotas&lt;/li&gt;
+&lt;li&gt;Use Tags&lt;/li&gt;
+&lt;li&gt;Pay As You Go, Reserved Instances For 1 Or 3 Yrs.&lt;/li&gt;
+&lt;li&gt;Azure Advisor Has Cost Optimization Section&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/support/options/&#34;&gt;Support&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Support Plans
+&lt;ul&gt;
+&lt;li&gt;Basic&lt;/li&gt;
+&lt;li&gt;Developer&lt;/li&gt;
+&lt;li&gt;Standard&lt;/li&gt;
+&lt;li&gt;Professional Direct&lt;/li&gt;
+&lt;li&gt;Premier&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;All Support Plans Have Access To
+&lt;ul&gt;
+&lt;li&gt;247 Access To Billing And Subscription Support&lt;/li&gt;
+&lt;li&gt;Online Documentation&lt;/li&gt;
+&lt;li&gt;Forums&lt;/li&gt;
+&lt;li&gt;Azure Advisor&lt;/li&gt;
+&lt;li&gt;Service Health&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dev Support -&amp;gt; Business Hrs Email, Rest Get 247 Email/Phone&lt;/li&gt;
+&lt;li&gt;Severity A Support For Standard To Premier Is &amp;lt; 1hr. Sev B &amp;lt; 2hr, Sev C &amp;lt; 4 Hr&lt;/li&gt;
+&lt;li&gt;Tickets
+&lt;ul&gt;
+&lt;li&gt;To Contact Azure Support&lt;/li&gt;
+&lt;li&gt;Ticket_id Is Unique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Channels&lt;/li&gt;
+&lt;li&gt;Knowledge Center&lt;/li&gt;
+&lt;li&gt;SLA
+&lt;ul&gt;
+&lt;li&gt;1 Sla For Product. No Sla For Free Products And Services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Service Lifecycle&lt;/li&gt;
+&lt;li&gt;Azure &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/?product=featured&#34;&gt;Documentation&lt;/a&gt; And Forums&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Https://Azure.Microsoft.Com/En-Us/Resources/Knowledge-Center/&#34;&gt;Azure Knowledge Center&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Azure Service Lifecycle
+&lt;ul&gt;
+&lt;li&gt;Private Preview (Invite Only By Product Team)&lt;/li&gt;
+&lt;li&gt;Public Previews (Feature Available To All Azure Customers In Portal)&lt;/li&gt;
+&lt;li&gt;GA – Has SLA, Support Team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Preview Portal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;useful-links&#34;&gt;Useful Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.shareasale.com/m-pr.cfm?merchantID=43514&amp;userID=2564998&amp;productID=1217786039&#34; target=&#34;_blank&#34;&gt;Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95&lt;/a&gt;&lt;br/&gt;from: &lt;b&gt;Whizlabs.com&lt;/b&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/learn/certifications/exams/az-900&#34;&gt;AZ900 prep official&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>The best way to experience the Himalayas</title>
+      <link>https://vikrambahl.com/best-way-experience-himalayas/</link>
+      <pubDate>Fri, 04 Mar 2016 04:43:17 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/best-way-experience-himalayas/</guid>
+      <description>
+        
+          &lt;p&gt;No it’s not by going to Manali. Not that I have anything against Manali, but it’s beyond touristy now. It’s a great starting point for for experiencing the real himalayas though. Yes &lt;a href=&#34;https://en.wikipedia.org/wiki/Rohtang_Pass&#34;&gt;Rohtang&lt;/a&gt; does come close. For those who have never seen much snow, it well worth it waiting 2 hours in a cramped Tata Sumo to see the fresh ice. Anyway, I am talking about experiencing the himalayas by going on a trek–backpacks and tents included. The allure of a trek is that you get to spend time in the wilderness, away from the bustle of cities and city people.&lt;/p&gt;
+&lt;p&gt;Living in Singapore is great but the weather can really get to you. It is hot and humid all year around. To make things worse, there is barely any wind. The real feel is always &amp;gt; 36 degrees. So when we decided to go on a trek, it had to be in a cold place. The alps were out of the question due to time and expenses. So I started searching around for cold places to trek in. It had to have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;forests&lt;/li&gt;
+&lt;li&gt;snow&lt;/li&gt;
+&lt;li&gt;rivers&lt;/li&gt;
+&lt;li&gt;valleys&lt;/li&gt;
+&lt;li&gt;mountains&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It took me about 5 minutes of brainstorming to realise that i could experience all of the above in my own backyard – The Himalayas. Next: which part of the Himalayas to go to? For the uninitiated, the &lt;a href=&#34;https://en.wikipedia.org/wiki/Himalayas&#34;&gt;Himalayas&lt;/a&gt; are the tallest and the most intimidating mountain ranges in the world. They span across from Afghanistan all the way to China and East India and include some 12 countries along the way. They are the source of fresh water to 500 million Indians. The high himalayan glaciers give rise to the massive Ganges, Brahmaputra and Indus rivers. So then again, where do we go?&lt;/p&gt;
+&lt;p&gt;Nepal? Sikkim? Arunachal? Himachal? Ladakh? Uttaranchal? Kashmir? Gilgit-Baltistan? Tibet?&lt;/p&gt;
+&lt;p&gt;I turned to google images. Well, all these places seemed quite breathtaking. I needed a better approach to decide. But first, I settled on trekking in the Indian Himalayas. For starters, it’s my homeland and that would make navigation and communication pretty easy. This meant that I had to narrow down to one region among Sikkim, West Bengal, Himachal, Uttaranchal and Kashmir. To help me decide, I turned to the old faithful – &lt;a href=&#34;http://reddit.com/r/India&#34;&gt;r/India&lt;/a&gt;. Took me about 10 mins of perusing the trekking threads to come across &lt;a href=&#34;http://indiahikes.in&#34;&gt;Indiahikes&lt;/a&gt;. These guys are a trekking startup based in Bengaluru. They organize trekking tours across India. Their website even listed treks based on whether you wanted to experience snow and which months give you the best experience. They had treks to Himachal, Uttaranchal and Sikkim. They listed treks based on difficulty level. Man each trek had a baseline fitness level you had to have!&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/himalayas/negotiating-snow-slopes.jpeg&#34; alt=&#34;Negotiating snow slopes&#34;&gt;
+&lt;p&gt;Then I looked at the different treks mentioned and settled upon &lt;a href=&#34;http://rupinpass.com/&#34;&gt;Rupin Pass&lt;/a&gt;. It’s a trek that starts in Uttaranchal and ends in Sangla, Himachal Pradesh. An 8 day trek with days 4-8 in high snow…and this is in the month of May when the snow cover is the highest. Being at a high altitude, the Himalayan villages are spared the wrath of the Indian summer. Temperatures of 2 degress in India in May felt like a great deal. Sitting in Singapore in 30 degree weather, I knew I had to do this Rupin Pass trek.&lt;/p&gt;
+&lt;p&gt;And so we paid the fee of INR 14000 for the 8 day Rupin Pass trek in May 2015. Next, getting fit enough to do the trek and buying trekking equipment….&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/himalayas/on-way-to-jiskun.jpeg&#34; alt=&#34;On way to the hanging village of Jiskun&#34;&gt;
+&lt;p&gt;According to Indiahikes, you need to be able to complete a 5km run in 30mins to consider yourself fit enough to do the trek. They also detail a fitness plan you can follow for 8 weeks to get match fit. I followed that and was able to complete 5km in 34mins after a month. Since I was already working out every week, getting match fit wasn’t too hard. If you’ve never exercised and are attempting a trek, start training about 4-5 months before it. You’ll thank me when you’re suspended above a valley with a 60 degree slope and you gotta rely on your thigh muscles to stand still.&lt;/p&gt;
+&lt;p&gt;Another note: I got an intense bout of flu/cough/cold about a month before the trek and that completely fucked my training up. Nevertheless, I recovered with tons of fluids, meds and sleep. So just keep an eye out for Murphy’s law. Take enough medicines along with you. Check out the Indiahikes guide on what to pack before a Himalayan trek. Ladies make sure you plan your trek so it doesn’t happen during your cycles. You don’t want to be feeling ‘icky’ at 12000 feet trust me.&lt;/p&gt;
+&lt;h2 id=&#34;day-1&#34;&gt;&lt;strong&gt;DAY 1&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;On to the travel bit. Booked my flights on Air India from Singapore-Delhi. AI has the new dreamliner jet. The journey was pleasant surprise. After hearing so many horror stories about Air India, this one was smooth and punctual. Landed in delhi, met my relatives and headed straight to the New Delhi Railway Station (NDLS) to take the Jan Shatabdi to Dehradun. Usual train journey, little delayed but reached around midnight. Had a stayover in some dingy hotel close to the station. Next morning, went back to the station to meet up with the trekkers and the Indiahikes driver who would take us on a 8hr journey to our basecamp in Dhaula.&lt;/p&gt;
+&lt;p&gt;We left Dehradun at 7am in a Tata Sumo with 6 other trekkers. Uneventful 8hrs with a couple of pit stops for food and drink. We arrived at the basecamp at about 6pm. The Indiahikes team had already setup some 10-12 tents for us and there were 2 admin tents and a kitchen. There were 4 makeshift toilets at the far end of the camp. The atmosphere was awesome. The camp was located in a large clearing surrounded by hills, tall trees and a loud blue river gushing alongside it. The weather was cool and the skies were clear. Game on!&lt;/p&gt;
+&lt;p&gt;We had some food and chai prepared by the talented Indiahikes chefs. After that there was a group briefing with our Trek Leader Hemang. 17 of us introduced each other and we were debriefed on the do’s and dont’s (no smoking, having the proper gear, no being an asshole etc).&lt;/p&gt;
+&lt;p&gt;It was an early start to Day 2 so we were all off to bed. Aside from a group of mules shitting on our tent in the night, it was smooth sailing. One of the super mules almost fell on the tent. This happened because the sacks of corn were super close to our tent area. Do note that the mules carried the cooking equipment and luggage all the way to our Day 8 destination.&lt;/p&gt;
+&lt;p&gt;According to Indiahikes, you need to be able to complete a 5km run in 30mins to consider yourself fit enough to do the trek. They also detail a fitness plan you can follow for 8 weeks to get match fit. I followed that and was able to complete 5km in 34mins after a month. Since I was already working out every week, getting match fit wasn’t too hard. If you’ve never exercised and are attempting a trek, start training about 4-5 months before it. You’ll thank me when you’re suspended above a valley with a 60 degree slope and you gotta rely on your thigh muscles to stand still.&lt;/p&gt;
+&lt;p&gt;Another note: I got an intense bout of flu/cough/cold about a month before the trek and that completely fucked my training up. Nevertheless, I recovered with tons of fluids, meds and sleep. So just keep an eye out for Murphy’s law. Take enough medicines along with you. Check out the Indiahikes guide on what to pack before a Himalayan trek. Ladies make sure you plan your trek so it doesn’t happen during your cycles. You don’t want to be feeling ‘icky’ at 12000 feet trust me (or a certain lady in our trek group whose peak period hit just as we were in the toughest part of the trek).&lt;/p&gt;
+&lt;p&gt;On to the travel bit. Booked my flights on Air India from Singapore-Delhi. AI has the new dreamliner jet. The journey was pleasant surprise. After hearing so many horror stories about Air India, this one was smooth and punctual. Landed in delhi, met my relatives and headed straight to the New Delhi Railway Station (NDLS) to take the Jan Shatabdi to Dehradun. Usual train journey, little delayed but reached around midnight. Had a stayover in some dingy hotel close to the station. Next morning, went back to the station to meet up with the trekkers and the Indiahikes driver who would take us on a 8hr journey to our basecamp in Dhaula.&lt;/p&gt;
+&lt;p&gt;We left Dehradun at 7am in a Tata Sumo with 6 other trekkers. Uneventful 8hrs with a couple of pit stops for food and drink. We arrived at the basecamp at about 6pm. The indiahikes team had already setup some 10-12 tents for us and there were 2 admin tents and a kitchen. There were 4 makeshift toilets at the far end of the camp. The atmosphere was awesome. The camp was located in a large clearing surrounded by hills, tall trees and a loud blue river gushing alongside it. The weather was cool, the skies were clear and game on!&lt;/p&gt;
+&lt;p&gt;[I need to finish this article]&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Accessing files stored by the iOS Simulator</title>
+      <link>https://vikrambahl.com/accessing-files-stored-ios-simulator/</link>
+      <pubDate>Fri, 19 Feb 2016 08:14:49 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/accessing-files-stored-ios-simulator/</guid>
+      <description>
+        
+          &lt;p&gt;iOS provides limited access to the directory structure for your device. You may often wonder what it looks like. If you are creating a temporary plist or generating a text file, you may want to see where exactly it gets stored on your device. For those with non-jailbroken devices, this can be a difficult task. Yes, you can always work with relative paths inside Xcode and there’s no problem, but certain frameworks generate files which are stored locally on the device. For eg.,  the &lt;a href=&#34;http://www.politepix.com/openears/&#34;&gt;OpenEars&lt;/a&gt; library running the &lt;a href=&#34;http://cmusphinx.sourceforge.net/wiki/&#34;&gt;CMU speech recognition&lt;/a&gt; engine generates a dictionary and language model (.arpa and .DMP) and stores it ‘somewhere’ on the device. To access the directory structure for your iOS simulator, type in the following command in Terminal:&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;open -R `find ~/Library/Developer/CoreSimulator/Devices \
+ -type d -depth 5 -name &#34;*.app&#34; -print0 | xargs -0 stat -f \
+ &#34;%m %N&#34; | sort -rn | head -1 | cut -f2- -d&#34; &#34;`
+
+&lt;/pre&gt;
+&lt;p&gt;That will open the folder where your simulator has stored your filed. Now you just have to search for your filename and voila. Note that the above command opens up 5 levels deep in your folder structure. So you may have to move up a few level and then search for the file you are looking for.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/macos-folder.png&#34;&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Online Guitar App</title>
+      <link>https://vikrambahl.com/online-guitar-app/</link>
+      <pubDate>Thu, 28 Aug 2014 22:28:01 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/online-guitar-app/</guid>
+      <description>
+        
+          &lt;p&gt;While studying computer graphics at NTU, I created this guitar app along with my colleague &lt;a href=&#34;http://sg.linkedin.com/pub/vasundhara-jayaraman/32/360/68a&#34; title=&#34;Vasu&#34;&gt;Vasu&lt;/a&gt;. We used Adobe Flash 3.0 to quickly prototype the strings and the body of the guitar. Then by using keyframe animation and keyboard event triggering, added sounds and a vibration to the strings.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Since flash has been deprecated on modern browsers, you can&#39;t interact with the simulation anymore. It&#39;s on my backlog to port it to html5 canvas&lt;/em&gt;&lt;/p&gt;
+&lt;div&gt;
+  Instructions for playing:
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      Make sure your audio setting is not muted.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Click anywhere on the guitar to get it in focus.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Press keyboard keys 1,2,3,4,5,6 to hear music notes.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Press &amp; Hold any of the keys for &amp;#8216;santoor&amp;#8217; effect.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Press any combination of keys together(separated by split second) to hear chords
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;You can see the video here&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/KrsGwIJduXo?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Converting Storyboard from iPhone to iPad in 4 simple steps</title>
+      <link>https://vikrambahl.com/convert-storyboard-iphone-ipad-simple/</link>
+      <pubDate>Fri, 04 Jul 2014 09:56:41 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/convert-storyboard-iphone-ipad-simple/</guid>
+      <description>
+        
+          &lt;p&gt;Developing a universal iOS app means that you have to maintain two storyboards. Sometimes, all you want is your iPad user interface to be somewhat similar to your iPhone UI. However, making 2 interfaces is a big pain and a mega resource expender. The solution is simple. Just create your iPhone UI in Xcode as you do, then to make a new storyboard for the iPad without doing unnecessary back breaking, do the following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Make a copy of your iPhone storyboard in Xcode. You can do this by right clicking on the storyboard file in Xcode and selecting “Show in Finder”. Now locate the storyboard file in the finder window that pops (you may have to go into a few folders to find it). Copy the file to desktop and rename it “MainStoryboard_iPad.storyboard”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now open this file “MainStoryboard_iPad.storyboard” in a text editor like Text Wrangler or Sublime Text etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now perform the following 2 search and replaces in the “MainStoryboard_iPad.storyboard” file:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Search for&lt;/p&gt;
+&lt;pre&gt;targetRuntime=&#34;iOS.CocoaTouch&#34;&lt;/pre&gt;
+&lt;p&gt;and replace it with&lt;/p&gt;
+&lt;pre&gt;targetRuntime=&#34;iOS.CocoaTouch.iPad&#34;&lt;/pre&gt;
+&lt;p&gt; &lt;/li&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Search for&lt;/p&gt;
+&lt;pre&gt;&amp;lt;simulatedScreenMetrics key=&#34;destination&#34; type=&#34;retina4&#34;/&amp;gt;&lt;/pre&gt;
+&lt;p&gt;and replace it with&lt;/p&gt;
+&lt;pre&gt;&amp;lt;simulatedScreenMetrics key=&#34;destination&#34;/&amp;gt;&lt;/pre&gt;&lt;/ul&gt; 
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Save the file. Reopen Xcode and add this file to the project either by dragging and dropping to the project folder or by going to File -&amp;gt; Add Files to &lt;your-project-name&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now head over to the ‘General’ section by choosing your applications target in Xcode. Under ‘Deployment Info’, choose iPad from ‘Devices’. A pop-up will appear asking if you want to copy the iPhone interface and use it for iPad. Choose ‘Dont Copy’. Now from the ‘Main Interface’ drop down menu, choose “MainStoryboard_iPad.storyboard” .&lt;/p&gt;
+&lt;p&gt;And done!&lt;/p&gt;
+&lt;p&gt;You may have to re-arrange all the views in your interface but thats not really much of a headache compared to creating a new UI from scratch.&lt;/p&gt;
+&lt;p&gt;Inspiration for this post: &lt;a href=&#34;http://stackoverflow.com/questions/8465769/converting-storyboard-from-iphone-to-ipad&#34;&gt;http://stackoverflow.com/questions/8465769/converting-storyboard-from-iphone-to-ipad&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/8465769/converting-storyboard-from-iphone-to-ipad&#34;&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Adding Animated Gif’s in iOS Applications using Xcode Storyboards</title>
+      <link>https://vikrambahl.com/animated-gifs-ios-xcode-storyboards/</link>
+      <pubDate>Thu, 03 Jul 2014 02:41:05 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/animated-gifs-ios-xcode-storyboards/</guid>
+      <description>
+        
+          &lt;p style=&#34;text-align: left;&#34;&gt;
+  There is no out of the box support provided by Apple to add animated GIF&amp;#8217;s to your iOS applications. There are many convoluted solutions available on the interwebs. After trying a few, I have come to rely on the super-easy to integrate solution by Flipboard Inc. (key development by Flipboard engineer &lt;a href=&#34;http://www.raphaelschaad.com/&#34;&gt;Raphael Schaad&lt;/a&gt;, follow him &lt;a href=&#34;https://twitter.com/raphaelschaad&#34;&gt;on twitter&lt;/a&gt;)Their library makes it a piece of cake to add animated GIF&amp;#8217;s to your iOS applications using storyboards in Xcode. Following this, your app will support animated GIF&amp;#8217;s. This post will walk you step by step through the process of doing so.
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  Download code from Github: &lt;a href=&#34;https://github.com/svram/AnimatedGIF-Xcode-Storyboards-iOS&#34;&gt;https://github.com/svram/AnimatedGIF-Xcode-Storyboards-iOS&lt;/a&gt;
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  1) This is what your app will look like if you follow all the steps (it&amp;#8217;ll be smoother in the simulation, had to convert a .mov file to gif):
+&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/gifMovie3.gif&#34;&gt;
+&lt;ul style=&#34;text-align: left;&#34;&gt;
+  &lt;li&gt;
+    Open Xcode, create a new project  and choose the &amp;#8220;Single View Application&amp;#8221; template.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Enter Product, Organisation &amp; Company names. Enter a class prefix and choose iPhone from the devices drop down menu.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Save the project to disk
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  2)  Download Flipboards FLAnimatedImage library from github:
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  &lt;a href=&#34;https://github.com/Flipboard/FLAnimatedImage&#34;&gt;https://github.com/Flipboard/FLAnimatedImage&lt;/a&gt;
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  (Just download the ZIP file to your disk)
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  3) Open Xcode and right-click the project in the project navigator and choose &amp;#8216;New Group&amp;#8217;. A new folder gets added to your project files. Name this folder &amp;#8216;Library&amp;#8217;.
+&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/newgroup.png&#34; alt= &#34;Create new group in Xcode named &amp;#8216;Library&amp;#8217;&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/newgroup2.png&#34; alt= &#34;Create new group in Xcode named &amp;#8216;Library&amp;#8217;&#34;&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  4) Now open the folder where you saved the FLAnimatedImage library you downloaded in Step 2.
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  Locate the following four files and drag them to the &amp;#8216;Library&amp;#8217; folder in Xcode that you created in Step 3.
+&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;FLAnimatedImage.h
+
+FLAnimatedImage.m
+
+FLAnimatedImageView.h
+
+FLAnimatedImageView.m&lt;/pre&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  It should be located in the folder hierarchy:
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  FLAnimatedImage-master -&gt; FLAnimatedImageDemo -&gt; FLAnimatedImage
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  When prompted, select the &amp;#8216;Copy items into destination groups folder&amp;#8217; and click ok.
+&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/dragfiles.png&#34; alt= &#34;Drag and add the FLAnimatedImageView to the Library folder&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addToLibrary.png&#34; alt= &#34;Drag and add the FLAnimatedImageView to the Library folder&#34;&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  5) Open your ViewController.h and add the following import statements:
+&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;#import &#34;FLAnimatedImage.h&#34;
+#import &#34;FLAnimatedImageView.h&#34;&lt;/pre&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Open the Main Storyboard file and add 3 UIImageView objects from the Object Library in the Utilities area on the right. Resize them so your storyboard looks like the one below.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addComponents.png&#34; alt= &#34;Drag 3 UIImageView objects to the storyboard&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/alignComponents.png&#34; alt= &#34;Final storyboard orientation with 3 image views&#34;&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Now click on one of the UIImageView objects that you added to the storyboard and under the Identity Inspector on the right, locate  the ‘Custom Class’ section. In the ‘Class’ text field enter ‘FLAnimatedImageView’.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Do this for all 3 UIImageView objects. The objects are of type FLAnimatedImageView which is a subclass of UIImageView.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/changeClass.png&#34; alt= &#34;Change the class of each of the image views to FLAnimatedImageView in the Identity Inspector in Xcode&#34;&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Open the Assistance Editor in Xcode such that the Storyboard and your ViewController.h files are side by side.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Control drag from each of the image views in the storyboard to your ViewController.h file between the @interface and @end statements. Give your outlet a name and let it be of type FLAnimatedImageView. At the end of it, your ViewController.h file should look like this:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
+#import &#34;FLAnimatedImageView.h&#34;
+#import &#34;FLAnimatedImage.h&#34;
+
+@interface VBViewController : UIViewController
+@property (strong, nonatomic) IBOutlet FLAnimatedImageView *lightningImageView;
+@property (strong, nonatomic) IBOutlet FLAnimatedImageView *manWalkingImageView;
+
+@property (strong, nonatomic) IBOutlet FLAnimatedImageView *pageLoadingImageView;
+
+@end&lt;/pre&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addCode.png&#34; alt= &#34;Connect outlets from the FLAnimatedImageViews in the storyboard to the ViewController.h file&#34;&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;With your view controller selected in the storyboard, we will add a navigation controller for aesthetics sake. In the menubar, go to Editor -&amp;gt; Embed In -&amp;gt; Navigation Controller.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/embed.png&#34; alt= &#34;Add a navigation controller in Xcode storyboard&#34;&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;Open your ViewController.m file and add code to the viewDidLoad: method to set the title of the navigation bar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre lang=&#34;objc&#34;&gt;self.title = @&#34;I Love GIF&#39;s&#34;;&lt;/pre&gt;
+&lt;p&gt;Now, we will add 3 gifs to each of the image views programmatically. First download them to your disk here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vikrambahl.com/wp-content/uploads/2014/07/manWalking.gif&#34;&gt;http://vikrambahl.com/wp-content/uploads/2014/07/manWalking.gif&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vikrambahl.com/wp-content/uploads/2014/07/lightning.gif&#34;&gt;http://vikrambahl.com/wp-content/uploads/2014/07/lightning.gif&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The third GIF we will load via a URL.&lt;/p&gt;
+&lt;p&gt;Just right click and save it.&lt;/p&gt;
+&lt;p&gt;Once saved, add it to your project by dragging the images to your project folder in Xcode. When prompted, select Copy items into destination groups folder.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addGifs.png&#34; alt= &#34;Adding GIF&amp;#8217;s to the project folder in Xcode&#34;&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Now we will load each of the three images with FLAnimatedImage instead of UIImage. Add the following code to your viewDidLoad: method in your ViewController.m file:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre lang=&#34;objc&#34;&gt;FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;manWalking&#34; ofType:@&#34;gif&#34;]]];
+
+FLAnimatedImage *lightningImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;lightning&#34; ofType:@&#34;gif&#34;]]];
+
+FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@&#34;http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif&#34;]]];&lt;/pre&gt;
+&lt;p&gt;Now,  assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;self.lightningImageView.animatedImage = lightningImage;&lt;/pre&gt;
+&lt;p&gt;And add the FLAnimatedImage view objects as subviews:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;[self.view addSubview:self.lightningImageView];&lt;/pre&gt;
+&lt;p&gt;Finally, your viewDidLoad: method should look like this:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;- (void)viewDidLoad
+
+{
+
+[super viewDidLoad];
+
+// Do any additional setup after loading the view, typically from a nib.
+
+//Set the title of the naviagation bar
+
+self.title = @&#34;I Love GIF&#39;s&#34;;
+
+//Add the gifs as FLAnimatedImage objects
+
+FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;manWalking&#34; ofType:@&#34;gif&#34;]]];
+
+FLAnimatedImage *lightningImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;lightning&#34; ofType:@&#34;gif&#34;]]];
+
+//Loading a gif from URL
+
+FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@&#34;http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif&#34;]]];
+
+//Assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property
+
+self.lightningImageView.animatedImage = lightningImage;
+
+self.manWalkingImageView.animatedImage = manWalkingImage;
+
+self.pageLoadingImageView.animatedImage = loadingImage;
+
+//Add the FLAnimatedImage view objects as subviews
+
+[self.view addSubview:self.lightningImageView];
+
+[self.view addSubview:self.manWalkingImageView];
+
+[self.view addSubview:self.pageLoadingImageView];
+
+}&lt;/pre&gt;
+&lt;p&gt;Now just run the program in the simulator and you should see your three GIFs loading perfectly.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Google Maps SDK for iOS in Xcode Storyboard</title>
+      <link>https://vikrambahl.com/google-maps-ios-xcode-storyboards/</link>
+      <pubDate>Tue, 01 Jul 2014 05:20:40 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/google-maps-ios-xcode-storyboards/</guid>
+      <description>
+        
+          &lt;p&gt;Developing a location based application on iOS with Google Maps is super easy with the Google Maps SDK for iOS. So here’s the complete step-by-step way to add a google map to your iOS application using storyboards in Xcode 5.&lt;/p&gt;
+&lt;p&gt;This is what your app will look like in the end:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/finalApp.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/finalApp.png&#34; alt=&#34;Google Maps in iPhone using Xcode Storyboards&#34; title=&#34;Google Maps in iPhone using Xcode Storyboards&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Download code from Github: &lt;a href=&#34;https://github.com/svram/GoogleMapSDKiOS-Storyboards&#34;&gt;https://github.com/svram/GoogleMapSDKiOS-Storyboards&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the Google Maps SDK for iOS:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/ios/start#getting_the_google_maps_sdk_for_ios&#34;&gt;https://developers.google.com/maps/documentation/ios/start#getting_the_google_maps_sdk_for_ios&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The current version is 1.8.1&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Obtain an API key from the Google Developers console. Do the easy to follow instructions here:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/maps/documentation/ios/start#the_google_maps_api_key&#34;&gt;https://developers.google.com/maps/documentation/ios/start#the_google_maps_api_key&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Setup Xcode Environment to work with Google Maps SDK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;a) Open Xcode and Create a new project.&lt;/p&gt;
+&lt;p&gt;b) Create a new ‘Single View Application’ template.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/singleViewApp.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/singleViewApp.png&#34; alt=&#34;Create Single View Application in Xcode&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Create Single View Application in Xcode&lt;/p&gt;
+&lt;p&gt;c) Enter Product, Organization &amp;amp; Company names. Enter a class prefix and choose iPhone from the devices drop down menu.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-details.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-details.png&#34; alt=&#34;Add product name, company etc&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Add product name, company etc&lt;/p&gt;
+&lt;p&gt;d) Save your project to disk.&lt;/p&gt;
+&lt;p&gt;e) Unzip and open the Google Maps iOS SDK that you downloaded in Step 1.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-framework.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-framework.png&#34; alt=&#34;Google Maps SDK iOS folder on desktop&#34; title=&#34;Google Maps SDK iOS folder on desktop&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;f) Add the “GoogleMaps.framework” bundle to the “Frameworks” Folder in Xcode by dragging it there. When prompted, select “Copy items into destination group’s folder”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/drag-image.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/drag-image.png&#34; alt=&#34;Drag the GoogleMaps.framework bundle to the Frameworks folder in Xcode&#34; title=&#34;Drag the GoogleMaps.framework bundle to the Frameworks folder in Xcode&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/copy-items.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/copy-items.png&#34; alt=&#34;Select Copy items into destination group&#39;s folder&#34; title=&#34;Select Copy items into destination group&#39;s folder&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;g) Similarly, drag the “GoogleMaps.bundle” from the  &lt;em&gt;GoogleMaps.framework -&amp;gt; Resources&lt;/em&gt;  folder to the “Frameworks” folder in Xcode. When prompted DO NOT select “Copy items into destination group’s folder”.&lt;/p&gt;
+&lt;p&gt;f) Then, select your project from the Project Navigator and select your applications “Target” (not the “Project”).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/select-target.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/select-target.png&#34; alt=&#34;Select applications Target in project navigator&#34; title=&#34;Select applications Target in project navigator&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;g) Then go to the “Build Phases” tab and then open “Link Binary With Libraries”. Then click on the “+” button at the bottom left and add the following libraries to be compiled along with your app binaries:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AVFoundation.framework&lt;/li&gt;
+&lt;li&gt;CoreData.framework&lt;/li&gt;
+&lt;li&gt;CoreLocation.framework&lt;/li&gt;
+&lt;li&gt;CoreText.framework&lt;/li&gt;
+&lt;li&gt;GLKit.framework&lt;/li&gt;
+&lt;li&gt;ImageIO.framework&lt;/li&gt;
+&lt;li&gt;libc++.dylib&lt;/li&gt;
+&lt;li&gt;libicucore.dylib&lt;/li&gt;
+&lt;li&gt;libz.dylib&lt;/li&gt;
+&lt;li&gt;OpenGLES.framework&lt;/li&gt;
+&lt;li&gt;QuartzCore.framework&lt;/li&gt;
+&lt;li&gt;SystemConfiguration.framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/build-phases.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/build-phases.png&#34; alt=&#34;Go To Build Phases -&gt; Link Binary With Libraries&#34; title=&#34;Go To Build Phases -&amp;gt; Link Binary With Libraries&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-frameworks.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-frameworks.png&#34; alt=&#34;Add the frameworks&#34; title=&#34;Add the frameworks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is what your Xcode environment should look like:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/after-adding-frameworks.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/after-adding-frameworks.png&#34; alt=&#34;XCode environment after adding the frameworks&#34; title=&#34;XCode environment after adding the frameworks&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;h) Now choose your “Project” rather than a “Target” and open the “Build Settings” tab. Scroll down till you find the “Linking” section and under that find “Other Linker Flags”. Now open the section and click the “+” next to “Debug” and add “-ObjC” in the text field. If these settings are not visible, change the filter in the “Build Settings” to “All” instead of “Basic”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/other-linker-flags.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/other-linker-flags.png&#34; alt=&#34;Add the &#39;-ObjC&#39; flag in Other Linker Flags under Build Settings tab&#34; title=&#34;Add the &#39;-ObjC&#39; flag in Other Linker Flags under Build Settings tab&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Add the ‘-ObjC’ flag in Other Linker Flags under Build Settings tab&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Begin Coding&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;a) Open your AppDelegate.m file and add the following import statement:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;GoogleMaps/GoogleMaps.h&amp;gt;;
+
+//Copy the API Key you created in Step 2 and enter the following code in the method
+
+application: didFinishLaunchingWithOptions:
+
+[GMSServices provideAPIKey:@&amp;quot;API_KEY&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Replace API_KEY with your API key.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-api-key.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-api-key.png&#34; alt=&#34;Add Google Maps API Key to the AppDelegate.m application:didFinishLaunchingWithOptions: method&#34; title=&#34;Add Google Maps API Key to the AppDelegate.m application:didFinishLaunchingWithOptions: method&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;b) Open “Main.Storyboard” and drag a UIView object from the Object Library. Now open the Identity Inspector and under Custom Class add “GMSMapView”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/drag-uiview.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/drag-uiview.png&#34; alt=&#34;Drag a UIView from object library to the main storyboard&#34; title=&#34;Drag a UIView from object library to the main storyboard&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/add-custom-class.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/add-custom-class.png&#34; alt=&#34;Assign Custom class &#39;GMSMapView&#39; to the UIView object in the Identity Inspector&#34; title=&#34;Assign Custom class &#39;GMSMapView&#39; to the UIView object in the Identity Inspector&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;c) Control drag from the UIView (GMSMapView) object to your ViewController.h file to create an outlet with the name “mapView”. Don’t forget to add the GoogleMaps import statement in your ViewController.h file.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/mapview-outlet.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/mapview-outlet.png&#34; alt=&#34;Create an outlet for the GMSMapView object in the ViewController.h file&#34; title=&#34;Create an outlet for the GMSMapView object in the ViewController.h file&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;d) Make the ViewController conform to the “GMSMapViewDelegate” protocol.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/delegate-protocol.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/delegate-protocol.png&#34; alt=&#34;Make the ViewController conform to the GMSMapViewDelegate protocol&#34; title=&#34;Make the ViewController conform to the GMSMapViewDelegate protocol&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;e) Finally, add the following code to your ViewController.m file in the viewDidLoad: method&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//Controls whether the My Location dot and accuracy circle is enabled.
+ 
+self.mapView.myLocationEnabled = YES;
+ 
+//Controls the type of map tiles that should be displayed.
+ 
+self.mapView.mapType = kGMSTypeNormal;
+ 
+//Shows the compass button on the map
+ 
+self.mapView.settings.compassButton = YES;
+ 
+//Shows the my location button on the map
+ 
+self.mapView.settings.myLocationButton = YES;
+ 
+//Sets the view controller to be the GMSMapView delegate
+ 
+self.mapView.delegate = self;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/viewdidload.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/viewdidload.png&#34; alt=&#34;viewDidLoad: method in ViewController.m&#34; title=&#34;viewDidLoad: method in ViewController.m&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;f) Now run the app in the simulator. Choose a location from the Debug -&amp;gt; Location menu option. Click on the my location button the app to move to your current location. And done!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/debug-location.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/debug-location.png&#34; alt=&#34;iOS Simulator choose location from Debug -&gt; Location&#34; title=&#34;iOS Simulator choose location from Debug -&amp;gt; Location&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/successful-maps-add.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/successful-maps-add.png&#34; alt=&#34;Successfully added a google map to Xcode storyboard&#34; title=&#34;Successfully added a google map to Xcode storyboard&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;g) Almost done. Finally some cosmetic changes. Go to your main storyboard and click on the view controller. Now go to the menu add a navigation controller by choosing “Editor -&amp;gt; Embed In -&amp;gt; Navigation Controller”.&lt;/p&gt;
+&lt;p&gt;This will add a navigator controller to your main storyboard.&lt;/p&gt;
+&lt;p&gt;Next give the navigation bar a title by adding the following code in your ViewController.m file:&lt;/p&gt;
+&lt;p&gt;self.title = @&amp;quot;Google Maps in iOS&amp;quot;;&lt;/p&gt;
+&lt;p&gt;Feel free to add any other UIView objects. I have added a dummy button and a UITextView object.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vikrambahl.com/images/google-maps-ios/embed-navcontroller.png&#34;&gt;&lt;img src=&#34;https://vikrambahl.com/images/google-maps-ios/embed-navcontroller.png&#34; alt=&#34;Embed a Navigation Controller&#34; title=&#34;Embed a Navigation Controller&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Get the project files on  &lt;a href=&#34;https://github.com/svram/GoogleMapSDKiOS-Storyboards&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Trip to Mount Ijen &amp; Mount Bromo</title>
+      <link>https://vikrambahl.com/trip-mount-ijen-mount-bromo/</link>
+      <pubDate>Tue, 10 Jun 2014 08:00:53 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/trip-mount-ijen-mount-bromo/</guid>
+      <description>
+        
+          &lt;p&gt;It is a personal battle for me to choose between beaches and mountains. Soothing sounds of the waves crashing vs the awe-inspiring views from hilltops and peaks. Having been on beach vacations the past few weekends, I decided to get a taste of ‘mountainous’ terrain. But no touristy snow capped Himalayas or Alps (sorry for calling you touristy, you are ever so beautiful..but you are touristy nonetheless). I decided to see a volcano. It is not hard to visit a volcano from Singapore. Especially when the pacific ring of fire is just a 2-3 hour flight away. Indonesia, the land of beautiful beaches and fiery volcanoes. After surfing on tripadvisor and blog hopping, I settled on visiting Mount Ijen and Mount Bromo, with the plan of covering both in a span of 3 full days.&lt;/p&gt;
+&lt;p&gt;Both Ijen &amp;amp; Bromo are active volcanoes in the Java island of Indonesia. 5 minutes of viewing their images on google and I wanted to get there.&lt;/p&gt;
+&lt;p&gt;“Ok, which is the closest airport to these volcanoes? ”&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Googled for a bit&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Its Surabaya. Step 1 check. Next step, how to go from Surabaya to Ijen and Bromo? After searching a lot, I decided to do what I always do. Contact a travel agency. Yes yes, I sold out. Remember, I do not have a week to explore and soak in the culture. All I have is 3 days in which I wanted to pack in 2 volcanoes.  I googled a lot for travel agencies offering bromo and ijen tours. I emailed them. Among the many who replied, one of them was &lt;a href=&#34;http://sunriseholiday.com/web/&#34;&gt;Sunrise Holidays&lt;/a&gt;. Their website is shady. I was reluctant to even open that possibly malwared email. But I did, and am glad I did, open the email. Sunrise holidays had the best offer. For S$160, I get a dedicated guide and a driver (thats two dedicated people for 3 days) AND they take care of accommodation for 2 nights! The other agencies were ALL charging nearly double that. I was IN. I replied back to them saying that I was on board. They replied back asking me to transfer the FULL amount in Indonesian Rupiah beforehand. SCAM ALERT. Ah Fuck. I was not going to wire this amount to an agency with a shady looking website.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“But $180 for driver, guide and accommodation for 3 days!”&lt;/em&gt;, I reasoned with my logical side.&lt;/p&gt;
+&lt;p&gt;A few minutes later, I had an idea. I emailed back saying that I would pay only 1/7th of the $280, or $40 to them. The rest I would pay in cash when I arrived in Surabaya (EDIT: My bad, I meant $280 per head and not $160)&lt;/p&gt;
+&lt;p&gt;They immediately agreed. I immediately transferred the 40 bucks. They immediately confirmed the receipt.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“Fuck. I just got scammed”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;So, I emailed this guide asking for more details about the trip. They sent me the same itinerary they had when I first contacted them. Ah well, it was only 45 bucks and this &lt;a href=&#34;http://www.lonelyplanet.com/indonesia/malang/activities/small-group-tours/sunrise-holiday&#34;&gt;Sunrise Tours was mentioned by Lonely Planet&lt;/a&gt; as well, I remembered.&lt;/p&gt;
+&lt;p&gt;The Itinerary was (literally quoting from these guys):&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;SURABAYA – IJEN  – BROMO – SURABAYA (3 DAYS 2 NIGHTS)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Day 1 SURABAYA – SEMPOL&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Our driver will pick you up in Surabaya. After meeting service, we will drive to Sempol, the closest village to Mount Ijen. It takes approximately 8 hours drive from Surabaya (depends on the traffic)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Overnight : Arabika/ Catimor Homestay&lt;/p&gt;
+&lt;p&gt;Day 2 IJEN CRATER – TOSARI&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;At 01.00 AM we start the trip to Paltuding (the entrance point). From Paltuding, we start trekking to the top of Ijen to see the crater and it will take about 1, 5 hours or more. From the top of the crater, we can see beautiful milky way. To see the blue fire, you need to go down to the crater. After the day is brighter, you can see the one-kilometer-wide-acid crater. After we finish the entire program in Ijen, we drive about 7 hours to go to Tosari.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Overnight : Ancala Inn Hotel Bromo&lt;/p&gt;
+&lt;p&gt;Day 3 BROMO SUNRISE TOUR – SURABAYA&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Early in the morning at 03.30 am, we will start our tour to Mt. Pananjakan (the highest viewpoint) to see the spectacular process of sunrise, also the beautiful sceney of Mt. Bromo, Mt. Batok and Mt. Semeru. After we see the process of sunrise, we continue our trip to the crater of Bromo via sea of sand. The distance from the parking area of the jeep and Bromo Crater is 800m. To reach the top of the mountain, you can walk for 30 minutes or ride the horse back. After we arrive on the slope of Bromo we should climb the stair and there are 249 steps to see the Bromo active crater. From Mt Bromo we will drive back to the homestay to have breakfast and drive to Malang. It takes around 3 hours drive from Tosari to Surabaya Airport.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Price:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2 Persons : IDR 2.800.000/ person&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Included:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Private car with AC&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–     English Speaking Guide&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       2 Nights Accommodation (Twin/ Double Room) &amp;amp; Breakfast&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Entrance Fee&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Jeep in Bromo&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Refreshment&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Toll &amp;amp; Parking Fee&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Excluded;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Lunch&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Dinner&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Horse Riding in Bromo&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;–       Personal Expenses&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;If you are interested with this tour, we suggest you to take morning flight to Surabaya, because from Surabaya to Ijen it takes atound 8 hours drive.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Please contact us if you need our further assistance and we are kindly looking forward to hearing from you soon.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I WAS IN. This is a cheap deal if you are living in Singapore. Only when the tour started did I realise how super valuable and cost saving this trip was.
+[2021 UPDATE: These prices may have changed, please check with your tour operator]&lt;/p&gt;
+&lt;p&gt;I asked my friend to join and now there were two of us going for this trip.&lt;/p&gt;
+&lt;p&gt;Next, I surfed hipmunk .com and booked Valuair flights for departure on Friday morning and return on Sunday night. Total cost of booking flights was around $180. If you are going to do the Ijen-Bromo tour, make sure you reach Surabaya during the day, latest by 2pm. This is because getting to Ijen from Surabaya takes 7-8 hours even though it is only 350km.&lt;/p&gt;
+&lt;p&gt;Ok, it was D-Day. Boarded the flight to Surabaya from Singapore at Changi Airport. Valuair is run by Jetstar. So, no hassles. Simple, routine 2 hour flight. Not many crying babies, mainly Indonesians heading back for the weekend. Cool. Landed on time. Headed to the Visa-on-Arrival counter. 25 USD and it took only 5 minutes. Went for immigration. Foreigners have a dedicated queue for clearing the immigration. Superb. Done. Collected the bag, handed the immigration form to the customs officer and I was out.&lt;/p&gt;
+&lt;p&gt;Our guide, Mr. Halan, was waiting outside with my name on a placard. We met, shook hands and headed to the car. A white  Toyota Qualis with tinted windows pulled up. The A/C inside was welcome respite from the heat. Our driver, Mr. Mohammed informed us that it would take us 8 hours to reach the homestay near Mount Ijen. And the trip began.&lt;/p&gt;
+&lt;p&gt;For the first 3 hours, we were weaving in and out of towns, occasionally stopping for a piss and food break. After this is when things got picturesque. The drive from Surabaya to Ijen is along the coastline of the Bali Sea in east Java. After leaving Probolinggo, we ventured on an hour long drive across the beautiful coastline and saw some amazing pristine beaches and of course..the sunset.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/java-sea.jpg&#34; alt=&#34;Sunset along java sea&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/evening-ocean-view-java-sea.jpg&#34; alt=&#34;Evening ocean view&#34;&gt;
+&lt;p&gt;After sunset, the drive started uphill. The roads got narrower and the terrain steeper. There was suddenly a nip in the air. The temperature had dropped by at least 10 degrees compared to the town and city areas. Brrrr! Around 9pm, we reached the Arabika home stay all set for the journey ahead!&lt;/p&gt;
+&lt;p&gt;It was at this time we were informed that our trek for 1am was cancelled due to heavy volcanic activity around Mount Ijen. This meant that we would not be able to see the majestic blue flames. This also meant that if the volcano erupted, we’d be toast. Anyway, were informed that the trek would start at 5am and were asked to be at the reception and ready to check out at 4am.&lt;/p&gt;
+&lt;p&gt;Sleepy time…&lt;/p&gt;
+&lt;p&gt;At 4am we check out and waited at the foyer and had breakfast. Kaya bread sandwich and a boiled egg with choice of black coffee and tea. It was slightly chilly. Perfect.&lt;/p&gt;
+&lt;p&gt;Halan arrived with Mohammed and we were off to Mount Ijen! It was a 30min drive uphill on a rocky road. We could make out silhouettes of towering peaks above us. Truly intimidating in the dark. The car stopped at a rest point from where we had to trek up to the volcano crater. Cars cannot go further from this point. We wasted no time and began the trek. Apparently it was only 3 kilometers. Halan told us that it would take us about 1.5 hours. What! I usually cover a 3km walk in 20mins. But as we trekked we realised why. This was no ordinary trek path…&lt;/p&gt;
+&lt;p&gt;It was uphill. Steep. More than 55 degress in most places. Along the way we were greeted by Sulphur miners who worked from pre-dawn to dusk to extract unadulterated sulphur from the volcano crater. Badass! As the sun rose, we took in the beauty of the panoramic view around us.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/mount-ijen-clouds.jpg&#34; alt=&#34;Clouds below us at Mount Ijen&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/ijen-hills-distance.jpg&#34; alt=&#34;Hills in the distance while trekking up Mount Ijen&#34;&gt;
+&lt;p&gt;We came to a rest stop midway. My thighs were burning. I was amazed to learn that the sulphur miners would carry more than 90kg of sulphur rocks up and down the volcano everyday! Thats 200 pounds on your back while going downhill a treacherous path! For just about a dollar a day. Sad :-/ Shames me that I earn more for making pixels on a computer screen change. But such is life and this is a travel log, so no more philosophising.&lt;/p&gt;
+&lt;p&gt;Along the way, our guide high-fived a few miners and chatted with them. Apparently, being a tour guide pays much more than mining sulphur so the miners were all requesting with Halan to refer them to some travel agency.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/ijen-sulphur-mine-worker.jpg&#34; alt=&#34;Sulphur mine worker at mount ijen, indonesia&#34;&gt;
+&lt;p&gt;The view kept getting better. We reached a plateau and decided to take some pics. The skies were quite clear..this was because most of the clouds were below us. It was an oddly satisfying feeling. We were above the clouds. I think it was drizzling below us. This was May so there were still a few clouds here and there. According to Halan, in the month of August there are absolutely no cloud formations during the day and the view from where we were standing stretches right up to the Bali sea. Wow! Think I am going to come back in August just for the view.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/clouds-below-us-ijen.jpg&#34; alt=&#34;The clouds below us while hiking up ijen&#34;&gt;
+&lt;p&gt;Onwards, the final 500 meters to the crater. The sun had risen, there were a few tourists hiking and most obvious of all was the stink of hydrogen sulphide gas. For those unaware, hydrogen sulphide smells like 10 day old rotten eggs. Horrible. It was difficult to breathe. As we reached the rim of the volcano, the smell wasn’t the only thing assaulting our senses.&lt;/p&gt;
+&lt;p&gt;Standing on the rim of the volcano, I was speechless. This is the first time I am seeing an active volcano. Breathing, bubbling, ALIVE. The scene was beautiful. The crater was massive. The soil was chrome yellowish gray. There were tourists here and there but they were just specks in the vast rim of the volcano.&lt;/p&gt;
+&lt;p&gt;The view of the crater was even more breathtaking. A greenish blue acidic lake surrounded by many yellow sulphurous cracks venting volcanic gases at a breathtaking speed. The entire view was surreal. Pictures do not do it any justice. The plume of sulphurous gas smoke was rising high and at times appeared to be coming toward us, but it always seemed to veer away at the last minute.&lt;/p&gt;
+&lt;p&gt;As I stared closer at the vents near the acid lake, I squinted my eyes to reveal something astonishing. There were miners moving about the sulphur deposits with pickaxes! They looked so tiny! The volcano was indeed massive. It made miners look like specks. This was an intimidating optical illusion. The rim of the crater was so large that it looked like it was merely 200 meters away. However, it must’ve been at least a mile off. Scary! I can easily imagine a regional catastrophe if this volcano blew up.&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/sulphur-miners-ijen.jpg&#34; alt=&#34;Sulphur miners dangerously close to poisonous volcanic gases at Ijen&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/ijen-crater-rim-desolation.jpeg&#34; alt=&#34;Desolation at the crater rim Mount Ijen&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/mount-ijen-panorama.jpg&#34; alt=&#34;Panoramic view of Sulphuric fumes bursting through the crevices at Mount Ijen&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/mount-ijen-acidic-green-blue-volcanic-lake.jpg&#34; alt=&#34;Acidic greenish-blue volcano lake&#34;&gt;
+&lt;p&gt;As the day progressed, we sat and walked around the volcano for an hour and decided that it was time to head back. Now to trek downhill on a steep slope.&lt;/p&gt;
+&lt;p&gt;Pro Tip: When going downhill, run, don’t walk. We sprinted down the slopes passing satisfied tourists and weary miners. After 30mins of sprinting peppered by a break or two (one break where I peed down the valley as there were no urinals for more than 30 miles…glorious). we reached the parking spot where Mohammed was waiting for us. We decided to get some breakfast from the canteen. Mee Rebus, omelettes and some coffee. All vegetarian fare.&lt;/p&gt;
+&lt;p&gt;To Bromo now.&lt;/p&gt;
+&lt;p&gt;The car ride to Bromo was uneventful. We reached the Hotel in 3.5 hours. This place is quite famous among tourists, so we had clean rooms with fresh linen. It was still 4pm, so we decided to get a buzz on. Some local Bintang beer and a Nasi Goreng kept me in high spirits. The view of Mt. Bromo from the bar at the Bromo Permai hotel was breathtaking.&lt;/p&gt;
+&lt;p&gt;Next morning at 3:30am, our jeep was ready to go to the Mt Pananjakan  top to see the highly rated sunrise across to Mt. Bromo. The 30 minute ride was bumpy and dusty. Soon enough, we were nearing the top of the viewpoint but had to alight before that due to a traffic jam. Yes, Mt Bromo is that touristy. So we started walking and took a short break at a coffee stall when Halan told us that the UEFA Champions League final between Real Madrid and Atletico Madrid was entering stoppage time. I had totally forgotten! Due to the time difference, I thought it was on Monday morning Singapore time..and not Sunday morning. Anyways we left after Bale scored as we wanted to see the Milky Way in all its glory before sunrise. Halan waited back to complete the game.&lt;/p&gt;
+&lt;p&gt;And onto the disappointment of the trip. The sunrise viewing area was overcrowded with people using their smartphones to click photos of the dark sky. Most of the people had bright torches as well. You can forget about seeing the Milky Way in such brightness. Humans. Sigh. Nevertheless, we could still see more stars in the sky than you can on even the clearest day in Singapore. So we waited for the sun to rise. Let me cut it short by saying that the sky was cloudy and the sunrise was SO-SO. Mainly because you have to camp since midnight to get the best viewing spot. Else, all you see is a swarm of people getting their newest facebook profile pic. Sigh again.&lt;/p&gt;
+&lt;p&gt;We were a little let down but were looking forward to climbing Mt Bromo and check out the crater. So our jeep took us to the base camp. We got off and I thought we were on the Moon. This plain field was called the sea of sand. The grayish-brownish sand stretched for miles on all sides. On one side was Mount Bromo, just a mile away, and the other side you could see lush green mountains. Desolation on one side and greenery on the other. Beautiful.&lt;/p&gt;
+&lt;p&gt;The terrain leading to Mt Bromo was devoid of plant life. Just rocks and sands. there were ridges on the side of the volcano where it was clear that hundreds of years ago lava flew freely through it. The only man made structure was an ancient Hindu temple at the foothill of the volcano. Apparently, shamans still pray to the pagan gods and leave offerings at the volcano to pacify it. This would later be confirmed when we saw religious items and fruits coated in brown gunge at the top of Bromo. Halan would later tell us that there was an eruption in 2010 which threw molten rocks more than 3 miles into the distance and partly destroyed the temple.&lt;/p&gt;
+&lt;p&gt;There are two ways to get to the top of Mt. Bromo. By trekking it or on horseback. We decided to trek it. I would strongly recommend a horseback ride if you are super tired or have arthritis. The 30minute trek up was a joy. It felt like I was on the surface of some desolate planet hiking up to a virgin volcano to see its beauty.&lt;/p&gt;
+&lt;p&gt;We reached on top and realised that the rim of the volcano was narrow! With the mouth on one side and a 100 meter near vertical drop on the other, we were glad for the railing that was up there. There was a distinct smell of volcanic gases and a constant flow of fumes billowing from the mouth of the volcano. The view of the sea of sand from up there was worth every damn penny I paid to come there, and then some. The alien feel and desolation of the view was mesmerising. The rim of volcano was narrow and the railings ended after 50meters. After that, you had to balance and hope that your fall wouldn’t either break your head or fry your body. We tried going around the volcano on the path with no railing but came back after a short while after deciding that the view was the same and that it was not worth the risk. Bonus points if you go on the path with no railing and trek down the steep sleep to the sea of sand. There were a bunch of local school kids who were confidently &lt;em&gt;running&lt;/em&gt; across the non-railing path to interview foreigners for their school project. After spending 10 minutes answering questions about my childhood, we decided to head back.&lt;/p&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/champions-league-2014-final-bromo-madrid.jpg&#34; alt=&#34;Watching the uefa champions league final between real madrid and atletico&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/mount-batok-and-semeru.jpg&#34; alt=&#34;Mount batok (front) and mount semeru(back)&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/mount-batok-tengger-caldera.jpg&#34; alt=&#34;Mount batok, tengger caldera&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/sea-of-sand-mount-bromo.jpg&#34; alt=&#34;The sea of sand mount bromo&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bali-sea-mount-pananjakan.jpg&#34; alt=&#34;Amazing view of the bali sea from mount pananjakan&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-above-the-clouds.jpg&#34; alt=&#34;Above the clouds mount bromo&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-spouting-volcanic-gases.jpg&#34; alt=&#34;Mount bromo spouting volcanic gases&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/greenery-mount-bromo.jpg&#34; alt=&#34;Greenery in the distance at mount bromo&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-volcanic-field.jpg&#34; alt=&#34;Vast plain rocky field 3&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-volcanic-field-desolate-2.jpg&#34; alt=&#34;Vast plain rocky field 2&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-volcanic-rocky-field-3.jpg&#34; alt=&#34;Vast plain rocky field&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-rocky-mountain.jpg&#34; alt=&#34;Rocky mountain&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/panorama-sea-of-sand-bromo.jpg&#34; alt=&#34;Panorama of the sea mount bromo sea of sand&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/desolate-planet-surface-galaxy.jpg&#34; alt=&#34;Are we on some desolate planet in our galaxy&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/bromo-moonscape.jpg&#34; alt=&#34;The moonscape at sea of sand Mount Bromo&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/hindu-shamans-bromo-indonesia.jpg&#34; alt=&#34;Religious offering to mount bromo by hindu shamans&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/hindu-temple-sea-of-sand-bromo.jpg&#34; alt=&#34;View of the sea of sand with hindu temple from the bromo crater&#34;&gt;
+  &lt;img src=&#34;https://vikrambahl.com/images/ijen-bromo/desolation-sea-of-sand-bromo.jpg&#34; alt=&#34;Desolation of the sea of sand mount bromo&#34;&gt;
+&lt;p&gt;We headed back to the jeep and back to the hotel. Our shoes were black and we sneezed brown mucus. If you sensitive to dust particles, just get a face mask and you should be fine. The breakfast at the hotel was good. We ate, we pondered, browsed through photos and updated our facebook statuses.&lt;/p&gt;
+&lt;p&gt;It was time to head back. I tipped $30 each to Halan and Mohammed for their services and we headed straight to Surabaya to board our flight to Singapore and back to work.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>How to make a WordPress Website in 99 minutes</title>
+      <link>https://vikrambahl.com/make-wordpress-website-99-minutes/</link>
+      <pubDate>Tue, 03 Jun 2014 16:33:58 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/make-wordpress-website-99-minutes/</guid>
+      <description>
+        
+          &lt;h3 id=&#34;update-2021&#34;&gt;Update 2021&lt;/h3&gt;
+&lt;p&gt;So the content on this page needs to be refreshed to reflect modern web development. The steps to register the domain name and build the site may not work as shown in the video. I plan to refresh the content on this page.&lt;/p&gt;
+&lt;p&gt;--&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;This is a Step-by-Step tutorial on how to make a wordpress website. By the end of this article you will have made a fully fledged wordpress website with a Home, About Me, Contact Us and a Blog page. You will learn how to choose a hosting provider, select a domain name, install wordpress on your website, upload your photos/videos and configure your website.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Time taken to complete this task: 99 – 140 minutes&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Prerequisites: None&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;There are 2 ways to complete this tutorial. First way is to watch the YouTube video of the tutorial. The second way is to complete this tutorial in parts. Apart from a massive 144 minute YouTube video, I have divided the same video into 10 parts so you can consume the content step-by-step. All of these videos are embedded on this page along with useful text descriptions and the occasional screenshot to clear things up. I leave this choice upto you. &lt;strong&gt;The meat of the learning is in watching the videos&lt;/strong&gt;. I have deliberately explained every menial thing that I do while creating the website so you can latch onto the thought process and methodology of creating websites.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-full-video-tutorial&#34;&gt;The FULL video tutorial:&lt;/h2&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/9lYgK-LDMYE?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;the-learning-road-map&#34;&gt;The learning road map&lt;/h4&gt;
+&lt;p&gt;The respective time stamp range is provided next to the task.&lt;/p&gt;
+&lt;p&gt;Register a domain name &amp;amp; get hosting: 0:00 – 15:33&lt;br&gt;
+cPanel &amp;amp; Installing WordPress: 15:36 – 22:25&lt;br&gt;
+Install a WordPress Theme, Create Homepage: 22:27 – 32:07&lt;br&gt;
+Adding Logos: 32:11 – 40:17&lt;br&gt;
+Customize Slider/Adding Pages/Image Galleries/Embed YouTube Videos: 40:21 – 1:01:47&lt;br&gt;
+Adding Blogposts &amp;amp; Portfolio Items: 1:01:50 – 1:25:01&lt;br&gt;
+Adding Icon Menu/Finishing up the Homepage: 1:25:08 – 1:33:30&lt;br&gt;
+Adding Contact form/Embed Google Maps/Install Facebook Plugin/configuring the sidebar: 1:33:36 – 1:51:40&lt;br&gt;
+Adding a Multilevel Menu: 1:51:45 – 1:56:20&lt;br&gt;
+Add Login Page/Configuring the footer/Add a Favicon/Conclusion: 1:56:24 – 2:21:43&lt;/p&gt;
+&lt;p&gt;Download this wordpress theme&lt;/p&gt;
+&lt;p&gt;Virtue WordPress Theme: &lt;a href=&#34;http://www.kadencethemes.com/product/virtue-free-theme/&#34;&gt;http://www.kadencethemes.com/product/virtue-free-theme/&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;For those of you who want to watch the video in parts and follow along with some text and screenshots, proceed ahead:&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;You will never learn what you are about to read in any university or high school. Computer science courses in university focus on teaching you how to program websites. You learn HTML, CSS, JavaScript and PHP/Python. Most websites in the world use these technologies, so these are useful skills to learn. But in college you have only one semester to learn all this. This means that all the focus is on learning how to code. You practice your web development skills on the university machines which take care of storing your webpages on a server. They provide you with a nifty little tool to edit and upload  your code on the cloud and all you have to do is refresh the page to see the changes you have made.&lt;/p&gt;
+&lt;p&gt;All this is fine but this is only half the picture.  It is only when you come to the industry or when you want to launch a real world website when questions like..&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“ok, how do i register a .com website?”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“ok.what is server hosting and how do i get it?”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;..come to mind. This is VITAL real world information which is left out of university education. Mainly because you need a credit card to register a domain name, ie, a “.com” website and most 18 year old university students do not have credit cards.&lt;/p&gt;
+&lt;p&gt;Registering a domain name, getting hosting, configuring the DNS, migrating code and managing databases are essential tasks that need to be performed when you want to make a website. Fortunately, these are simple to learn and it takes less than a day to get familiar with these technologies. A week if you don’t know the difference between DNS and HTTP.&lt;/p&gt;
+&lt;p&gt;You will learn all this as we go over the steps leading to creating your own website.&lt;/p&gt;
+&lt;p&gt;Having your own website adds tremendous professional pedigree to your online profile. Surely, “yourname.com” sounds better than “yourname.wordpress.com” or “yourname.blogspot.freedomain.mycoolfreesite.com”. :p&lt;/p&gt;
+&lt;p&gt;Read on to find out how to make your very own website on a domain name of your choice.&lt;/p&gt;
+&lt;h2 id=&#34;choosing-a-hosting-provider&#34;&gt;Choosing a hosting provider&lt;/h2&gt;
+&lt;p&gt;or &lt;em&gt;“How to choose a web host for my website?”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;or “&lt;em&gt;Where will my website live?&lt;/em&gt;”&lt;/p&gt;
+&lt;p&gt;First off, who exactly is a web host. A web host or hosting provider is a server (usually a bunch of servers) which store all the files and databases which constitute your website. A server is just a technical term for an industrial computer whose purpose is to interact with other computers by responding to their requests for data. For example, Facebook stores all the data (profile pics, wall posts, albums, sharing preferences etc) associated with a profile on its servers. Whenever you click on your profile button, your browser sends a request to the &lt;a href=&#34;https://www.facebook.com/PrinevilleDataCenter&#34;&gt;facebook server&lt;/a&gt; where your profile information is stored asking for your profile page. Upon receiving this request, the FB server responds to your browser by sending it your profile page with all the data (like first post, profile info etc) and your browser formats the appearance and presents it to you. Facebook owns thousands of such servers which it places in the same room and calls it a “data center”.&lt;/p&gt;
+&lt;p&gt;A web host or hosting provider also owns many such servers in a data center where it stores website data for thousands of websites. If you want to have a website, you HAVE to rent space at some web host. Alternatively, you could convert your computer into a server and save on hosting fees but when you turn your computer off, your website also shuts down. Inconvenient.&lt;/p&gt;
+&lt;p&gt;Fortunately for us, there are plenty of web hosts. Some good, some awful. Based on my experience, the best web hosts are the ones with excellent customer service. You don’t want to pay for a cheap host and then have to cluelessly run around trying to figure out how to add a subdomain and do the most basic of website maintenance tasks (or worse when you accidentally break your website and need an expert to revert to your old site).&lt;/p&gt;
+&lt;p&gt;One web hosting provider which provides excellent customer service at a cheap price is &lt;a title=&#34;Hostgator&#34; href=&#34;http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=svram&#34; target=&#34;_blank&#34;&gt;Hostgator&lt;/a&gt;. These guys have been around for a long time. They have a 24×7 LiveChat service manned by web engineers who patiently solve even the most ridiculous of requests. From database maintenance to website recovery to simple tasks like spoonfeeding you the process of creating an email account are carried out by these blessed customer service reps at Hostgator. I have registered  tens of domain names with Hostgator and introduced many clients to them. In the past 4 years or so, there hasn’t been a single downtime issue.&lt;/p&gt;
+&lt;p&gt;If you are serious about having your own website, then you must get hosting. Go to the Hostgator website and move on to the next Step to learn how to purchase hosting and create a domain name.&lt;/p&gt;
+&lt;h2 id=&#34;part-110-register-a-domain-name--get-hosting&#34;&gt;Part 1/10: Register a Domain Name &amp;amp; Get Hosting&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have registered a domain name and acquired hosting with Hostgator.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;See the video of Part 1/10 here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/SbGmUBo5R98?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IMPORTANT NOTE: Your domain may take 24-48hours to fully propagate across the web. This means that if your website does not open, just clear your browser history and cache and keep refreshing the page. Either you page may not open or you will get a message from Hostgator saying that it will take 24-48 hours for your domain name to propagate across all the DNS servers around the web. Since this is a new domain, all the name servers have to be notified of a new website and have to update their directories accordingly. This is carried out automatically by Hostgator, so feel free to move on to the next section where you will install wordpress on your website and create a Home page, add a blog post, upload a photo/video and create many boilerplate pages like Contact us etc.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;part-210-installing-wordpress-on-your-website&#34;&gt;Part 2/10: Installing WordPress on your website&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will get acquainted with cPanel and will install wordpress on your website through one-click QuickInstall. You will then proceed to login to your wordpress website, take a short tour of the dashboard and change your password&lt;/em&gt;
+See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/FidLELNpJ4Y?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-310-install-a-new-wordpress-theme--create-a-homepage&#34;&gt;PART 3/10: Install a new WordPress Theme &amp;amp; Create a Homepage&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;After completing this section you will have installed a new theme and created you first page – the Homepage!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/vo0HS__IuEk?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-410-add-a-logo-to-your-website&#34;&gt;PART 4/10: Add a logo to your website&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;After completing this section you will have added your own logo to the website and will learn how to upload images to your wordpress.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;See the Video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/15A0Wm75Obk?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-510-add-slider-create-pages-add-imagesimage-galleries--embed-youtube-videos&#34;&gt;PART 5/10: Add Slider, Create Pages, Add Images/Image Galleries &amp;amp; Embed YouTube Videos&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After completing this section you will have:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added a customized slider to the homepage&lt;/li&gt;
+&lt;li&gt;added 3 pages&lt;/li&gt;
+&lt;li&gt;added images to your pages&lt;/li&gt;
+&lt;li&gt;added an image gallery to your page&lt;/li&gt;
+&lt;li&gt;embedded a video from youtube to your page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/wtD6zATdZr0?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-610-adding-blog-posts--portfolio-pages-of-your-creative-work&#34;&gt;PART 6/10: Adding Blog posts &amp;amp; Portfolio pages of your creative work&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added blog posts with image sliders to your website&lt;/li&gt;
+&lt;li&gt;created portfolio pages to display your projects, creative work etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/evoUwWPV9Fc?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-710-adding-icon-menu--completing-the-homepage&#34;&gt;PART 7/10: Adding Icon Menu &amp;amp; completing the Homepage&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added icon menus to the homepage to display features related to the website you are making&lt;/li&gt;
+&lt;li&gt;completed customizing the homepage to include blogposts, portfolio slideshow and an icon menu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/ND3oOF4NFqI?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-810-contact-forms-embed-google-maps-to-your-page-add-a-facebook-8216like8217-box--configure-the-sidebar&#34;&gt;PART 8/10: Contact forms, Embed google maps to your page, add a Facebook ‘Like’ box &amp;amp; configure the sidebar&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added a contact form to your contact us page.&lt;/li&gt;
+&lt;li&gt;embedded a google map to your page to display your address.&lt;/li&gt;
+&lt;li&gt;install the Facebook plugin and add a ‘Like’ box to your facebook page on your sidebar&lt;/li&gt;
+&lt;li&gt;create and customize your sidebar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/kNnB0qZINb0?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-910-add-a-multi-level-menu&#34;&gt;PART 9/10: Add a multi-level menu&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added a multi-level menu to your website.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/jkkJdlrnm1g?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-1010-customize-footer-area-add-a-favicon--a-login-page&#34;&gt;PART 10/10: Customize footer area, add a favicon &amp;amp; a login page&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After completing this section you will have:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;customized the look and placement of the main menu.&lt;/li&gt;
+&lt;li&gt;added a ‘login’ page to your website using the ‘Theme My Login’ plugin for wordpress&lt;/li&gt;
+&lt;li&gt;customized the footer area of the website&lt;/li&gt;
+&lt;li&gt;added a favicon to your website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/D75BskKW6RA?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Python code to list all files in a directory</title>
+      <link>https://vikrambahl.com/python-code-to-list-all-files-in/</link>
+      <pubDate>Sun, 16 Mar 2014 11:26:48 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/python-code-to-list-all-files-in/</guid>
+      <description>
+        
+          &lt;p&gt;Python contains useful modules to execute file and folder operations. It makes use of the ‘os’ module to carry out file system operations. To illustrate, the python code to get the current working directory is:&lt;/p&gt;
+&lt;pre lang=&#34;python&#34;&gt;import os 
+os.getcwd()&lt;/pre&gt;
+&lt;p&gt;.&lt;br&gt;
+On OSX, the output of that is:&lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;&#39;/Users/vikrambahl/Documents&#39;&lt;/pre&gt;
+&lt;p&gt;.&lt;br&gt;
+The ‘os’ module makes it easy to manipulate files and folders on a file system. To list all the files in a directory, you type in the following code:&lt;/p&gt;
+&lt;pre lang=&#34;python&#34;&gt;import os
+os.listdir(os.getcwd())&lt;/pre&gt;
+&lt;p&gt;The piece of code above will return a list of all the files contained in the directory specified within the parentheses of ‘os.listdir()’. In this case, it will list out all the files contained in the current directory as specified by the function call ‘os.getcwd()’.&lt;br&gt;
+The usage is:&lt;/p&gt;
+&lt;pre lang=&#34;python&#34;&gt;os.listdir()&lt;/pre&gt;
+&lt;p&gt;The output of the command on idle is something like:&lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;[&#39;.DS_Store&#39;, &#39;.localized&#39;, &#39;Digital Editions&#39;, &#39;Microsoft User Data&#39;, &#39;RDC Connections&#39;, &#39;signal_processing&#39;, &#39;wallapers&#39;]&lt;/pre&gt;
+&lt;p&gt;Find out more about the ‘os’ module at the &lt;a href=&#34;http://docs.python.org/2/library/os.html&#34;&gt;python docs.&lt;/a&gt;&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>OpenGL mesh viewer</title>
+      <link>https://vikrambahl.com/opengl-mesh-viewer/</link>
+      <pubDate>Sat, 19 Oct 2013 05:40:29 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/opengl-mesh-viewer/</guid>
+      <description>
+        
+          &lt;p&gt;This application was the first one I created while learning computer graphics at &lt;a href=&#34;https://www.ntu.edu.sg/&#34;&gt;NTU&lt;/a&gt;. It parses a .m file, which is nothing but a bunch of numbers representing vertices (x, y, z) in the 3D plane. The resulting 3D model is displayed in the viewport. Options for orthogonal/perspective projection along with various viewing options to pan, zoom and rotate the model were provided. Plane, spherical and psychedelic texturing options were implemented. Watch this video to learn more:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/uq0H0PYBnys?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Secure Data Sanitization</title>
+      <link>https://vikrambahl.com/secure-data-sanitization/</link>
+      <pubDate>Sat, 19 Oct 2013 05:29:38 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/secure-data-sanitization/</guid>
+      <description>
+        
+          &lt;p&gt;Published a paper on techniques for shredding data from storage devices. &lt;a href=&#34;https://en.wikipedia.org/wiki/Gutmann_method&#34;&gt;Guttman’s algorithm&lt;/a&gt; to DoD to the NSA algorithm were all put to test on a 1GB flash drive. The results were published in this paper.&lt;/p&gt;
+&lt;object data=&#34;/pdfs/Secure-Data-Sanitization.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;700px&#34;&gt;
+    &lt;embed src=&#34;http://yoursite.com/the.pdf&#34;&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;https://vikrambahl.com/pdfs/Secure-Data-Sanitization.pdf&#34;&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Signal processing with python</title>
+      <link>https://vikrambahl.com/signal-processing-python/</link>
+      <pubDate>Sat, 19 Oct 2013 04:47:21 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/signal-processing-python/</guid>
+      <description>
+        
+          &lt;p&gt;Gave a talk on audio signal processing with python at &lt;a href=&#34;https://pycon.sg/archive/2013/schedule/presentation/14/index.html&#34;&gt;PyCon Singapore&lt;/a&gt; 2013.  I started using python to quickly prototype a beat recognition system for my masters dissertation. I realised the power of python in signal processing. The speed at which you can test algorithms is astounding. You can perform a cross FFT on the IDLE interpreter within seconds. Well, what I found was this nifty dsp library called &lt;a href=&#34;http://ajaxsoundstudio.com/software/pyo/&#34;&gt;pyo&lt;/a&gt; which lets you play around with audio signals…cool results follow. See the video:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/CYeN0OgtfEA?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Introduction to HTML5 &amp; WebGL</title>
+      <link>https://vikrambahl.com/introduction-html5-webgl/</link>
+      <pubDate>Fri, 18 Oct 2013 08:46:01 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/introduction-html5-webgl/</guid>
+      <description>
+        
+          &lt;p&gt;Recently gave a talk on HTML5 and WebGL, talking about how it has changed the web app landscape. The presentation slides talk about these topics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML5 vs HTML4.0/XHTML&lt;/li&gt;
+&lt;li&gt;HTML5 vs Flash&lt;/li&gt;
+&lt;li&gt;Intro to WebGL&lt;/li&gt;
+&lt;li&gt;Graphics  pipeline&lt;/li&gt;
+&lt;li&gt;Vertex &amp;amp; fragment shaders&lt;/li&gt;
+&lt;li&gt;Cool WebGL and HTML5 demos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So check it out:&lt;/p&gt;
+&lt;iframe src=&#34;https://slides.com/vikrambahl/introduction-to-html5-webgl/embed&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

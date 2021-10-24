@@ -1,0 +1,390 @@
+---
+title: Pass the AZ-900 Azure Fundamentals in your first attempt
+author: Vikram Bahl
+type: post
+date: 2020-04-30T00:00:00+00:00
+url: /az-900-azure-fundamentals-guide/
+ssb_old_counts:
+  - 'a:5:{s:7:"twitter";i:0;s:9:"pinterest";i:0;s:7:"fbshare";i:0;s:6:"reddit";i:0;s:6:"tumblr";i:0;}'
+ssb_cache_timestamp:
+  - 445635
+categories:
+  - AZ-900
+  - Azure
+  - Certifications
+  - Cloud
+  - Cloud 101 
+---
+
+## Thoughts on AZ-900
+
+The Azure Fundamentals AZ-900 certification is meant to be the first step in Microsoft Azure land for business and technical folks. I recently prepared and  [cleared the certification](https://www.youracclaim.com/badges/f08a72ab-e3d5-406f-806c-30b9d543b8b0)  securing 884 on 1000 (passing marks are 700). This guide below goes over all you need for Azure AZ-900 preparation.
+
+Coming from a hands on cloud and dev background, my impression before I gave the exam was “this shit is going to be a breeze” or “AZ-900 is for sales and project managers, cloud architects should find it easy af”. After the exam? I stand corrected. While I breezed through the 29 questions in about 30-35mins (including a once over), I left the center pondering why these pricing and compliance focussed exams tend to trip up technical folks. In hindsight, I should’ve focussed a LOT more on the compliance and pricing features.
+
+The questions on cloud concepts were the easiest because they relied on logic and a bit of cloud experience. But these questions comprise just about 15-20% of the exam. The devil is in making sure your knowledge of azure services, what the services do, compliance, trust, security, privacy, pricing and support are rock solid. And this means memorising some Azure facts (which sucks TBH, certifications should test concepts rather than facts. Atleast 60% of the exam should be concepts as opposed to the 20% that it is now).
+
+I had about 10 days to prepare for this exam. I had about 5yrs cloud experience already so I reckoned that 10 days is enough time.
+
+## Tips to prepare
+
+I followed the following methods to prepare and it is more than enough to comfortably sail through this examination:
+
+-   The starting point should be the official free online study guide by Microsoft. It’s good and covers all the bases
+-   Aside from this cheat sheet I would recommend doing EITHER the *Whizlabs* question bank set or the one from Udemy. Gun to my head, I’d recommend Whizlabs since they have a reputation for keeping the questions up to date and relevant. There are about 6-7 tests with 55 questions each. So we are looking at 350-400 questions to choose from. The Udemy practise test was great but I found myself doubting a lot of the answers. You can choose to do it only for the questions but then again do either and not both.
+
+<a target="_blank" href="https://shareasale.com/r.cfm?b=1815676&amp;u=2564998&amp;m=43514&amp;urllink=&amp;afftrack="><img src="https://static.shareasale.com/image/43514/Hurry-Limited-period-offer-on-Subscr_06.png" border="0" /></a>
+
+<a href="https://www.shareasale.com/m-pr.cfm?merchantID=43514&userID=2564998&productID=1217786039" target="_blank">Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95</a><br/>from: <b>Whizlabs.com</b>
+
+-   The aCloudGuru/Linux Academy course is pretty decent (Thanks to my employer for getting me a subscription)
+-   Hands on playing around the Azure Portal
+
+## The cheatsheet
+
+Use this to revise concepts and facts a day or two before the exam. Follow and read up all links. Get a PDF version right here.
+
+-   A geography is a part of the world with at-least one azure region
+-   An Azure region contains more than one data center.
+-   A region can be comprised of multiple availability zones (AZ)
+-   An AZ contains more than 1 data center
+-   When it’s AZ think independent power, cooling, and networking
+-   Not all regions have AZ’s in Azure
+-   [Regions, AZ’s, Geographies](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
+-   High Availability (HA) refers to that feature of Azure which enables distributed systems to recover very quickly from faults with none or minor degradation in user experience.
+    -   A highly available application or database is one which is spread across multiple hosts in independent racks in a data center, independent data centers in a regions/AZ or independent AZ’s in a region
+-   Fault Tolerance refers to the ability of a systems to adhere to SLA’s for response time and availability even if system failure occurs. Basically no impact on users during system failure. This is more complex and expensive to attain compared with HA.
+-   Disaster Recovery is associated with the ability of a system to recover operations (applications and data) within a defined RTO (Recovery Time Objective) and RPO (Recovery Point Objective). RTO and RPO are usually decided based on the SLA and business objectives.
+    -   RTO: The maximum downtime the service or application can endure in time of a disaster (or my application can be down only for 2 hours before my users complain or I break the SLA with my customers)
+    -   RPO: The tolerable amount of unbacked up data which can be lost in a disaster before it harms the business (or I can lose two hours of data if it is not backed up which means I need to schedule backups every two hours to meet the RPO)
+-   Scalability is the ability of a system to handle variable increase in load or requests without affecting the response time or quality of service.
+-   Elasticity is the ability of a system to scale up or down with the load on the system. The system adds additional resources to handle an increase in load and when the load decreases, it removes the additional resources.
+-   Vertical scaling refers to increasing the spec or capacity of a resource so it can handle higher load
+    -   Choosing a higher powered instance
+    -   Vertical scaling often requires making the system temporarily unavailable while it is being redeployed
+-   Horizontal scaling is the addition of resources to a pool of resource in response to an increase in load or some metric which require additional compute to perform the job.
+-   Autoscaling mostly applies to compute resources. While it’s possible to horizontally scale a database or a message queue, this usually involves data partitioning, which is generally not automated. There are flavours of SQL and NoSQL databases which make autoscaling easier but that is because they’re managed services or PaaS services like Synapse, Amazon RDS, Bigquery or Azure SQL PaaS.
+-   What differentiates the cloud from the onpremises deployments is essentially the API. You can provision large amounts of compute and storage resources in a data center somewhere with just a simple API call. Azure provides us with a plethora of mediums to invoke these APIs.
+-   There are many options to work with resources in Azure. These are elaborated on below. For a small sized project, you will likely use a couple. The different options to manipulate resources in Azure are
+    -   [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli)
+        -   This is the command line interface for interating with Azure resources. Runs on windows, linux and mac environments.
+    -   [Azure Powershell](https://docs.microsoft.com/en-us/powershell/azure/?view=azps-4.8.0)
+        -   Azure PowerShell is a set of cmdlets (automation scripts) for managing Azure resources directly from the PowerShell command line
+    -   [Azure Cloud Shell](https://azure.microsoft.com/en-us/features/cloud-shell/)
+        -   Like the name mentions, this is a shell in the cloud. It’s a browser based, automatically authenticated powerful shell experience. It comes with both Bash and Powershell. This is very powerful and I believe no other cloud offers 2 shell flavours.
+    -   [Azure SDK’s](https://azure.github.io/azure-sdk/)
+        -   This is the Software Development Kit (SDK) libraries which contain support for multiple programming languages (.NET, Java, Javascript, Python, C++, iOS, Android). Essentially they contain similar functionality as the CLI or the API’s but invoked through application code.
+        -   One use case could be your team is building a mobile only chat application and you need a way to setup the backend for common chat functionalities like create message, list contacts or join groups. You can  [embed Azure SDK for chat](https://github.com/Azure/azure-sdk-for-ios/tree/1.0.0-beta.2/sdk/communication/AzureCommunicationChat)  directly in your Swift codebase so that the backend “just works”
+    -   [Azure APIs](https://docs.microsoft.com/en-us/rest/api/azure/)
+        -   These are REST API’s
+    -   [Azure Portal](https://azure.microsoft.com/en-us/features/azure-portal/)
+        -   Azure Portal is a web based dashboard for creating, configuring, deleting and managing Azure resources. It is essentially a powerful web application which gives you a UI for making things happen on Azure. The URL is  [**https://portal.azure.com/**](https://portal.azure.com/). This is similar to the AWS Console ([**https://console.aws.amazon.com/**](https://console.aws.amazon.com/)) or the GCP Console ([**http://console.cloud.google.com/**](http://console.cloud.google.com/))
+-   Powershell, CLI, SDK’s etc all use azure resource manager to take action on azure
+-   Azure building blocks
+    -   Regions
+        -   Not all regions have availability zones
+        -   Data centers are close enough to each other that there is no latency difference
+    -   Paired regions
+        -   Each azure region is paired except brazil south. colocated geographically. Offers failover during outages. Offers data replication. Maintenance is done serially
+    -   AZ
+        -   Independent power, network and cooling
+        -   Each region that supports AZ’s has minimum of 3 AZ’s
+-   Latency defined perimeter: not too far from each other
+-   Regional low latency network -> fiber connection between regions not too far from each other
+-   How to choose region to deploy your application. Take the following 3 factors into consideration
+    -   Location -> closer to users
+    -   Features -> do we have full azure feature set required for the application
+    -   Price -> price varies per region
+-   To take advantage of multi-az, you need to specify you need multi-az for resource during provisioning.
+-   Resource groups
+    -   Everything in azure must be inside a resource group. Resource group is not a resource
+    -   It is a container that holds related azure resources for a solution
+    -   Each resource exists in 1 resource group only
+    -   Resources can be moved, added, deleted from/to other resource groups
+    -   Resource groups can span multiple regions
+    -   Has access control facility for users
+    -   Resources in a resource group can interact with resources in other resource groups
+    -   Has a location or region. Resource group can be in Mumbai but have resources in Singapore or USA
+    -   A resource group will contain resources related to a specific application. For example, a group may contain a website resource that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage Account that stores non-relational assets.
+-   [Azure Resource Manager (ARM)](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview)
+    -   Everything cli, powershell, rest api, client SDK, web portal all go through the ARM API to CRUD (Create, Read, Update, Delete) resources on azure
+    -   Allows for grouped resource handling, access control, resource tagging, billing of tagged resource, define dependencies between resources
+-   Scale sets
+    -   Lets you manage a group of identical, load balanced vm’s
+    -   You only pay for VM’s, storage, load balancers
+    -   Upto 1000 VM’s in a single scale set
+    -   Baseline VM is used as a template
+    -   Similar to a managed instance group in GCP
+-   [Azure App Services](https://azure.microsoft.com/en-us/services/app-service/)
+    -   PaaS offering
+    -   Web apps on win and linux
+    -   Web apps for containers -> host containers on azure
+    -   Api apps -> expose and connect data backend
+    -   App service plan is the server
+    -   App service is the service or website
+    -   Similar to App Engine on GCP or Elastic Beanstalk on AWS
+-   [Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
+    -   Primary Azure service for running containerized apps
+    -   Similar to ECS on AWS or Cloud Run on GCP
+-   Virtual Network (VNET)
+    -   VNET’s are regional
+    -   VNET belongs to 1 subscription, 1 subscription can have many VNET’s
+    -   Similar to VPC’s in AWS and GCP
+-   Load Balancer
+    -   Frontend -> access point for the load balancer, receives the traffic
+    -   Backend -> pool of VM’s over which traffic is distributed by load balancer
+    -   Configuration for rules and health probes
+    -   Health probe to make sure backend pool has healthy vm’s
+    -   Supports port forward to a specific port on a specific machine. on the VM, a process or app will be listening for messages on a specific port or ports
+-   VNET gateway
+    -   A subnet with 2 or more servers
+    -   A virtual network can have two virtual network gateways; one VPN gateway and one ExpressRoute gateway
+    -   The VM’s in the VNET gateway cannot be directly accessed
+    -   Hybrid cloud starts with setting up a VPN or Express route connection from onpremises to the VNET gateway
+-   [Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview)
+    -   Make routing requests based on parameters other than IP and port
+    -   Other parameters are URL, headers, data format
+    -   Elastic scaling, e2e encryption, multi-az, supports upto 100 websites per application gateway
+    -   Another type of load balancer for HTTP requests
+    -   Similar to ALB on AWS or Cloud Load Balancing on GCP
+-   [Storage. Essentially four kinds of storage on Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction)
+    -   Blob: Similar to S3 on AWS or GCS on GCP
+    -   Disk: Similar to EBS on AWS or Persistent disk on GCP
+    -   File: similar to EFS on AWS or Filestore on GCP
+    -   Archive: Similar to Glacier on AWS or Cold Storage on GCP
+-   Storage Account – unique Azure namespace for storage
+    -   Base for all azure storage types
+    -   Storage account has a container with blob storage inside
+-   Blob – binary large object or BLOB
+-   Storage account can have multiple blob containers to store data
+-   Blob container – mix bag of items (images, video, vmdk etc) each with a web address
+-   Blob types
+    -   Block blobs – text and binary data upto 4.7tb
+    -   Append blobs – appendable files like log file
+    -   Page blobs – files upto 8 TB like hard disks
+-   Pricing tiers
+    -   Hot
+    -   Cool
+    -   Archive
+-   Disk
+    -   Managed – azure manages backup, uptime, performance
+    -   Attached to VM’s
+    -   Easily upgrade type and size
+-   Disk types
+    -   HDD – low cost, best for backup
+    -   Standard SSD – standard for production workloads
+    -   Premium SSD – critical workloads like db installs
+    -   Ultra disk – unprecedented sub ms latency – upto 64TB like gaming, rendering
+-   File storage
+    -   Large scale managed storage for files
+    -   Connects with onprem file storage
+-   Archive
+    -   Lowest price, highest access time, low performance, encrypted
+    -   Cheap type of blob storage
+-   Azure CDN
+    -   Content Delivery Network
+    -   Distributed network of servers that can deliver content close to users
+    -   CDN fetches data from an origin server depending upon the TTL (Time to Live)
+        -   Simple example: I have a website where people can browse cat photos. I upload new photos once a day. People visit the site by going to vikramsamazingcatphotos.com. I store all photos in an Object storage account on Azure in the US region. However, my users are from all over the world. So I setup Azure CDN to fetch images from the origin server, which is the storage account in US in this case. Azure CDN caches the images at an edge location closer to the users location. So a user in India requesting for a cat image will not be routed to the storage account in US, they will receive the image from an edge location (nothing but a bunch of servers) in India.
+-   [Databases](https://azure.microsoft.com/en-us/product-categories/databases/)
+    -   Cosmos DB
+    -   Azure SQL
+    -   MySQL
+    -   PostgreSQL
+    -   DMS
+-   Cosmos DB
+    -   Global, easy to add region
+    -   Sync, cross-region replication is handled
+    -   Latency 0-9ms anywhere in the world
+    -   Autoscaling
+    -   Various sdks and languages for developers
+    -   Supports database flavors like Sql, Mongo, Cassandra
+    -   Can be very expensive
+-   Azure SQL
+    -   DB as a service (PaaS)
+    -   Use case: migrate onprem SQL server to azure sql
+    -   Built in machine learning
+    -   Upto 100TB
+    -   Secure, scale
+-   Azure DB for MySQL
+    -   Host foss MySQL
+    -   It’s a PaaS
+-   Azure DB for Postgres
+    -   Hosted foss
+    -   Based on Ingres, came after it (hence POSTgres)
+    -   Default os for macos
+    -   Lot of features – horizontal scale, jsonb, fast indexing, geospatial (postgis)
+-   Database Migration Service (DMS)
+    -   Onprem database migration to azure
+-   Authentication and authorization in Azure
+    -   Identity services
+    -   Azure Active Directory (AD)
+    -   MFA
+-   Identity
+    -   Authentication: identity proving/confirmation (you are who you say you are)
+    -   Authorization: once authenticated, do i have authorization to access a resource
+        -   Is this identity allowed access to a particular resource
+-   [Azure Active Directory (AAD)](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis)
+    -   This is different from Active Directory onprem
+    -   AD onprem is used by companies for managing users, printers and more
+    -   Azure AD is a separate product, you cant transfer skills from onprem AD
+    -   First service in a new azure account is an AAD service
+    -   Tenant is a dedicated instance of AAD that an org receives when it signs up for azure. One user belongs to 1 tenant but can be guest in other tenants
+    -   Tenant represents an organization
+    -   Subscriptions -> separate billing entities, multiple subscriptions in a single tenant
+    -   AAD can manage users onprem and in azure
+-   Azure Solutions
+    -   IoT Hub (ingest for billions of devices), managed PaaS, device authentication
+    -   IoT Central – SaaS, no code, connect IoT devices with dashboard, connections, rules
+    -   Big Data
+        -   Azure Data Lake Analytics – parallel processing, SQL, serverless
+        -   Azure HDInsights – foss (similar to dl analytics), hadoop, spark, kafka
+        -   Azure Databricks – based on spark (distributed cluster computing), integrates with azure storage
+        -   Synapse analytics – data warehouse (reporting and data analytics), limitless in storage, synapse sql
+        -   Speed of processing, cheaper for large data, better decisions, high profits as you use data to build better products
+    -   AIML
+        -   Modelling
+        -   Knowledge mining – uses azure search
+        -   Cognitive services – apis
+            -   Vision, decision, speech
+        -   Aazure ML studio
+            -   Premade modules
+            -   UI based
+        -   Azure ML service
+            -   e2e service
+    -   Serverless
+        -   Azure functions
+        -   Logic apps – connects apps, data, systems across azure and outside. like workflow orchestration without code
+        -   Event grid – pubsub model, routing service for connected apps
+    -   [Azure DevOps](https://docs.microsoft.com/en-us/azure/?product=featured)
+        -   Azure Boards – Azure Jira
+        -   Azure Pipelines – Cicd
+        -   Azure Repos – Git Repo
+        -   Azure Test Plans – Test Planning
+        -   Azure Artifacts – App Binaries And Libs
+        -   Devtest Labs – Create Test Environments, No Unexpected Costs
+    -   Security
+        -   Securing Network Connectivity
+            -   Azure Firewall – Rules To Define What Traffic Has Access
+            -   Ddos Protection – Detection, Deflection
+            -   Network Sec Groups – Attached To Subnet, Network, Interface
+            -   App Security Group – Protects Applications
+        -   [Azure Security Center](https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction)
+            -   Manage All Sec Features Of Azure
+            -   In Azure Portal
+            -   Agents In Vm’s Onprem Or Azure Sent Data To Azure Sec Center
+            -   Policy, Compliance, Anomalies, Secure Score, Integrated With Aws/Gcp, Single Point For Siem, Alerts
+            -   Set Policies In Sec Center, Protect Resources Through Active Monitoring, Respond To Incidents
+        -   Key Vault
+            -   Secure Place To Store Passwords And Secrets. Can Delegate Access With Others Without Sharing The Actual Password
+            -   Secure Hardware
+            -   Global Scaling
+        -   Azure Information Protection
+            -   Secure Data And Documents, Email, Office 365
+        -   Advanced Threat Protection
+            -   Monitors Users
+            -   Call Out Anomalous Behavior
+        -   Privacy, Compliance, Trust
+            -   Governance
+            -   Azure Monitor
+            -   Azure Service Health
+            -   Compliance
+            -   Privacy
+            -   Trust
+    -   Governance
+        -   [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) – Set Of Rules Which Resources Should Be Compliant To. Resources And Policies Are There. Azure Policy Is The Enforcer.
+        -   RBAC
+            -   Least Privilege
+            -   Principal – Users Or Group
+            -   Roles – Collection Of Permissions
+            -   Scope – Specific Resources Access
+        -   Resources Can Be Locked (Cant Be Deleted Or Read-Only)
+            -   Can Be Applied To Subscription, Resource Group Or Resource
+        -   Azure Blueprints – Templates For Resource Creation With Policy, Compliance, Regulation Adherence, Rbac
+        -   Telemetry – Info About How Remote Resources Re Performing
+        -   [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview)
+            -   Feed Telemetry Here
+            -   Supports Ml
+            -   Query Language
+            -   Identify Issues Beforehand
+        -   [Azure Service Health](https://azure.microsoft.com/en-in/features/service-health/)
+            -   Notifications For Azure Platform Health, Maintenance Window Etc
+            -   Service Health Dashboard
+        -   Compliance – With Legislation
+            -   GDPR
+            -   NIST
+            -   ISO 9001:2008
+            -   Azure Compliance Manager
+                -   Recommendations For Achieving Compliance, Track Compliance For Team, Score
+            -   Azure Gov Cloud
+                -   Dedicated Regions For Us Govt
+            -   China Regions
+            -   Azure Germany
+        -   Privacy – Baked Into Azure Products
+            -   Azure Privacy Statement
+        -   Trust
+            -   Azure Trust Center. Efforts Taken By Msft In Ensuring Trust
+            -   Service Trust Portal – Read Audit Reports
+-   [Pricing](https://azure.microsoft.com/en-us/pricing/)
+    -   Subscriptions
+        -   No Azure Service Lives Outside A Subscription
+        -   Billing Admin Has Access To Billing Responsibilities
+        -   Billing Cycles Net 30/60
+        -   Subscriptions Are Good For Separating Billing Concerns
+        -   Azure Offer Types
+        -   Management Groups For Subscriptions Can Have Multiple Subs Under One Mgmt Group. Easier For Policies, Tracking In Bulk
+        -   Mgmt Group Per Country Or Department
+        -   Nest Mgmt Groups To Indicate Hierarchy
+    -   Cost Management
+        -   Free Services Upto 12 Months
+        -   Some Are Always Free Upto Certain Usage Limit
+        -   Nice Dashboard To See Graphs Of Cost
+    -   Cost Affected By
+        -   Resource Type
+        -   Resource Size
+        -   Bandwidth
+    -   Data Transfer Between Regions In Same Billing Zone Is Free. Egress Between Billing Zones Is Charged
+    -   Azure Tco Calculator Over 5 Yrs
+    -   Azure Pricing Calculator
+    -   Best Practises
+        -   Spending Limits
+        -   Quotas
+        -   Use Tags
+        -   Pay As You Go, Reserved Instances For 1 Or 3 Yrs.
+        -   Azure Advisor Has Cost Optimization Section
+-   [Support](https://azure.microsoft.com/en-us/support/options/)
+    -   Support Plans
+        -   Basic
+        -   Developer
+        -   Standard
+        -   Professional Direct
+        -   Premier
+    -   All Support Plans Have Access To
+        -   247 Access To Billing And Subscription Support
+        -   Online Documentation
+        -   Forums
+        -   Azure Advisor
+        -   Service Health
+    -   Dev Support -> Business Hrs Email, Rest Get 247 Email/Phone
+    -   Severity A Support For Standard To Premier Is < 1hr. Sev B < 2hr, Sev C < 4 Hr
+    -   Tickets
+        -   To Contact Azure Support
+        -   Ticket_id Is Unique
+    -   Channels
+    -   Knowledge Center
+    -   SLA
+        -   1 Sla For Product. No Sla For Free Products And Services
+    -   Service Lifecycle
+    -   Azure [Documentation](https://docs.microsoft.com/en-us/azure/?product=featured) And Forums
+    -   [Azure Knowledge Center](Https://Azure.Microsoft.Com/En-Us/Resources/Knowledge-Center/)
+    -   Azure Service Lifecycle
+        -   Private Preview (Invite Only By Product Team)
+        -   Public Previews (Feature Available To All Azure Customers In Portal)
+        -   GA – Has SLA, Support Team
+    -   Preview Portal 
+
+## Useful Links
+
+- <a href="https://www.shareasale.com/m-pr.cfm?merchantID=43514&userID=2564998&productID=1217786039" target="_blank">Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95</a><br/>from: <b>Whizlabs.com</b>
+
+- [AZ900 prep official](https://docs.microsoft.com/en-us/learn/certifications/exams/az-900)

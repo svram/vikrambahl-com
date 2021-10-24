@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lighting on Vikram Bahl</title>
+    <link>https://vikrambahl.com/tags/lighting/</link>
+    <description>Recent content in lighting on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 19 Oct 2013 05:40:29 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/tags/lighting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenGL mesh viewer</title>
+      <link>https://vikrambahl.com/opengl-mesh-viewer/</link>
+      <pubDate>Sat, 19 Oct 2013 05:40:29 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/opengl-mesh-viewer/</guid>
+      <description>
+        
+          &lt;p&gt;This application was the first one I created while learning computer graphics at &lt;a href=&#34;https://www.ntu.edu.sg/&#34;&gt;NTU&lt;/a&gt;. It parses a .m file, which is nothing but a bunch of numbers representing vertices (x, y, z) in the 3D plane. The resulting 3D model is displayed in the viewport. Options for orthogonal/perspective projection along with various viewing options to pan, zoom and rotate the model were provided. Plane, spherical and psychedelic texturing options were implemented. Watch this video to learn more:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/uq0H0PYBnys?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

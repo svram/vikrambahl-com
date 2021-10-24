@@ -1,0 +1,1450 @@
+
+<!DOCTYPE html>
+<html lang="en" data-figures="" class="page">
+  <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45012538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-45012538-1');
+</script>
+<title>Pass the AZ-900 Azure Fundamentals in your first attempt | Vikram Bahl</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script async src="https://www.googletagmanager.com/gtag/js?id=45012538"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '45012538');
+</script>
+
+  
+<meta property="og:locale" content="en" />
+
+<meta property="og:type" content="article">
+<meta name="description" content="Thoughts on AZ-900 The Azure Fundamentals AZ-900 certification is meant to be the first step in Microsoft Azure land for business and technical folks. I …">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="Pass the AZ-900 Azure Fundamentals in your first attempt" />
+<meta property="og:url" content="https://vikrambahl.com/az-900-azure-fundamentals-guide/" />
+<meta property="og:title" content="Pass the AZ-900 Azure Fundamentals in your first attempt" />
+<meta property="og:description" content="Thoughts on AZ-900 The Azure Fundamentals AZ-900 certification is meant to be the first step in Microsoft Azure land for business and technical folks. I …" />
+<meta property="og:image" content="https://vikrambahl.com/images/thumbnail.png" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://vikrambahl.com/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://vikrambahl.com/icons/favicon-32x32.png">
+<link rel="manifest" href="https://vikrambahl.com/icons/site.webmanifest">
+
+<link rel="canonical" href="https://vikrambahl.com/az-900-azure-fundamentals-guide/">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3811526775513018"
+     crossorigin="anonymous"></script>
+
+
+    
+
+    
+    
+    <link rel="preload" href="https://vikrambahl.com/css/styles.d6b027c22f42725b13d5bafff05232cee0f8006ccba38be041f7d699ed2ca3c3dde7f41a86ab5db17af2efd2e35697380bb70ea0f3da4e5cbabfa0e3482f9d82.css" integrity = "sha512-1rAnwi9CclsT1br/8FIyzuD4AGzLo4vgQffWme0so8Pd5/QahqtdsXry79LjVpc4C7cOoPPaTly6v6DjSC&#43;dgg==" as="style" crossorigin="anonymous">
+    <link rel="preload" href="https://vikrambahl.com/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" as="script" integrity=
+    "sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" type="text/css" href="https://vikrambahl.com/css/styles.d6b027c22f42725b13d5bafff05232cee0f8006ccba38be041f7d699ed2ca3c3dde7f41a86ab5db17af2efd2e35697380bb70ea0f3da4e5cbabfa0e3482f9d82.css" integrity="sha512-1rAnwi9CclsT1br/8FIyzuD4AGzLo4vgQffWme0so8Pd5/QahqtdsXry79LjVpc4C7cOoPPaTly6v6DjSC&#43;dgg==" crossorigin="anonymous">
+    
+  </head>
+  
+  
+    
+  
+  <body data-code="7" data-lines="false" id="documentTop">
+
+<header class="nav_header" >
+  <nav class="nav"><a href='https://vikrambahl.com' class="nav_brand nav_item" title="Vikram Bahl" target="_self">Vikram Bahl
+  <div class="nav_close">
+    <div><svg class="icon">
+  <use xlink:href="#open-menu"></use>
+</svg><svg class="icon">
+  <use xlink:href="#closeme"></use>
+</svg></div>
+  </div>
+</a>
+
+    <div class='nav_body nav_body_left'>
+      
+      
+      
+        
+
+  <div class="nav_parent">
+    <a href="https://vikrambahl.com" class="nav_item" title="Home" target="_self">Home </a>
+  </div>
+  <div class="nav_parent">
+    <a href="https://vikrambahl.com/about-vikram-bahl" class="nav_item" title="About" target="_self">About </a>
+  </div>
+      
+      <div class="nav_parent">
+        <a href="#" class="nav_item"></a>
+        <div class="nav_sub">
+          <span class="nav_child"></span>
+          
+          <a href="https://vikrambahl.com/" class="nav_child nav_item">English</a>
+          
+          <a href="https://vikrambahl.com/pt/" class="nav_child nav_item"></a>
+          
+        </div>
+      </div>
+<div class='follow'>
+  <a href="https://github.com/svram">
+    <svg class="icon">
+  <use xlink:href="#github"></use>
+</svg>
+  </a>
+  <a href="https://www.linkedin.com/in/vikram-bahl-0668bb1b/">
+    <svg class="icon">
+  <use xlink:href="#linkedin"></use>
+</svg>
+  </a>
+<div class="color_mode">
+  <input type="checkbox" class="color_choice" id="mode">
+</div>
+
+</div>
+
+    </div>
+  </nav>
+</header>
+
+    <main>
+  
+<div class="grid-inverse wrap content">
+  <article class="post_content">
+    <h1 class="post_title">Pass the AZ-900 Azure Fundamentals in your first attempt</h1>
+  <div class="post_meta">
+    <span><svg class="icon">
+  <use xlink:href="#calendar"></use>
+</svg></span>
+    <span class="post_date">
+      Apr 30, 2020</span>
+    <span class="post_time"> · 16 min read</span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=Pass%20the%20AZ-900%20Azure%20Fundamentals%20in%20your%20first%20attempt&url=https%3a%2f%2fvikrambahl.com%2faz-900-azure-fundamentals-guide%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+      <svg class="icon">
+  <use xlink:href="#twitter"></use>
+</svg>
+    </a>
+    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fvikrambahl.com%2faz-900-azure-fundamentals-guide%2f&t=Pass%20the%20AZ-900%20Azure%20Fundamentals%20in%20your%20first%20attempt" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+      <svg class="icon">
+  <use xlink:href="#facebook"></use>
+</svg>
+    </a>
+    <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow">
+      <svg class="icon">
+  <use xlink:href="#linkedin"></use>
+</svg>
+    </a>
+    <a href="https://vikrambahl.com/az-900-azure-fundamentals-guide/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <use xlink:href="#copy"></use>
+</svg>
+    </a>
+  </div>
+  </span>
+  </div>
+
+    
+    <h2 id="thoughts-on-az-900">Thoughts on AZ-900</h2>
+<p>The Azure Fundamentals AZ-900 certification is meant to be the first step in Microsoft Azure land for business and technical folks. I recently prepared and  <a href="https://www.youracclaim.com/badges/f08a72ab-e3d5-406f-806c-30b9d543b8b0">cleared the certification</a>  securing 884 on 1000 (passing marks are 700). This guide below goes over all you need for Azure AZ-900 preparation.</p>
+<p>Coming from a hands on cloud and dev background, my impression before I gave the exam was “this shit is going to be a breeze” or “AZ-900 is for sales and project managers, cloud architects should find it easy af”. After the exam? I stand corrected. While I breezed through the 29 questions in about 30-35mins (including a once over), I left the center pondering why these pricing and compliance focussed exams tend to trip up technical folks. In hindsight, I should’ve focussed a LOT more on the compliance and pricing features.</p>
+<p>The questions on cloud concepts were the easiest because they relied on logic and a bit of cloud experience. But these questions comprise just about 15-20% of the exam. The devil is in making sure your knowledge of azure services, what the services do, compliance, trust, security, privacy, pricing and support are rock solid. And this means memorising some Azure facts (which sucks TBH, certifications should test concepts rather than facts. Atleast 60% of the exam should be concepts as opposed to the 20% that it is now).</p>
+<p>I had about 10 days to prepare for this exam. I had about 5yrs cloud experience already so I reckoned that 10 days is enough time.</p>
+<h2 id="tips-to-prepare">Tips to prepare</h2>
+<p>I followed the following methods to prepare and it is more than enough to comfortably sail through this examination:</p>
+<ul>
+<li>The starting point should be the official free online study guide by Microsoft. It’s good and covers all the bases</li>
+<li>Aside from this cheat sheet I would recommend doing EITHER the <em>Whizlabs</em> question bank set or the one from Udemy. Gun to my head, I’d recommend Whizlabs since they have a reputation for keeping the questions up to date and relevant. There are about 6-7 tests with 55 questions each. So we are looking at 350-400 questions to choose from. The Udemy practise test was great but I found myself doubting a lot of the answers. You can choose to do it only for the questions but then again do either and not both.</li>
+</ul>
+<p><a target="_blank" href="https://shareasale.com/r.cfm?b=1815676&amp;u=2564998&amp;m=43514&amp;urllink=&amp;afftrack="><img src="https://static.shareasale.com/image/43514/Hurry-Limited-period-offer-on-Subscr_06.png" border="0" /></a></p>
+<p><a href="https://www.shareasale.com/m-pr.cfm?merchantID=43514&userID=2564998&productID=1217786039" target="_blank">Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95</a><br/>from: <b>Whizlabs.com</b></p>
+<ul>
+<li>The aCloudGuru/Linux Academy course is pretty decent (Thanks to my employer for getting me a subscription)</li>
+<li>Hands on playing around the Azure Portal</li>
+</ul>
+<h2 id="the-cheatsheet">The cheatsheet</h2>
+<p>Use this to revise concepts and facts a day or two before the exam. Follow and read up all links. Get a PDF version right here.</p>
+<ul>
+<li>A geography is a part of the world with at-least one azure region</li>
+<li>An Azure region contains more than one data center.</li>
+<li>A region can be comprised of multiple availability zones (AZ)</li>
+<li>An AZ contains more than 1 data center</li>
+<li>When it’s AZ think independent power, cooling, and networking</li>
+<li>Not all regions have AZ’s in Azure</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/availability-zones/az-overview">Regions, AZ’s, Geographies</a></li>
+<li>High Availability (HA) refers to that feature of Azure which enables distributed systems to recover very quickly from faults with none or minor degradation in user experience.
+<ul>
+<li>A highly available application or database is one which is spread across multiple hosts in independent racks in a data center, independent data centers in a regions/AZ or independent AZ’s in a region</li>
+</ul>
+</li>
+<li>Fault Tolerance refers to the ability of a systems to adhere to SLA’s for response time and availability even if system failure occurs. Basically no impact on users during system failure. This is more complex and expensive to attain compared with HA.</li>
+<li>Disaster Recovery is associated with the ability of a system to recover operations (applications and data) within a defined RTO (Recovery Time Objective) and RPO (Recovery Point Objective). RTO and RPO are usually decided based on the SLA and business objectives.
+<ul>
+<li>RTO: The maximum downtime the service or application can endure in time of a disaster (or my application can be down only for 2 hours before my users complain or I break the SLA with my customers)</li>
+<li>RPO: The tolerable amount of unbacked up data which can be lost in a disaster before it harms the business (or I can lose two hours of data if it is not backed up which means I need to schedule backups every two hours to meet the RPO)</li>
+</ul>
+</li>
+<li>Scalability is the ability of a system to handle variable increase in load or requests without affecting the response time or quality of service.</li>
+<li>Elasticity is the ability of a system to scale up or down with the load on the system. The system adds additional resources to handle an increase in load and when the load decreases, it removes the additional resources.</li>
+<li>Vertical scaling refers to increasing the spec or capacity of a resource so it can handle higher load
+<ul>
+<li>Choosing a higher powered instance</li>
+<li>Vertical scaling often requires making the system temporarily unavailable while it is being redeployed</li>
+</ul>
+</li>
+<li>Horizontal scaling is the addition of resources to a pool of resource in response to an increase in load or some metric which require additional compute to perform the job.</li>
+<li>Autoscaling mostly applies to compute resources. While it’s possible to horizontally scale a database or a message queue, this usually involves data partitioning, which is generally not automated. There are flavours of SQL and NoSQL databases which make autoscaling easier but that is because they’re managed services or PaaS services like Synapse, Amazon RDS, Bigquery or Azure SQL PaaS.</li>
+<li>What differentiates the cloud from the onpremises deployments is essentially the API. You can provision large amounts of compute and storage resources in a data center somewhere with just a simple API call. Azure provides us with a plethora of mediums to invoke these APIs.</li>
+<li>There are many options to work with resources in Azure. These are elaborated on below. For a small sized project, you will likely use a couple. The different options to manipulate resources in Azure are
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli">Azure CLI</a>
+<ul>
+<li>This is the command line interface for interating with Azure resources. Runs on windows, linux and mac environments.</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/powershell/azure/?view=azps-4.8.0">Azure Powershell</a>
+<ul>
+<li>Azure PowerShell is a set of cmdlets (automation scripts) for managing Azure resources directly from the PowerShell command line</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/features/cloud-shell/">Azure Cloud Shell</a>
+<ul>
+<li>Like the name mentions, this is a shell in the cloud. It’s a browser based, automatically authenticated powerful shell experience. It comes with both Bash and Powershell. This is very powerful and I believe no other cloud offers 2 shell flavours.</li>
+</ul>
+</li>
+<li><a href="https://azure.github.io/azure-sdk/">Azure SDK’s</a>
+<ul>
+<li>This is the Software Development Kit (SDK) libraries which contain support for multiple programming languages (.NET, Java, Javascript, Python, C++, iOS, Android). Essentially they contain similar functionality as the CLI or the API’s but invoked through application code.</li>
+<li>One use case could be your team is building a mobile only chat application and you need a way to setup the backend for common chat functionalities like create message, list contacts or join groups. You can  <a href="https://github.com/Azure/azure-sdk-for-ios/tree/1.0.0-beta.2/sdk/communication/AzureCommunicationChat">embed Azure SDK for chat</a>  directly in your Swift codebase so that the backend “just works”</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/rest/api/azure/">Azure APIs</a>
+<ul>
+<li>These are REST API’s</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/features/azure-portal/">Azure Portal</a>
+<ul>
+<li>Azure Portal is a web based dashboard for creating, configuring, deleting and managing Azure resources. It is essentially a powerful web application which gives you a UI for making things happen on Azure. The URL is  <a href="https://portal.azure.com/"><strong>https://portal.azure.com/</strong></a>. This is similar to the AWS Console (<a href="https://console.aws.amazon.com/"><strong>https://console.aws.amazon.com/</strong></a>) or the GCP Console (<a href="http://console.cloud.google.com/"><strong>http://console.cloud.google.com/</strong></a>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Powershell, CLI, SDK’s etc all use azure resource manager to take action on azure</li>
+<li>Azure building blocks
+<ul>
+<li>Regions
+<ul>
+<li>Not all regions have availability zones</li>
+<li>Data centers are close enough to each other that there is no latency difference</li>
+</ul>
+</li>
+<li>Paired regions
+<ul>
+<li>Each azure region is paired except brazil south. colocated geographically. Offers failover during outages. Offers data replication. Maintenance is done serially</li>
+</ul>
+</li>
+<li>AZ
+<ul>
+<li>Independent power, network and cooling</li>
+<li>Each region that supports AZ’s has minimum of 3 AZ’s</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Latency defined perimeter: not too far from each other</li>
+<li>Regional low latency network -&gt; fiber connection between regions not too far from each other</li>
+<li>How to choose region to deploy your application. Take the following 3 factors into consideration
+<ul>
+<li>Location -&gt; closer to users</li>
+<li>Features -&gt; do we have full azure feature set required for the application</li>
+<li>Price -&gt; price varies per region</li>
+</ul>
+</li>
+<li>To take advantage of multi-az, you need to specify you need multi-az for resource during provisioning.</li>
+<li>Resource groups
+<ul>
+<li>Everything in azure must be inside a resource group. Resource group is not a resource</li>
+<li>It is a container that holds related azure resources for a solution</li>
+<li>Each resource exists in 1 resource group only</li>
+<li>Resources can be moved, added, deleted from/to other resource groups</li>
+<li>Resource groups can span multiple regions</li>
+<li>Has access control facility for users</li>
+<li>Resources in a resource group can interact with resources in other resource groups</li>
+<li>Has a location or region. Resource group can be in Mumbai but have resources in Singapore or USA</li>
+<li>A resource group will contain resources related to a specific application. For example, a group may contain a website resource that hosts your public website, a SQL Database that stores relational data used by the site, and a Storage Account that stores non-relational assets.</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview">Azure Resource Manager (ARM)</a>
+<ul>
+<li>Everything cli, powershell, rest api, client SDK, web portal all go through the ARM API to CRUD (Create, Read, Update, Delete) resources on azure</li>
+<li>Allows for grouped resource handling, access control, resource tagging, billing of tagged resource, define dependencies between resources</li>
+</ul>
+</li>
+<li>Scale sets
+<ul>
+<li>Lets you manage a group of identical, load balanced vm’s</li>
+<li>You only pay for VM’s, storage, load balancers</li>
+<li>Upto 1000 VM’s in a single scale set</li>
+<li>Baseline VM is used as a template</li>
+<li>Similar to a managed instance group in GCP</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/services/app-service/">Azure App Services</a>
+<ul>
+<li>PaaS offering</li>
+<li>Web apps on win and linux</li>
+<li>Web apps for containers -&gt; host containers on azure</li>
+<li>Api apps -&gt; expose and connect data backend</li>
+<li>App service plan is the server</li>
+<li>App service is the service or website</li>
+<li>Similar to App Engine on GCP or Elastic Beanstalk on AWS</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/services/container-instances/">Azure Container Instances</a>
+<ul>
+<li>Primary Azure service for running containerized apps</li>
+<li>Similar to ECS on AWS or Cloud Run on GCP</li>
+</ul>
+</li>
+<li>Virtual Network (VNET)
+<ul>
+<li>VNET’s are regional</li>
+<li>VNET belongs to 1 subscription, 1 subscription can have many VNET’s</li>
+<li>Similar to VPC’s in AWS and GCP</li>
+</ul>
+</li>
+<li>Load Balancer
+<ul>
+<li>Frontend -&gt; access point for the load balancer, receives the traffic</li>
+<li>Backend -&gt; pool of VM’s over which traffic is distributed by load balancer</li>
+<li>Configuration for rules and health probes</li>
+<li>Health probe to make sure backend pool has healthy vm’s</li>
+<li>Supports port forward to a specific port on a specific machine. on the VM, a process or app will be listening for messages on a specific port or ports</li>
+</ul>
+</li>
+<li>VNET gateway
+<ul>
+<li>A subnet with 2 or more servers</li>
+<li>A virtual network can have two virtual network gateways; one VPN gateway and one ExpressRoute gateway</li>
+<li>The VM’s in the VNET gateway cannot be directly accessed</li>
+<li>Hybrid cloud starts with setting up a VPN or Express route connection from onpremises to the VNET gateway</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/application-gateway/overview">Application Gateway</a>
+<ul>
+<li>Make routing requests based on parameters other than IP and port</li>
+<li>Other parameters are URL, headers, data format</li>
+<li>Elastic scaling, e2e encryption, multi-az, supports upto 100 websites per application gateway</li>
+<li>Another type of load balancer for HTTP requests</li>
+<li>Similar to ALB on AWS or Cloud Load Balancing on GCP</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction">Storage. Essentially four kinds of storage on Azure</a>
+<ul>
+<li>Blob: Similar to S3 on AWS or GCS on GCP</li>
+<li>Disk: Similar to EBS on AWS or Persistent disk on GCP</li>
+<li>File: similar to EFS on AWS or Filestore on GCP</li>
+<li>Archive: Similar to Glacier on AWS or Cold Storage on GCP</li>
+</ul>
+</li>
+<li>Storage Account – unique Azure namespace for storage
+<ul>
+<li>Base for all azure storage types</li>
+<li>Storage account has a container with blob storage inside</li>
+</ul>
+</li>
+<li>Blob – binary large object or BLOB</li>
+<li>Storage account can have multiple blob containers to store data</li>
+<li>Blob container – mix bag of items (images, video, vmdk etc) each with a web address</li>
+<li>Blob types
+<ul>
+<li>Block blobs – text and binary data upto 4.7tb</li>
+<li>Append blobs – appendable files like log file</li>
+<li>Page blobs – files upto 8 TB like hard disks</li>
+</ul>
+</li>
+<li>Pricing tiers
+<ul>
+<li>Hot</li>
+<li>Cool</li>
+<li>Archive</li>
+</ul>
+</li>
+<li>Disk
+<ul>
+<li>Managed – azure manages backup, uptime, performance</li>
+<li>Attached to VM’s</li>
+<li>Easily upgrade type and size</li>
+</ul>
+</li>
+<li>Disk types
+<ul>
+<li>HDD – low cost, best for backup</li>
+<li>Standard SSD – standard for production workloads</li>
+<li>Premium SSD – critical workloads like db installs</li>
+<li>Ultra disk – unprecedented sub ms latency – upto 64TB like gaming, rendering</li>
+</ul>
+</li>
+<li>File storage
+<ul>
+<li>Large scale managed storage for files</li>
+<li>Connects with onprem file storage</li>
+</ul>
+</li>
+<li>Archive
+<ul>
+<li>Lowest price, highest access time, low performance, encrypted</li>
+<li>Cheap type of blob storage</li>
+</ul>
+</li>
+<li>Azure CDN
+<ul>
+<li>Content Delivery Network</li>
+<li>Distributed network of servers that can deliver content close to users</li>
+<li>CDN fetches data from an origin server depending upon the TTL (Time to Live)
+<ul>
+<li>Simple example: I have a website where people can browse cat photos. I upload new photos once a day. People visit the site by going to vikramsamazingcatphotos.com. I store all photos in an Object storage account on Azure in the US region. However, my users are from all over the world. So I setup Azure CDN to fetch images from the origin server, which is the storage account in US in this case. Azure CDN caches the images at an edge location closer to the users location. So a user in India requesting for a cat image will not be routed to the storage account in US, they will receive the image from an edge location (nothing but a bunch of servers) in India.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/product-categories/databases/">Databases</a>
+<ul>
+<li>Cosmos DB</li>
+<li>Azure SQL</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>DMS</li>
+</ul>
+</li>
+<li>Cosmos DB
+<ul>
+<li>Global, easy to add region</li>
+<li>Sync, cross-region replication is handled</li>
+<li>Latency 0-9ms anywhere in the world</li>
+<li>Autoscaling</li>
+<li>Various sdks and languages for developers</li>
+<li>Supports database flavors like Sql, Mongo, Cassandra</li>
+<li>Can be very expensive</li>
+</ul>
+</li>
+<li>Azure SQL
+<ul>
+<li>DB as a service (PaaS)</li>
+<li>Use case: migrate onprem SQL server to azure sql</li>
+<li>Built in machine learning</li>
+<li>Upto 100TB</li>
+<li>Secure, scale</li>
+</ul>
+</li>
+<li>Azure DB for MySQL
+<ul>
+<li>Host foss MySQL</li>
+<li>It’s a PaaS</li>
+</ul>
+</li>
+<li>Azure DB for Postgres
+<ul>
+<li>Hosted foss</li>
+<li>Based on Ingres, came after it (hence POSTgres)</li>
+<li>Default os for macos</li>
+<li>Lot of features – horizontal scale, jsonb, fast indexing, geospatial (postgis)</li>
+</ul>
+</li>
+<li>Database Migration Service (DMS)
+<ul>
+<li>Onprem database migration to azure</li>
+</ul>
+</li>
+<li>Authentication and authorization in Azure
+<ul>
+<li>Identity services</li>
+<li>Azure Active Directory (AD)</li>
+<li>MFA</li>
+</ul>
+</li>
+<li>Identity
+<ul>
+<li>Authentication: identity proving/confirmation (you are who you say you are)</li>
+<li>Authorization: once authenticated, do i have authorization to access a resource
+<ul>
+<li>Is this identity allowed access to a particular resource</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis">Azure Active Directory (AAD)</a>
+<ul>
+<li>This is different from Active Directory onprem</li>
+<li>AD onprem is used by companies for managing users, printers and more</li>
+<li>Azure AD is a separate product, you cant transfer skills from onprem AD</li>
+<li>First service in a new azure account is an AAD service</li>
+<li>Tenant is a dedicated instance of AAD that an org receives when it signs up for azure. One user belongs to 1 tenant but can be guest in other tenants</li>
+<li>Tenant represents an organization</li>
+<li>Subscriptions -&gt; separate billing entities, multiple subscriptions in a single tenant</li>
+<li>AAD can manage users onprem and in azure</li>
+</ul>
+</li>
+<li>Azure Solutions
+<ul>
+<li>IoT Hub (ingest for billions of devices), managed PaaS, device authentication</li>
+<li>IoT Central – SaaS, no code, connect IoT devices with dashboard, connections, rules</li>
+<li>Big Data
+<ul>
+<li>Azure Data Lake Analytics – parallel processing, SQL, serverless</li>
+<li>Azure HDInsights – foss (similar to dl analytics), hadoop, spark, kafka</li>
+<li>Azure Databricks – based on spark (distributed cluster computing), integrates with azure storage</li>
+<li>Synapse analytics – data warehouse (reporting and data analytics), limitless in storage, synapse sql</li>
+<li>Speed of processing, cheaper for large data, better decisions, high profits as you use data to build better products</li>
+</ul>
+</li>
+<li>AIML
+<ul>
+<li>Modelling</li>
+<li>Knowledge mining – uses azure search</li>
+<li>Cognitive services – apis
+<ul>
+<li>Vision, decision, speech</li>
+</ul>
+</li>
+<li>Aazure ML studio
+<ul>
+<li>Premade modules</li>
+<li>UI based</li>
+</ul>
+</li>
+<li>Azure ML service
+<ul>
+<li>e2e service</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Serverless
+<ul>
+<li>Azure functions</li>
+<li>Logic apps – connects apps, data, systems across azure and outside. like workflow orchestration without code</li>
+<li>Event grid – pubsub model, routing service for connected apps</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/?product=featured">Azure DevOps</a>
+<ul>
+<li>Azure Boards – Azure Jira</li>
+<li>Azure Pipelines – Cicd</li>
+<li>Azure Repos – Git Repo</li>
+<li>Azure Test Plans – Test Planning</li>
+<li>Azure Artifacts – App Binaries And Libs</li>
+<li>Devtest Labs – Create Test Environments, No Unexpected Costs</li>
+</ul>
+</li>
+<li>Security
+<ul>
+<li>Securing Network Connectivity
+<ul>
+<li>Azure Firewall – Rules To Define What Traffic Has Access</li>
+<li>Ddos Protection – Detection, Deflection</li>
+<li>Network Sec Groups – Attached To Subnet, Network, Interface</li>
+<li>App Security Group – Protects Applications</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction">Azure Security Center</a>
+<ul>
+<li>Manage All Sec Features Of Azure</li>
+<li>In Azure Portal</li>
+<li>Agents In Vm’s Onprem Or Azure Sent Data To Azure Sec Center</li>
+<li>Policy, Compliance, Anomalies, Secure Score, Integrated With Aws/Gcp, Single Point For Siem, Alerts</li>
+<li>Set Policies In Sec Center, Protect Resources Through Active Monitoring, Respond To Incidents</li>
+</ul>
+</li>
+<li>Key Vault
+<ul>
+<li>Secure Place To Store Passwords And Secrets. Can Delegate Access With Others Without Sharing The Actual Password</li>
+<li>Secure Hardware</li>
+<li>Global Scaling</li>
+</ul>
+</li>
+<li>Azure Information Protection
+<ul>
+<li>Secure Data And Documents, Email, Office 365</li>
+</ul>
+</li>
+<li>Advanced Threat Protection
+<ul>
+<li>Monitors Users</li>
+<li>Call Out Anomalous Behavior</li>
+</ul>
+</li>
+<li>Privacy, Compliance, Trust
+<ul>
+<li>Governance</li>
+<li>Azure Monitor</li>
+<li>Azure Service Health</li>
+<li>Compliance</li>
+<li>Privacy</li>
+<li>Trust</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Governance
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/governance/policy/overview">Azure Policy</a> – Set Of Rules Which Resources Should Be Compliant To. Resources And Policies Are There. Azure Policy Is The Enforcer.</li>
+<li>RBAC
+<ul>
+<li>Least Privilege</li>
+<li>Principal – Users Or Group</li>
+<li>Roles – Collection Of Permissions</li>
+<li>Scope – Specific Resources Access</li>
+</ul>
+</li>
+<li>Resources Can Be Locked (Cant Be Deleted Or Read-Only)
+<ul>
+<li>Can Be Applied To Subscription, Resource Group Or Resource</li>
+</ul>
+</li>
+<li>Azure Blueprints – Templates For Resource Creation With Policy, Compliance, Regulation Adherence, Rbac</li>
+<li>Telemetry – Info About How Remote Resources Re Performing</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/azure-monitor/overview">Azure Monitor</a>
+<ul>
+<li>Feed Telemetry Here</li>
+<li>Supports Ml</li>
+<li>Query Language</li>
+<li>Identify Issues Beforehand</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-in/features/service-health/">Azure Service Health</a>
+<ul>
+<li>Notifications For Azure Platform Health, Maintenance Window Etc</li>
+<li>Service Health Dashboard</li>
+</ul>
+</li>
+<li>Compliance – With Legislation
+<ul>
+<li>GDPR</li>
+<li>NIST</li>
+<li>ISO 9001:2008</li>
+<li>Azure Compliance Manager
+<ul>
+<li>Recommendations For Achieving Compliance, Track Compliance For Team, Score</li>
+</ul>
+</li>
+<li>Azure Gov Cloud
+<ul>
+<li>Dedicated Regions For Us Govt</li>
+</ul>
+</li>
+<li>China Regions</li>
+<li>Azure Germany</li>
+</ul>
+</li>
+<li>Privacy – Baked Into Azure Products
+<ul>
+<li>Azure Privacy Statement</li>
+</ul>
+</li>
+<li>Trust
+<ul>
+<li>Azure Trust Center. Efforts Taken By Msft In Ensuring Trust</li>
+<li>Service Trust Portal – Read Audit Reports</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/pricing/">Pricing</a>
+<ul>
+<li>Subscriptions
+<ul>
+<li>No Azure Service Lives Outside A Subscription</li>
+<li>Billing Admin Has Access To Billing Responsibilities</li>
+<li>Billing Cycles Net 30/60</li>
+<li>Subscriptions Are Good For Separating Billing Concerns</li>
+<li>Azure Offer Types</li>
+<li>Management Groups For Subscriptions Can Have Multiple Subs Under One Mgmt Group. Easier For Policies, Tracking In Bulk</li>
+<li>Mgmt Group Per Country Or Department</li>
+<li>Nest Mgmt Groups To Indicate Hierarchy</li>
+</ul>
+</li>
+<li>Cost Management
+<ul>
+<li>Free Services Upto 12 Months</li>
+<li>Some Are Always Free Upto Certain Usage Limit</li>
+<li>Nice Dashboard To See Graphs Of Cost</li>
+</ul>
+</li>
+<li>Cost Affected By
+<ul>
+<li>Resource Type</li>
+<li>Resource Size</li>
+<li>Bandwidth</li>
+</ul>
+</li>
+<li>Data Transfer Between Regions In Same Billing Zone Is Free. Egress Between Billing Zones Is Charged</li>
+<li>Azure Tco Calculator Over 5 Yrs</li>
+<li>Azure Pricing Calculator</li>
+<li>Best Practises
+<ul>
+<li>Spending Limits</li>
+<li>Quotas</li>
+<li>Use Tags</li>
+<li>Pay As You Go, Reserved Instances For 1 Or 3 Yrs.</li>
+<li>Azure Advisor Has Cost Optimization Section</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://azure.microsoft.com/en-us/support/options/">Support</a>
+<ul>
+<li>Support Plans
+<ul>
+<li>Basic</li>
+<li>Developer</li>
+<li>Standard</li>
+<li>Professional Direct</li>
+<li>Premier</li>
+</ul>
+</li>
+<li>All Support Plans Have Access To
+<ul>
+<li>247 Access To Billing And Subscription Support</li>
+<li>Online Documentation</li>
+<li>Forums</li>
+<li>Azure Advisor</li>
+<li>Service Health</li>
+</ul>
+</li>
+<li>Dev Support -&gt; Business Hrs Email, Rest Get 247 Email/Phone</li>
+<li>Severity A Support For Standard To Premier Is &lt; 1hr. Sev B &lt; 2hr, Sev C &lt; 4 Hr</li>
+<li>Tickets
+<ul>
+<li>To Contact Azure Support</li>
+<li>Ticket_id Is Unique</li>
+</ul>
+</li>
+<li>Channels</li>
+<li>Knowledge Center</li>
+<li>SLA
+<ul>
+<li>1 Sla For Product. No Sla For Free Products And Services</li>
+</ul>
+</li>
+<li>Service Lifecycle</li>
+<li>Azure <a href="https://docs.microsoft.com/en-us/azure/?product=featured">Documentation</a> And Forums</li>
+<li><a href="Https://Azure.Microsoft.Com/En-Us/Resources/Knowledge-Center/">Azure Knowledge Center</a></li>
+<li>Azure Service Lifecycle
+<ul>
+<li>Private Preview (Invite Only By Product Team)</li>
+<li>Public Previews (Feature Available To All Azure Customers In Portal)</li>
+<li>GA – Has SLA, Support Team</li>
+</ul>
+</li>
+<li>Preview Portal</li>
+</ul>
+</li>
+</ul>
+<h2 id="useful-links">Useful Links</h2>
+<ul>
+<li>
+<p><a href="https://www.shareasale.com/m-pr.cfm?merchantID=43514&userID=2564998&productID=1217786039" target="_blank">Microsoft Azure Fundamentals(AZ-900) Practice Test - $29.95</a><br/>from: <b>Whizlabs.com</b></p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900">AZ900 prep official</a></p>
+</li>
+</ul>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vikrambahl-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+        <div class="author_header">
+          <img src="https://vikrambahl.com/images/vikram-bahl.jpg" alt="Vikram Bahl photo">
+          <h1>Vikram Bahl</h1>
+        </div>
+      <div class="author_bio">
+        Cloud computing enthusiast
+      </div>
+      <a href='https://vikrambahl.com/about-vikram-bahl' class="button mt-1" role="button" title='Read More'>Read More</a>
+    <h2 class="mt-4">Recent Posts</h2>
+    <ul class="flex-column">
+      <li>
+        <a href="https://vikrambahl.com/clean-data-is-the-foundation-of-effective-machine-learning/" class="nav-link" title="Clean Data Is the Foundation of Effective Machine Learning">Clean Data Is the Foundation of Effective Machine Learning</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/switch-github-account-on-macos-terminal/" class="nav-link" title="Switch GitHub account on macOS terminal">Switch GitHub account on macOS terminal</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/best-way-experience-himalayas/" class="nav-link" title="The best way to experience the Himalayas">The best way to experience the Himalayas</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/accessing-files-stored-ios-simulator/" class="nav-link" title="Accessing files stored by the iOS Simulator">Accessing files stored by the iOS Simulator</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/online-guitar-app/" class="nav-link" title="Online Guitar App">Online Guitar App</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/convert-storyboard-iphone-ipad-simple/" class="nav-link" title="Converting Storyboard from iPhone to iPad in 4 simple steps">Converting Storyboard from iPhone to iPad in 4 simple steps</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/animated-gifs-ios-xcode-storyboards/" class="nav-link" title="Adding Animated Gif’s in iOS Applications using Xcode Storyboards">Adding Animated Gif’s in iOS Applications using Xcode Storyboards</a>
+      </li>
+      <li>
+        <a href="https://vikrambahl.com/google-maps-ios-xcode-storyboards/" class="nav-link" title="Google Maps SDK for iOS in Xcode Storyboard">Google Maps SDK for iOS in Xcode Storyboard</a>
+      </li>
+    </ul>
+    <div>
+      <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
+      <nav class="tags_nav">
+        <a href='https://vikrambahl.com/categories/ios-development/' class="post_tag button button_translucent" title="ios-development">
+          IOS-DEVELOPMENT
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/software/' class="post_tag button button_translucent" title="software">
+          SOFTWARE
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/travel/' class="post_tag button button_translucent" title="travel">
+          TRAVEL
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/xcode/' class="post_tag button button_translucent" title="xcode">
+          XCODE
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/ai/' class="post_tag button button_translucent" title="ai">
+          AI
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/apple/' class="post_tag button button_translucent" title="apple">
+          APPLE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/audio-processing/' class="post_tag button button_translucent" title="audio-processing">
+          AUDIO-PROCESSING
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/az-900/' class="post_tag button button_translucent" title="az-900">
+          AZ-900
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/azure/' class="post_tag button button_translucent" title="azure">
+          AZURE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/certifications/' class="post_tag button button_translucent" title="certifications">
+          CERTIFICATIONS
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/cloud/' class="post_tag button button_translucent" title="cloud">
+          CLOUD
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/categories/cloud-101/' class="post_tag button button_translucent" title="cloud-101">
+          CLOUD-101
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+        <br>
+        <div class="post_tags_toggle button">All Categories</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='https://vikrambahl.com/categories/ai/' class=" post_tag button button_translucent" data-position=1 title="ai">AI<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/apple/' class=" post_tag button button_translucent" data-position=1 title="apple">APPLE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/audio-processing/' class=" post_tag button button_translucent" data-position=1 title="audio-processing">AUDIO-PROCESSING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/az-900/' class=" post_tag button button_translucent" data-position=1 title="az-900">AZ-900<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/azure/' class=" post_tag button button_translucent" data-position=1 title="azure">AZURE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=1 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/certifications/' class=" post_tag button button_translucent" data-position=1 title="certifications">CERTIFICATIONS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/cloud/' class=" post_tag button button_translucent" data-position=1 title="cloud">CLOUD<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/cloud-101/' class=" post_tag button button_translucent" data-position=1 title="cloud-101">CLOUD-101<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/computer-graphics/' class=" post_tag button button_translucent" data-position=1 title="computer-graphics">COMPUTER-GRAPHICS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/create-a-wordpress-website/' class=" post_tag button button_translucent" data-position=1 title="create-a-wordpress-website">CREATE-A-WORDPRESS-WEBSITE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/data-cleaning/' class=" post_tag button button_translucent" data-position=1 title="data-cleaning">DATA-CLEANING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/data-sanitization/' class=" post_tag button button_translucent" data-position=1 title="data-sanitization">DATA-SANITIZATION<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/data-science/' class=" post_tag button button_translucent" data-position=1 title="data-science">DATA-SCIENCE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/flash/' class=" post_tag button button_translucent" data-position=1 title="flash">FLASH<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/github/' class=" post_tag button button_translucent" data-position=1 title="github">GITHUB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/google-maps-sdk/' class=" post_tag button button_translucent" data-position=1 title="google-maps-sdk">GOOGLE-MAPS-SDK<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/himalayas/' class=" post_tag button button_translucent" data-position=1 title="himalayas">HIMALAYAS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/hostgator/' class=" post_tag button button_translucent" data-position=1 title="hostgator">HOSTGATOR<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/hosting/' class=" post_tag button button_translucent" data-position=1 title="hosting">HOSTING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/html5/' class=" post_tag button button_translucent" data-position=1 title="html5">HTML5<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/indiahikes/' class=" post_tag button button_translucent" data-position=1 title="indiahikes">INDIAHIKES<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/indonesia/' class=" post_tag button button_translucent" data-position=1 title="indonesia">INDONESIA<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/ios-development/' class=" post_tag button button_translucent" data-position=4 title="ios-development">IOS-DEVELOPMENT<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/machine-learning/' class=" post_tag button button_translucent" data-position=1 title="machine-learning">MACHINE-LEARNING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/ml/' class=" post_tag button button_translucent" data-position=1 title="ml">ML<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/mount-bromo/' class=" post_tag button button_translucent" data-position=1 title="mount-bromo">MOUNT-BROMO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/mount-ijen/' class=" post_tag button button_translucent" data-position=1 title="mount-ijen">MOUNT-IJEN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/opengl/' class=" post_tag button button_translucent" data-position=1 title="opengl">OPENGL<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/osx/' class=" post_tag button button_translucent" data-position=1 title="osx">OSX<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/publications/' class=" post_tag button button_translucent" data-position=1 title="publications">PUBLICATIONS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/pycon/' class=" post_tag button button_translucent" data-position=1 title="pycon">PYCON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/python/' class=" post_tag button button_translucent" data-position=3 title="python">PYTHON<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/rupin-pass/' class=" post_tag button button_translucent" data-position=1 title="rupin-pass">RUPIN-PASS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/software/' class=" post_tag button button_translucent" data-position=2 title="software">SOFTWARE<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/talks/' class=" post_tag button button_translucent" data-position=1 title="talks">TALKS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/travel/' class=" post_tag button button_translucent" data-position=2 title="travel">TRAVEL<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/trekking/' class=" post_tag button button_translucent" data-position=1 title="trekking">TREKKING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/web-development/' class=" post_tag button button_translucent" data-position=1 title="web-development">WEB-DEVELOPMENT<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/webgl/' class=" post_tag button button_translucent" data-position=1 title="webgl">WEBGL<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/wordpress/' class=" post_tag button button_translucent" data-position=1 title="wordpress">WORDPRESS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/categories/xcode/' class=" post_tag button button_translucent" data-position=2 title="xcode">XCODE<span class="button_tally">2</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
+      <nav class="tags_nav">
+        <a href='https://vikrambahl.com/tags/app-dev/' class="post_tag button button_translucent" title="app-dev">
+          APP-DEV
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/ios/' class="post_tag button button_translucent" title="ios">
+          IOS
+          <span class="button_tally">4</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/python/' class="post_tag button button_translucent" title="python">
+          PYTHON
+          <span class="button_tally">3</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/computer-graphics/' class="post_tag button button_translucent" title="computer-graphics">
+          COMPUTER-GRAPHICS
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/actionscript/' class="post_tag button button_translucent" title="actionscript">
+          ACTIONSCRIPT
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/adobe-flash/' class="post_tag button button_translucent" title="adobe-flash">
+          ADOBE-FLASH
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/ai/' class="post_tag button button_translucent" title="ai">
+          AI
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/audio/' class="post_tag button button_translucent" title="audio">
+          AUDIO
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/c&#43;&#43;/' class="post_tag button button_translucent" title="c&#43;&#43;">
+          C&#43;&#43;
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/data/' class="post_tag button button_translucent" title="data">
+          DATA
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/data-cleaning/' class="post_tag button button_translucent" title="data-cleaning">
+          DATA-CLEANING
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/data-science/' class="post_tag button button_translucent" title="data-science">
+          DATA-SCIENCE
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/data-shredding/' class="post_tag button button_translucent" title="data-shredding">
+          DATA-SHREDDING
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://vikrambahl.com/tags/gifs/' class="post_tag button button_translucent" title="gifs">
+          GIFS
+          <span class="button_tally">1</span>
+        </a>
+        
+        
+        <br>
+        <div class="post_tags_toggle button">All Tags</div>
+        <div class="post_tags">
+          <div class="tags_list">
+            
+            <a href='https://vikrambahl.com/tags/actionscript/' class=" post_tag button button_translucent" data-position=1 title="actionscript">ACTIONSCRIPT<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/adobe-flash/' class=" post_tag button button_translucent" data-position=1 title="adobe-flash">ADOBE-FLASH<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/ai/' class=" post_tag button button_translucent" data-position=1 title="ai">AI<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/app-dev/' class=" post_tag button button_translucent" data-position=4 title="app-dev">APP-DEV<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/audio/' class=" post_tag button button_translucent" data-position=1 title="audio">AUDIO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/c&#43;&#43;/' class=" post_tag button button_translucent" data-position=1 title="c&#43;&#43;">C&#43;&#43;<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/computer-graphics/' class=" post_tag button button_translucent" data-position=2 title="computer-graphics">COMPUTER-GRAPHICS<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/data/' class=" post_tag button button_translucent" data-position=1 title="data">DATA<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/data-cleaning/' class=" post_tag button button_translucent" data-position=1 title="data-cleaning">DATA-CLEANING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/data-science/' class=" post_tag button button_translucent" data-position=1 title="data-science">DATA-SCIENCE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/data-shredding/' class=" post_tag button button_translucent" data-position=1 title="data-shredding">DATA-SHREDDING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/gifs/' class=" post_tag button button_translucent" data-position=1 title="gifs">GIFS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/github/' class=" post_tag button button_translucent" data-position=1 title="github">GITHUB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/google-maps/' class=" post_tag button button_translucent" data-position=1 title="google-maps">GOOGLE-MAPS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/guitar/' class=" post_tag button button_translucent" data-position=1 title="guitar">GUITAR<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/himalayas/' class=" post_tag button button_translucent" data-position=1 title="himalayas">HIMALAYAS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/hostgator/' class=" post_tag button button_translucent" data-position=1 title="hostgator">HOSTGATOR<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/html5/' class=" post_tag button button_translucent" data-position=1 title="html5">HTML5<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/india/' class=" post_tag button button_translucent" data-position=1 title="india">INDIA<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/indiahikes/' class=" post_tag button button_translucent" data-position=1 title="indiahikes">INDIAHIKES<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/indonesia/' class=" post_tag button button_translucent" data-position=1 title="indonesia">INDONESIA<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/ios/' class=" post_tag button button_translucent" data-position=4 title="ios">IOS<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/java-island/' class=" post_tag button button_translucent" data-position=1 title="java-island">JAVA-ISLAND<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/lighting/' class=" post_tag button button_translucent" data-position=1 title="lighting">LIGHTING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/machine-learning/' class=" post_tag button button_translucent" data-position=1 title="machine-learning">MACHINE-LEARNING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/macos/' class=" post_tag button button_translucent" data-position=1 title="macos">MACOS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/ml/' class=" post_tag button button_translucent" data-position=1 title="ml">ML<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/mount-bromo/' class=" post_tag button button_translucent" data-position=1 title="mount-bromo">MOUNT-BROMO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/mount-ijen/' class=" post_tag button button_translucent" data-position=1 title="mount-ijen">MOUNT-IJEN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/mount-pananjakan/' class=" post_tag button button_translucent" data-position=1 title="mount-pananjakan">MOUNT-PANANJAKAN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/online-guitar/' class=" post_tag button button_translucent" data-position=1 title="online-guitar">ONLINE-GUITAR<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/opengl/' class=" post_tag button button_translucent" data-position=1 title="opengl">OPENGL<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/plugins/' class=" post_tag button button_translucent" data-position=1 title="plugins">PLUGINS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/publications/' class=" post_tag button button_translucent" data-position=1 title="publications">PUBLICATIONS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/pycon/' class=" post_tag button button_translucent" data-position=1 title="pycon">PYCON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/pyo/' class=" post_tag button button_translucent" data-position=1 title="pyo">PYO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/python/' class=" post_tag button button_translucent" data-position=3 title="python">PYTHON<span class="button_tally">3</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/rupin-pass/' class=" post_tag button button_translucent" data-position=1 title="rupin-pass">RUPIN-PASS<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/sea-of-sand/' class=" post_tag button button_translucent" data-position=1 title="sea-of-sand">SEA-OF-SAND<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/signal-processing/' class=" post_tag button button_translucent" data-position=1 title="signal-processing">SIGNAL-PROCESSING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/sunrise-view/' class=" post_tag button button_translucent" data-position=1 title="sunrise-view">SUNRISE-VIEW<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/texturing/' class=" post_tag button button_translucent" data-position=1 title="texturing">TEXTURING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/travel/' class=" post_tag button button_translucent" data-position=1 title="travel">TRAVEL<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/trekking/' class=" post_tag button button_translucent" data-position=1 title="trekking">TREKKING<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/volcanoes/' class=" post_tag button button_translucent" data-position=1 title="volcanoes">VOLCANOES<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/web-design/' class=" post_tag button button_translucent" data-position=1 title="web-design">WEB-DESIGN<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/web-development/' class=" post_tag button button_translucent" data-position=1 title="web-development">WEB-DEVELOPMENT<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/webgl/' class=" post_tag button button_translucent" data-position=1 title="webgl">WEBGL<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://vikrambahl.com/tags/wordpress-website/' class=" post_tag button button_translucent" data-position=1 title="wordpress-website">WORDPRESS-WEBSITE<span class="button_tally">1</span>
+            </a>
+            
+            <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
+            </div>
+            <span class="tags_hide"><svg class="icon">
+            <use xlink:href="#closeme"></use>
+          </svg></span>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+</aside>
+
+  
+</div>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 212" id="gitlab">
+    <path d="M12.3 74.7h54L43.3 3c-1-3.6-6.4-3.6-7.6 0L12.3 74.8z" />
+    <path d="M12.3 74.7L.5 111c-1 3.2 0 6.8 3 8.8l101.6 74-92.5-119z"/>
+    <path d="M105 193.7l-38.6-119h-54l92.7 119z"/>
+    <path d="M105 193.7l38.7-119H66.4l38.7 119z"/>
+    <path d="M105 193.7l38.7-119H198l-93 119z"/>
+    <path d="M198 74.7l11.6 36.2c1 3 0 6.6-3 8.6l-101.5 74 93-119z"/>
+    <path d="M198 74.7h-54.3L167 3c1.2-3.6 6.4-3.6 7.6 0L198 74.8z"/> 
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M23 2.75A2.75 2.75 0 0 0 20.25 0H8.75A2.75 2.75 0 0 0 6 2.75v13.5A2.75 2.75 0 0 0 8.75 19h11.5A2.75 2.75 0 0 0 23 16.25zM18.25 14.5h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5zm0-3h-7.5a.75.75 0 0 1 0-1.5h7.5a.75.75 0 0 1 0 1.5z"></path>
+    <path d="M8.75 20.5a4.255 4.255 0 0 1-4.25-4.25V2.75c0-.086.02-.166.025-.25H3.75A2.752 2.752 0 0 0 1 5.25v16A2.752 2.752 0 0 0 3.75 24h12a2.752 2.752 0 0 0 2.75-2.75v-.75z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="open-menu">
+    <path d="M492 236H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0-160H20C8.954 76 0 84.954 0 96s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20zm0 320H20c-11.046 0-20 8.954-20 20s8.954 20 20 20h472c11.046 0 20-8.954 20-20s-8.954-20-20-20z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id=youtube>
+    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="stackoverflow">
+    <path d="M21 27v-8h3v11H0V19h3v8h18z"></path><path d="M17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zm3.7 14.7L10.6 6.4l1.7-2 10.2 8.5-1.7 2zM7.2 12.3l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm-1.8 6.8l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zM19 25H5v-3h14v3z"></path>
+  </symbol>
+</svg>
+
+
+<footer class="footer">
+  <div class="footer_inner wrap pale">
+    <img src='https://vikrambahl.com/images/dollar.png' class="icon icon_2 transparent" alt="Vikram Bahl">
+    <p>Copyright&nbsp;<span class="year"></span>&nbsp;VIKRAM BAHL. All Rights Reserved</p><a class="to_top" href="#documentTop">
+  <svg class="icon">
+  <use xlink:href="#arrow"></use>
+</svg>
+</a>
+
+  </div>
+</footer>
+
+    <script type="text/javascript" src="https://vikrambahl.com/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" integrity="sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

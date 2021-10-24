@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gifs on Vikram Bahl</title>
+    <link>https://vikrambahl.com/tags/gifs/</link>
+    <description>Recent content in gifs on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 03 Jul 2014 02:41:05 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/tags/gifs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding Animated Gif’s in iOS Applications using Xcode Storyboards</title>
+      <link>https://vikrambahl.com/animated-gifs-ios-xcode-storyboards/</link>
+      <pubDate>Thu, 03 Jul 2014 02:41:05 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/animated-gifs-ios-xcode-storyboards/</guid>
+      <description>
+        
+          &lt;p style=&#34;text-align: left;&#34;&gt;
+  There is no out of the box support provided by Apple to add animated GIF&amp;#8217;s to your iOS applications. There are many convoluted solutions available on the interwebs. After trying a few, I have come to rely on the super-easy to integrate solution by Flipboard Inc. (key development by Flipboard engineer &lt;a href=&#34;http://www.raphaelschaad.com/&#34;&gt;Raphael Schaad&lt;/a&gt;, follow him &lt;a href=&#34;https://twitter.com/raphaelschaad&#34;&gt;on twitter&lt;/a&gt;)Their library makes it a piece of cake to add animated GIF&amp;#8217;s to your iOS applications using storyboards in Xcode. Following this, your app will support animated GIF&amp;#8217;s. This post will walk you step by step through the process of doing so.
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  Download code from Github: &lt;a href=&#34;https://github.com/svram/AnimatedGIF-Xcode-Storyboards-iOS&#34;&gt;https://github.com/svram/AnimatedGIF-Xcode-Storyboards-iOS&lt;/a&gt;
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  1) This is what your app will look like if you follow all the steps (it&amp;#8217;ll be smoother in the simulation, had to convert a .mov file to gif):
+&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/gifMovie3.gif&#34;&gt;
+&lt;ul style=&#34;text-align: left;&#34;&gt;
+  &lt;li&gt;
+    Open Xcode, create a new project  and choose the &amp;#8220;Single View Application&amp;#8221; template.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Enter Product, Organisation &amp; Company names. Enter a class prefix and choose iPhone from the devices drop down menu.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Save the project to disk
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  2)  Download Flipboards FLAnimatedImage library from github:
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  &lt;a href=&#34;https://github.com/Flipboard/FLAnimatedImage&#34;&gt;https://github.com/Flipboard/FLAnimatedImage&lt;/a&gt;
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  (Just download the ZIP file to your disk)
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  3) Open Xcode and right-click the project in the project navigator and choose &amp;#8216;New Group&amp;#8217;. A new folder gets added to your project files. Name this folder &amp;#8216;Library&amp;#8217;.
+&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/newgroup.png&#34; alt= &#34;Create new group in Xcode named &amp;#8216;Library&amp;#8217;&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/newgroup2.png&#34; alt= &#34;Create new group in Xcode named &amp;#8216;Library&amp;#8217;&#34;&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  4) Now open the folder where you saved the FLAnimatedImage library you downloaded in Step 2.
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  Locate the following four files and drag them to the &amp;#8216;Library&amp;#8217; folder in Xcode that you created in Step 3.
+&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;FLAnimatedImage.h
+
+FLAnimatedImage.m
+
+FLAnimatedImageView.h
+
+FLAnimatedImageView.m&lt;/pre&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  It should be located in the folder hierarchy:
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  FLAnimatedImage-master -&gt; FLAnimatedImageDemo -&gt; FLAnimatedImage
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  When prompted, select the &amp;#8216;Copy items into destination groups folder&amp;#8217; and click ok.
+&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/dragfiles.png&#34; alt= &#34;Drag and add the FLAnimatedImageView to the Library folder&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addToLibrary.png&#34; alt= &#34;Drag and add the FLAnimatedImageView to the Library folder&#34;&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  5) Open your ViewController.h and add the following import statements:
+&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;#import &#34;FLAnimatedImage.h&#34;
+#import &#34;FLAnimatedImageView.h&#34;&lt;/pre&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Open the Main Storyboard file and add 3 UIImageView objects from the Object Library in the Utilities area on the right. Resize them so your storyboard looks like the one below.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addComponents.png&#34; alt= &#34;Drag 3 UIImageView objects to the storyboard&#34;&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/alignComponents.png&#34; alt= &#34;Final storyboard orientation with 3 image views&#34;&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Now click on one of the UIImageView objects that you added to the storyboard and under the Identity Inspector on the right, locate  the ‘Custom Class’ section. In the ‘Class’ text field enter ‘FLAnimatedImageView’.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Do this for all 3 UIImageView objects. The objects are of type FLAnimatedImageView which is a subclass of UIImageView.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/changeClass.png&#34; alt= &#34;Change the class of each of the image views to FLAnimatedImageView in the Identity Inspector in Xcode&#34;&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Open the Assistance Editor in Xcode such that the Storyboard and your ViewController.h files are side by side.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Control drag from each of the image views in the storyboard to your ViewController.h file between the @interface and @end statements. Give your outlet a name and let it be of type FLAnimatedImageView. At the end of it, your ViewController.h file should look like this:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;#import &amp;lt;UIKit/UIKit.h&amp;gt;
+#import &#34;FLAnimatedImageView.h&#34;
+#import &#34;FLAnimatedImage.h&#34;
+
+@interface VBViewController : UIViewController
+@property (strong, nonatomic) IBOutlet FLAnimatedImageView *lightningImageView;
+@property (strong, nonatomic) IBOutlet FLAnimatedImageView *manWalkingImageView;
+
+@property (strong, nonatomic) IBOutlet FLAnimatedImageView *pageLoadingImageView;
+
+@end&lt;/pre&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addCode.png&#34; alt= &#34;Connect outlets from the FLAnimatedImageViews in the storyboard to the ViewController.h file&#34;&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;With your view controller selected in the storyboard, we will add a navigation controller for aesthetics sake. In the menubar, go to Editor -&amp;gt; Embed In -&amp;gt; Navigation Controller.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/embed.png&#34; alt= &#34;Add a navigation controller in Xcode storyboard&#34;&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;Open your ViewController.m file and add code to the viewDidLoad: method to set the title of the navigation bar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre lang=&#34;objc&#34;&gt;self.title = @&#34;I Love GIF&#39;s&#34;;&lt;/pre&gt;
+&lt;p&gt;Now, we will add 3 gifs to each of the image views programmatically. First download them to your disk here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vikrambahl.com/wp-content/uploads/2014/07/manWalking.gif&#34;&gt;http://vikrambahl.com/wp-content/uploads/2014/07/manWalking.gif&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vikrambahl.com/wp-content/uploads/2014/07/lightning.gif&#34;&gt;http://vikrambahl.com/wp-content/uploads/2014/07/lightning.gif&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The third GIF we will load via a URL.&lt;/p&gt;
+&lt;p&gt;Just right click and save it.&lt;/p&gt;
+&lt;p&gt;Once saved, add it to your project by dragging the images to your project folder in Xcode. When prompted, select Copy items into destination groups folder.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/flanimatedimage-ios/addGifs.png&#34; alt= &#34;Adding GIF&amp;#8217;s to the project folder in Xcode&#34;&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Now we will load each of the three images with FLAnimatedImage instead of UIImage. Add the following code to your viewDidLoad: method in your ViewController.m file:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre lang=&#34;objc&#34;&gt;FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;manWalking&#34; ofType:@&#34;gif&#34;]]];
+
+FLAnimatedImage *lightningImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;lightning&#34; ofType:@&#34;gif&#34;]]];
+
+FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@&#34;http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif&#34;]]];&lt;/pre&gt;
+&lt;p&gt;Now,  assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;self.lightningImageView.animatedImage = lightningImage;&lt;/pre&gt;
+&lt;p&gt;And add the FLAnimatedImage view objects as subviews:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;[self.view addSubview:self.lightningImageView];&lt;/pre&gt;
+&lt;p&gt;Finally, your viewDidLoad: method should look like this:&lt;/p&gt;
+&lt;pre lang=&#34;objc&#34;&gt;- (void)viewDidLoad
+
+{
+
+[super viewDidLoad];
+
+// Do any additional setup after loading the view, typically from a nib.
+
+//Set the title of the naviagation bar
+
+self.title = @&#34;I Love GIF&#39;s&#34;;
+
+//Add the gifs as FLAnimatedImage objects
+
+FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;manWalking&#34; ofType:@&#34;gif&#34;]]];
+
+FLAnimatedImage *lightningImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&#34;lightning&#34; ofType:@&#34;gif&#34;]]];
+
+//Loading a gif from URL
+
+FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@&#34;http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif&#34;]]];
+
+//Assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property
+
+self.lightningImageView.animatedImage = lightningImage;
+
+self.manWalkingImageView.animatedImage = manWalkingImage;
+
+self.pageLoadingImageView.animatedImage = loadingImage;
+
+//Add the FLAnimatedImage view objects as subviews
+
+[self.view addSubview:self.lightningImageView];
+
+[self.view addSubview:self.manWalkingImageView];
+
+[self.view addSubview:self.pageLoadingImageView];
+
+}&lt;/pre&gt;
+&lt;p&gt;Now just run the program in the simulator and you should see your three GIFs loading perfectly.&lt;/p&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Development on Vikram Bahl</title>
+    <link>https://vikrambahl.com/categories/web-development/</link>
+    <description>Recent content in Web Development on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 03 Jun 2014 16:33:58 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/categories/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make a WordPress Website in 99 minutes</title>
+      <link>https://vikrambahl.com/make-wordpress-website-99-minutes/</link>
+      <pubDate>Tue, 03 Jun 2014 16:33:58 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/make-wordpress-website-99-minutes/</guid>
+      <description>
+        
+          &lt;h3 id=&#34;update-2021&#34;&gt;Update 2021&lt;/h3&gt;
+&lt;p&gt;So the content on this page needs to be refreshed to reflect modern web development. The steps to register the domain name and build the site may not work as shown in the video. I plan to refresh the content on this page.&lt;/p&gt;
+&lt;p&gt;--&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;This is a Step-by-Step tutorial on how to make a wordpress website. By the end of this article you will have made a fully fledged wordpress website with a Home, About Me, Contact Us and a Blog page. You will learn how to choose a hosting provider, select a domain name, install wordpress on your website, upload your photos/videos and configure your website.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Time taken to complete this task: 99 – 140 minutes&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Prerequisites: None&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;There are 2 ways to complete this tutorial. First way is to watch the YouTube video of the tutorial. The second way is to complete this tutorial in parts. Apart from a massive 144 minute YouTube video, I have divided the same video into 10 parts so you can consume the content step-by-step. All of these videos are embedded on this page along with useful text descriptions and the occasional screenshot to clear things up. I leave this choice upto you. &lt;strong&gt;The meat of the learning is in watching the videos&lt;/strong&gt;. I have deliberately explained every menial thing that I do while creating the website so you can latch onto the thought process and methodology of creating websites.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-full-video-tutorial&#34;&gt;The FULL video tutorial:&lt;/h2&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/9lYgK-LDMYE?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;the-learning-road-map&#34;&gt;The learning road map&lt;/h4&gt;
+&lt;p&gt;The respective time stamp range is provided next to the task.&lt;/p&gt;
+&lt;p&gt;Register a domain name &amp;amp; get hosting: 0:00 – 15:33&lt;br&gt;
+cPanel &amp;amp; Installing WordPress: 15:36 – 22:25&lt;br&gt;
+Install a WordPress Theme, Create Homepage: 22:27 – 32:07&lt;br&gt;
+Adding Logos: 32:11 – 40:17&lt;br&gt;
+Customize Slider/Adding Pages/Image Galleries/Embed YouTube Videos: 40:21 – 1:01:47&lt;br&gt;
+Adding Blogposts &amp;amp; Portfolio Items: 1:01:50 – 1:25:01&lt;br&gt;
+Adding Icon Menu/Finishing up the Homepage: 1:25:08 – 1:33:30&lt;br&gt;
+Adding Contact form/Embed Google Maps/Install Facebook Plugin/configuring the sidebar: 1:33:36 – 1:51:40&lt;br&gt;
+Adding a Multilevel Menu: 1:51:45 – 1:56:20&lt;br&gt;
+Add Login Page/Configuring the footer/Add a Favicon/Conclusion: 1:56:24 – 2:21:43&lt;/p&gt;
+&lt;p&gt;Download this wordpress theme&lt;/p&gt;
+&lt;p&gt;Virtue WordPress Theme: &lt;a href=&#34;http://www.kadencethemes.com/product/virtue-free-theme/&#34;&gt;http://www.kadencethemes.com/product/virtue-free-theme/&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;For those of you who want to watch the video in parts and follow along with some text and screenshots, proceed ahead:&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;You will never learn what you are about to read in any university or high school. Computer science courses in university focus on teaching you how to program websites. You learn HTML, CSS, JavaScript and PHP/Python. Most websites in the world use these technologies, so these are useful skills to learn. But in college you have only one semester to learn all this. This means that all the focus is on learning how to code. You practice your web development skills on the university machines which take care of storing your webpages on a server. They provide you with a nifty little tool to edit and upload  your code on the cloud and all you have to do is refresh the page to see the changes you have made.&lt;/p&gt;
+&lt;p&gt;All this is fine but this is only half the picture.  It is only when you come to the industry or when you want to launch a real world website when questions like..&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“ok, how do i register a .com website?”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“ok.what is server hosting and how do i get it?”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;..come to mind. This is VITAL real world information which is left out of university education. Mainly because you need a credit card to register a domain name, ie, a “.com” website and most 18 year old university students do not have credit cards.&lt;/p&gt;
+&lt;p&gt;Registering a domain name, getting hosting, configuring the DNS, migrating code and managing databases are essential tasks that need to be performed when you want to make a website. Fortunately, these are simple to learn and it takes less than a day to get familiar with these technologies. A week if you don’t know the difference between DNS and HTTP.&lt;/p&gt;
+&lt;p&gt;You will learn all this as we go over the steps leading to creating your own website.&lt;/p&gt;
+&lt;p&gt;Having your own website adds tremendous professional pedigree to your online profile. Surely, “yourname.com” sounds better than “yourname.wordpress.com” or “yourname.blogspot.freedomain.mycoolfreesite.com”. :p&lt;/p&gt;
+&lt;p&gt;Read on to find out how to make your very own website on a domain name of your choice.&lt;/p&gt;
+&lt;h2 id=&#34;choosing-a-hosting-provider&#34;&gt;Choosing a hosting provider&lt;/h2&gt;
+&lt;p&gt;or &lt;em&gt;“How to choose a web host for my website?”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;or “&lt;em&gt;Where will my website live?&lt;/em&gt;”&lt;/p&gt;
+&lt;p&gt;First off, who exactly is a web host. A web host or hosting provider is a server (usually a bunch of servers) which store all the files and databases which constitute your website. A server is just a technical term for an industrial computer whose purpose is to interact with other computers by responding to their requests for data. For example, Facebook stores all the data (profile pics, wall posts, albums, sharing preferences etc) associated with a profile on its servers. Whenever you click on your profile button, your browser sends a request to the &lt;a href=&#34;https://www.facebook.com/PrinevilleDataCenter&#34;&gt;facebook server&lt;/a&gt; where your profile information is stored asking for your profile page. Upon receiving this request, the FB server responds to your browser by sending it your profile page with all the data (like first post, profile info etc) and your browser formats the appearance and presents it to you. Facebook owns thousands of such servers which it places in the same room and calls it a “data center”.&lt;/p&gt;
+&lt;p&gt;A web host or hosting provider also owns many such servers in a data center where it stores website data for thousands of websites. If you want to have a website, you HAVE to rent space at some web host. Alternatively, you could convert your computer into a server and save on hosting fees but when you turn your computer off, your website also shuts down. Inconvenient.&lt;/p&gt;
+&lt;p&gt;Fortunately for us, there are plenty of web hosts. Some good, some awful. Based on my experience, the best web hosts are the ones with excellent customer service. You don’t want to pay for a cheap host and then have to cluelessly run around trying to figure out how to add a subdomain and do the most basic of website maintenance tasks (or worse when you accidentally break your website and need an expert to revert to your old site).&lt;/p&gt;
+&lt;p&gt;One web hosting provider which provides excellent customer service at a cheap price is &lt;a title=&#34;Hostgator&#34; href=&#34;http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=svram&#34; target=&#34;_blank&#34;&gt;Hostgator&lt;/a&gt;. These guys have been around for a long time. They have a 24×7 LiveChat service manned by web engineers who patiently solve even the most ridiculous of requests. From database maintenance to website recovery to simple tasks like spoonfeeding you the process of creating an email account are carried out by these blessed customer service reps at Hostgator. I have registered  tens of domain names with Hostgator and introduced many clients to them. In the past 4 years or so, there hasn’t been a single downtime issue.&lt;/p&gt;
+&lt;p&gt;If you are serious about having your own website, then you must get hosting. Go to the Hostgator website and move on to the next Step to learn how to purchase hosting and create a domain name.&lt;/p&gt;
+&lt;h2 id=&#34;part-110-register-a-domain-name--get-hosting&#34;&gt;Part 1/10: Register a Domain Name &amp;amp; Get Hosting&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have registered a domain name and acquired hosting with Hostgator.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;See the video of Part 1/10 here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/SbGmUBo5R98?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;IMPORTANT NOTE: Your domain may take 24-48hours to fully propagate across the web. This means that if your website does not open, just clear your browser history and cache and keep refreshing the page. Either you page may not open or you will get a message from Hostgator saying that it will take 24-48 hours for your domain name to propagate across all the DNS servers around the web. Since this is a new domain, all the name servers have to be notified of a new website and have to update their directories accordingly. This is carried out automatically by Hostgator, so feel free to move on to the next section where you will install wordpress on your website and create a Home page, add a blog post, upload a photo/video and create many boilerplate pages like Contact us etc.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;part-210-installing-wordpress-on-your-website&#34;&gt;Part 2/10: Installing WordPress on your website&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will get acquainted with cPanel and will install wordpress on your website through one-click QuickInstall. You will then proceed to login to your wordpress website, take a short tour of the dashboard and change your password&lt;/em&gt;
+See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/FidLELNpJ4Y?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-310-install-a-new-wordpress-theme--create-a-homepage&#34;&gt;PART 3/10: Install a new WordPress Theme &amp;amp; Create a Homepage&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;After completing this section you will have installed a new theme and created you first page – the Homepage!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/vo0HS__IuEk?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-410-add-a-logo-to-your-website&#34;&gt;PART 4/10: Add a logo to your website&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;After completing this section you will have added your own logo to the website and will learn how to upload images to your wordpress.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;See the Video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/15A0Wm75Obk?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-510-add-slider-create-pages-add-imagesimage-galleries--embed-youtube-videos&#34;&gt;PART 5/10: Add Slider, Create Pages, Add Images/Image Galleries &amp;amp; Embed YouTube Videos&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After completing this section you will have:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added a customized slider to the homepage&lt;/li&gt;
+&lt;li&gt;added 3 pages&lt;/li&gt;
+&lt;li&gt;added images to your pages&lt;/li&gt;
+&lt;li&gt;added an image gallery to your page&lt;/li&gt;
+&lt;li&gt;embedded a video from youtube to your page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/wtD6zATdZr0?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-610-adding-blog-posts--portfolio-pages-of-your-creative-work&#34;&gt;PART 6/10: Adding Blog posts &amp;amp; Portfolio pages of your creative work&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added blog posts with image sliders to your website&lt;/li&gt;
+&lt;li&gt;created portfolio pages to display your projects, creative work etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/evoUwWPV9Fc?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-710-adding-icon-menu--completing-the-homepage&#34;&gt;PART 7/10: Adding Icon Menu &amp;amp; completing the Homepage&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added icon menus to the homepage to display features related to the website you are making&lt;/li&gt;
+&lt;li&gt;completed customizing the homepage to include blogposts, portfolio slideshow and an icon menu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/ND3oOF4NFqI?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-810-contact-forms-embed-google-maps-to-your-page-add-a-facebook-8216like8217-box--configure-the-sidebar&#34;&gt;PART 8/10: Contact forms, Embed google maps to your page, add a Facebook ‘Like’ box &amp;amp; configure the sidebar&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added a contact form to your contact us page.&lt;/li&gt;
+&lt;li&gt;embedded a google map to your page to display your address.&lt;/li&gt;
+&lt;li&gt;install the Facebook plugin and add a ‘Like’ box to your facebook page on your sidebar&lt;/li&gt;
+&lt;li&gt;create and customize your sidebar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/kNnB0qZINb0?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-910-add-a-multi-level-menu&#34;&gt;PART 9/10: Add a multi-level menu&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;After completing this section you will have:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;added a multi-level menu to your website.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/jkkJdlrnm1g?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;part-1010-customize-footer-area-add-a-favicon--a-login-page&#34;&gt;PART 10/10: Customize footer area, add a favicon &amp;amp; a login page&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After completing this section you will have:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;customized the look and placement of the main menu.&lt;/li&gt;
+&lt;li&gt;added a ‘login’ page to your website using the ‘Theme My Login’ plugin for wordpress&lt;/li&gt;
+&lt;li&gt;customized the footer area of the website&lt;/li&gt;
+&lt;li&gt;added a favicon to your website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the video here:&lt;/p&gt;
+
+&lt;div class=&#34;video&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/D75BskKW6RA?controls=1&amp;rel=0&#34; loading=&#34;lazy&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

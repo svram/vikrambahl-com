@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSX on Vikram Bahl</title>
+    <link>https://vikrambahl.com/categories/osx/</link>
+    <description>Recent content in OSX on Vikram Bahl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2021, Vikram Bahl; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 19 Feb 2016 08:14:49 +0000</lastBuildDate><atom:link href="https://vikrambahl.com/categories/osx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accessing files stored by the iOS Simulator</title>
+      <link>https://vikrambahl.com/accessing-files-stored-ios-simulator/</link>
+      <pubDate>Fri, 19 Feb 2016 08:14:49 +0000</pubDate>
+      
+      <guid>https://vikrambahl.com/accessing-files-stored-ios-simulator/</guid>
+      <description>
+        
+          &lt;p&gt;iOS provides limited access to the directory structure for your device. You may often wonder what it looks like. If you are creating a temporary plist or generating a text file, you may want to see where exactly it gets stored on your device. For those with non-jailbroken devices, this can be a difficult task. Yes, you can always work with relative paths inside Xcode and there’s no problem, but certain frameworks generate files which are stored locally on the device. For eg.,  the &lt;a href=&#34;http://www.politepix.com/openears/&#34;&gt;OpenEars&lt;/a&gt; library running the &lt;a href=&#34;http://cmusphinx.sourceforge.net/wiki/&#34;&gt;CMU speech recognition&lt;/a&gt; engine generates a dictionary and language model (.arpa and .DMP) and stores it ‘somewhere’ on the device. To access the directory structure for your iOS simulator, type in the following command in Terminal:&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre lang=&#34;bash&#34;&gt;open -R `find ~/Library/Developer/CoreSimulator/Devices \
+ -type d -depth 5 -name &#34;*.app&#34; -print0 | xargs -0 stat -f \
+ &#34;%m %N&#34; | sort -rn | head -1 | cut -f2- -d&#34; &#34;`
+
+&lt;/pre&gt;
+&lt;p&gt;That will open the folder where your simulator has stored your filed. Now you just have to search for your filename and voila. Note that the above command opens up 5 levels deep in your folder structure. So you may have to move up a few level and then search for the file you are looking for.&lt;/p&gt;
+&lt;img src=&#34;https://vikrambahl.com/images/macos-folder.png&#34;&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
